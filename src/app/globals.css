@@ -10,18 +10,36 @@ header {
   padding: 10px;
 }
 
+
 nav a {
   color: white;
   margin: 0 10px;
   text-decoration: none;
 }
 
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #333;
-  color: white;
+.threeD-animation {
+  width: 100%;
+  height: 400px; 
+  position: relative; 
 }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8; 
+}
+
+h1, h2, h3, p {
+  margin: 0;
+  padding: 10px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px; 
+}
+
+
 
 .hero {
   background: url('/path-to-your-hero-image.jpg') no-repeat center center/cover;
@@ -55,6 +73,13 @@ h1, h2, h3 {
 }
 
 
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #333;
+  color: white;
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 0.5rem;
@@ -74,24 +99,3 @@ h1, h2, h3 {
 }
 
 
-.threeD-animation {
-  width: 100%;
-  height: 400px; 
-  position: relative; 
-}
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f0f4f8; 
-}
-
-h1, h2, h3, p {
-  margin: 0;
-  padding: 10px;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px; 
-}

@@ -3,16 +3,17 @@ import Header from '@/components/Header';
 import ThreeDScene from '@/components/ThreeDScene';
 import Footer from '@/components/Footer';
 import HeroSection from '@/components/HeroSection';
-
-
+import AboutSection from '@/components/AboutSection'; 
+import Article from '@/components/Article';
 
 const HomePage = () => {
   return (
     <div>
-      <Header />
       <ThreeDScene />
+      <Header />
       <HeroSection />
-      
+      <AboutSection />
+      <Article /> 
       <Footer />
     </div>
   );
