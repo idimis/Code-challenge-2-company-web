@@ -1,23 +1,24 @@
 import React from 'react';
+import Image from 'next/image'; 
 
 const articles = [
   {
     title: "Transforming Communities with Solar Energy",
     description: "New World has successfully implemented solar energy projects in various communities, empowering them with sustainable power solutions.",
-    imageUrl: "/images/solar-energy.jpg", // Ganti dengan path gambar yang sesuai
-    link: "/articles/solar-energy" // Ganti dengan path link yang sesuai
+    imageUrl: "/windmill1.png", 
+    link: "/articles/solar-energy"
   },
   {
     title: "Wind Energy: A New Era for Renewable Resources",
     description: "Through innovative wind energy projects, New World is leading the charge in harnessing wind power for a cleaner future.",
-    imageUrl: "/images/wind-energy.jpg", // Ganti dengan path gambar yang sesuai
-    link: "/articles/wind-energy" // Ganti dengan path link yang sesuai
+    imageUrl: "/windmill2.png", 
+    link: "/articles/wind-energy"
   },
   {
     title: "Innovative Energy Storage Solutions",
     description: "New World has developed state-of-the-art energy storage systems, enhancing the efficiency of renewable energy utilization.",
-    imageUrl: "/images/energy-storage.jpg", // Ganti dengan path gambar yang sesuai
-    link: "/articles/energy-storage" // Ganti dengan path link yang sesuai
+    imageUrl: "/windmill3.png", 
+    link: "/articles/energy-storage"
   },
 ];
 
@@ -29,7 +30,14 @@ const Articles = () => {
         {articles.map((article, index) => (
           <div key={index} className={`flex ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"} items-center`}>
             <div className="w-1/2">
-              <img src={article.imageUrl} alt={article.title} className="w-full h-auto rounded-lg shadow-lg" />
+              <Image 
+                src={article.imageUrl} 
+                alt={article.title} 
+                className="w-full h-auto rounded-lg shadow-lg" 
+                layout="responsive" 
+                width={500} 
+                height={300} 
+              />
             </div>
             <div className="w-1/2 px-4">
               <h3 className="text-2xl font-semibold">{article.title}</h3>
