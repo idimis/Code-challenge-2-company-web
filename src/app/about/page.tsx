@@ -3,13 +3,13 @@ import Footer from '@/components/Footer';
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-100 about-page">
       <Header />
       <div className="container mx-auto px-4 py-16">
         {/* About Us Section */}
         <section className="mb-16">
-          <h1 className="text-center text-5xl font-bold text-gray-800 mb-10">About Us</h1>
-          <p className="text-center text-lg text-gray-600 mb-10">
+          <h1 className="text-left text-5xl font-bold text-gray-800 mb-10">About Us</h1>
+          <p className="text-left text-lg text-gray-600 mb-10">
             We are a global leader in renewable energy, committed to transforming the way the world generates power. With cutting-edge technology, we aim to create a cleaner and more sustainable future.
           </p>
           <div className="flex justify-center">
@@ -22,7 +22,7 @@ const About = () => {
 
         {/* History Section */}
         <section className="mb-16">
-          <h2 className="text-4xl font-semibold text-gray-800 mb-6 text-center">Our History</h2>
+          <h2 className="text-left text-4xl font-semibold text-gray-800 mb-6">Our History</h2>
           <div className="flex flex-col md:flex-row justify-between items-start gap-8">
             <div className="md:w-1/2">
               <p className="text-lg text-gray-600">
@@ -40,7 +40,7 @@ const About = () => {
 
         {/* Vision & Mission Section */}
         <section className="mb-16">
-          <h2 className="text-4xl font-semibold text-gray-800 mb-6 text-center">Vision & Mission</h2>
+          <h2 className="text-left text-4xl font-semibold text-gray-800 mb-6">Vision & Mission</h2>
           <div className="flex flex-col md:flex-row justify-between items-start gap-8">
             <div className="md:w-1/2 bg-white p-6 shadow-lg rounded-lg">
               <h3 className="text-2xl font-bold text-gray-800 mb-4">Our Vision</h3>
@@ -59,9 +59,8 @@ const About = () => {
 
         {/* Headquarters and Offices Section */}
         <section className="mb-16">
-          <h2 className="text-4xl font-semibold text-gray-800 mb-6 text-center">Global Presence</h2>
+          <h2 className="text-left text-4xl font-semibold text-gray-800 mb-6">Global Presence</h2>
           <div className="flex flex-wrap justify-between items-start gap-8">
-            
             {/* Headquarters */}
             <div className="flex w-full md:w-1/2 bg-white p-6 shadow-lg rounded-lg items-center">
               <div className="w-1/3">
@@ -91,7 +90,6 @@ const About = () => {
                 </p>
               </div>
             </div>
-
           </div>
         </section>
 
@@ -107,7 +105,6 @@ const About = () => {
             </button>
           </div>
         </section>
-
       </div>
       <Footer />
     </div>

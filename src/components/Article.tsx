@@ -27,19 +27,19 @@ const articles = [
 
 const Articles = () => {
   return (
-    <div className="submitted-articles px-4 py-10 bg-green-200"> {/* Set background color */}
+    <div className="submitted-articles px-4 py-10 bg-green-200">
       <h2 className="text-center text-4xl font-bold mb-8">Articles by New World</h2>
       <div className="flex flex-col gap-10">
         {articles.map((article, index) => (
-          <div key={index} className="article-container flex flex-row-reverse items-start gap-6"> {/* Reverse the row direction */}
+          <div key={index} className="article-container flex flex-row-reverse items-start gap-6">
             <div className="article-image flex-none" style={{ maxWidth: '150px', maxHeight: '90px' }}>
               <Image 
                 src={article.imageUrl} 
                 alt={article.title} 
                 className="rounded-lg object-cover" 
-                width={150} // Use the desired width
-                height={90} // Use the desired height
-                style={{ width: '100%', height: 'auto' }} // Ensure the image is responsive
+                width={150}
+                height={90}
+                style={{ width: '100%', height: 'auto' }}
               />
             </div>
             <div className="article-content flex-1">
