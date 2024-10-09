@@ -1,4 +1,4 @@
-/* Add your global styles here */
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -30,4 +30,68 @@ footer {
   justify-content: center;
   align-items: center;
   color: white;
+}
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+header, footer {
+  background-color: #282c34;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0.5rem;
+  }
+
+  header, footer {
+    padding: 0.5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+}
+
+
+.threeD-animation {
+  width: 100%;
+  height: 400px; 
+  position: relative; 
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8; 
+}
+
+h1, h2, h3, p {
+  margin: 0;
+  padding: 10px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px; 
 }

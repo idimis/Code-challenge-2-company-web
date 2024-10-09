@@ -1,12 +1,39 @@
-const TeamMember = ({ name, title, description }: { name: string; title: string; description: string; }) => {
-    return (
-      <div className="border p-4 rounded-lg shadow-md">
-        <h3 className="text-lg font-bold">{name}</h3>
-        <p className="text-gray-600">{title}</p>
-        <p>{description}</p>
+import { FaLinkedin } from 'react-icons/fa';
+
+interface TeamMemberProps {
+  name: string;
+  title: string;
+  description: string;
+  quote: string;
+  linkedIn: string;
+}
+
+const TeamMember: React.FC<TeamMemberProps> = ({ name, title, description, quote, linkedIn }) => {
+  return (
+    <div className="bg-white shadow-lg p-6 rounded-lg w-full md:w-1/3 mx-4 mb-8 relative group">
+      <div className="h-40 w-40 mx-auto mb-4 relative overflow-hidden rounded-full">
+        
+        <img 
+          src={`https://via.placeholder.com/150?text=${name}`} 
+          alt={`${name}`} 
+          className="h-full w-full object-cover rounded-full transition duration-300 group-hover:opacity-50"
+        />
+        
+        <a 
+          href={linkedIn} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="absolute inset-0 flex items-center justify-center bg-blue-700 bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300"
+        >
+          <FaLinkedin className="text-white text-3xl" />
+        </a>
       </div>
-    );
-  };
-  
-  export default TeamMember;
-  
+      <h3 className="text-xl font-bold text-center">{name}</h3>
+      <h4 className="text-sm text-gray-500 text-center mb-2">{title}</h4>
+      <p className="text-center mb-4">{description}</p>
+      <blockquote className="italic text-gray-600 text-center">"{quote}"</blockquote>
+    </div>
+  );
+};
+
+export default TeamMember;

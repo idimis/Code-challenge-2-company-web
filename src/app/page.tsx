@@ -1,15 +1,21 @@
-import Header from '../components/Header';
-import HeroSection from '../components/HeroSection';
-import Footer from '../components/Footer';
-import ThreeDScene from '../components/ThreeDScene';
+import React from 'react';
+import Header from '@/components/Header';
+import ThreeDScene from '@/components/ThreeDScene';
+import Footer from '@/components/Footer';
+import HeroSection from '@/components/HeroSection';
 
-export default function Home() {
+
+
+const HomePage = () => {
   return (
-    <>
+    <div>
       <Header />
-      <HeroSection />
       <ThreeDScene />
+      <HeroSection />
+      
       <Footer />
-    </>
+    </div>
   );
-}
+};
+
+export default HomePage;
