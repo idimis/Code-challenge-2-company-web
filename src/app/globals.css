@@ -1,101 +1,94 @@
-
+/* Global Styles */
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
 }
 
-header {
-  background: #333;
+/* General Container Styles */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Hero Section Styles */
+.hero-image {
+  width: 100%;
+  height: 650px; /* Set height to 650px */
+  background-position: center;
+  background-size: cover;
+  margin-top: 0; /* No margin to maintain position below header */
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: white;
-  padding: 10px;
+  text-align: center;
 }
 
+/* Utility Classes */
+.w-80 {
+  width: 20rem; /* Set width to 20rem */
+}
+
+.m-4 {
+  margin: 1rem; /* Set margin to 1rem */
+}
+
+/* Transition Effects */
+.transition-opacity {
+  transition: opacity 0.3s ease; /* Smooth transition for opacity */
+}
+
+/* Hover Effects for Team Member LinkedIn Overlay */
+.group:hover .group-hover\:bg-opacity-60 {
+  background-color: rgba(0, 0, 0, 0.6); /* Background color on hover */
+}
+
+.group:hover .group-hover\:opacity-100 {
+  opacity: 1; /* Show overlay on hover */
+}
+
+/* Header Styles */
+header {
+  position: relative; /* Keep the header relative */
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 1rem 2rem; /* Padding for header */
+  display: flex;
+  align-items: center; /* Center items vertically */
+  justify-content: space-between; /* Space between logo and nav links */
+  z-index: 10; /* Ensure header appears above other content */
+}
+
+/* Navigation Styles */
+nav {
+  flex-grow: 1; /* Allow nav to take up available space */
+  display: flex;
+  justify-content: center; /* Center the navigation links */
+}
 
 nav a {
-  color: white;
-  margin: 0 10px;
-  text-decoration: none;
+  color: #333; /* Link color */
+  text-decoration: none; /* Remove underline */
+  padding: 0.5rem 1rem; /* Padding for links */
 }
 
-.threeD-animation {
-  width: 100%;
-  height: 400px; 
-  position: relative; 
-}
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f0f4f8; 
+nav a:hover {
+  color: #007BFF; /* Change color on hover */
 }
 
-h1, h2, h3, p {
-  margin: 0;
-  padding: 10px;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px; 
-}
-
-
-
-.hero {
-  background: url('/path-to-your-hero-image.jpg') no-repeat center center/cover;
-  height: 400px;
+/* Company Logo Styles */
+.logo {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
+  align-items: center; /* Center logo items vertically */
 }
 
-body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
+.logo img {
+  height: 40px; /* Adjust logo size */
+  margin-right: 10px; /* Space between logo and text */
 }
-
-header, footer {
-  background-color: #282c34;
-  color: white;
-  padding: 1rem;
-  text-align: center;
-}
-
-h1, h2, h3 {
-  margin: 0;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #333;
-  color: white;
-}
-
-@media (max-width: 768px) {
-  .container {
-    padding: 0.5rem;
-  }
-
-  header, footer {
-    padding: 0.5rem;
-  }
-
-  h1 {
-    font-size: 1.5rem;
-  }
-
-  h2 {
-    font-size: 1.25rem;
-  }
-}
-
-

@@ -7,6 +7,10 @@ import Footer from '@/components/Footer';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection'; 
 import Article from '@/components/Article';
+import CompanyOverview from '@/components/CompanyOverview';
+import TestimonialsSection from '@/components/TestimonialsSection';
+import ServicesSection from '@/components/ServicesSection';
+
 
 const HomePage = () => {
   return (
@@ -14,8 +18,11 @@ const HomePage = () => {
       <ThreeDScene />
       <Header />
       <HeroSection />
+      <CompanyOverview />
       <AboutSection />
+      <ServicesSection />
       <Article /> 
+      <TestimonialsSection />
       <Footer />
     </div>
   );

@@ -9,16 +9,21 @@ interface TeamMemberProps {
 }
 
 const TeamMember: React.FC<TeamMemberProps> = ({ name, title, description, quote, linkedIn }) => {
+  // Create a dynamic URL for the randomuser.me API
+  const randomUserImage = `https://randomuser.me/api/portraits/lego/${Math.floor(Math.random() * 10)}.jpg`;
+
   return (
     <div className="bg-white shadow-lg p-6 rounded-lg w-full md:w-1/3 mx-4 mb-8 relative group">
       <div className="h-40 w-40 mx-auto mb-4 relative overflow-hidden rounded-full">
         
+        {/* Random image from randomuser.me */}
         <img 
-          src={`https://via.placeholder.com/150?text=${name}`} 
+          src={randomUserImage} 
           alt={`${name}`} 
           className="h-full w-full object-cover rounded-full transition duration-300 group-hover:opacity-50"
         />
         
+        {/* LinkedIn overlay */}
         <a 
           href={linkedIn} 
           target="_blank" 

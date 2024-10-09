@@ -1,7 +1,7 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
-const Services = () => {
+const Service = () => {
   return (
     <div className="min-h-screen bg-gray-100">
       <Header />
@@ -128,4 +128,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default Service;
