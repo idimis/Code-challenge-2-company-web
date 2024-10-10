@@ -9,26 +9,26 @@ const articles = [
     title: "Transforming Communities with Solar Energy",
     description: "New World has successfully implemented solar energy projects in various communities, empowering them with sustainable power solutions.",
     imageUrl: windmill1,
-    link: "/articles/solar-energy"
+    link: "https://heliumrenewable.com/Home/UpdatesDetails/9"
   },
   {
     title: "Wind Energy: A New Era for Renewable Resources",
     description: "Through innovative wind energy projects, New World is leading the charge in harnessing wind power for a cleaner future.",
     imageUrl: windmill2,
-    link: "/articles/wind-energy"
+    link: "https://www.enelgreenpower.com/learning-hub/gigawhat/search-articles/articles/2023/07/fossils-new-era-renewables"
   },
   {
     title: "Innovative Energy Storage Solutions",
     description: "New World has developed state-of-the-art energy storage systems, enhancing the efficiency of renewable energy utilization.",
     imageUrl: windmill3,
-    link: "/articles/energy-storage"
+    link: "https://www.greyb.com/blog/energy-storage-innovation-trends/"
   },
 ];
 
 const Articles = () => {
   return (
-    <div className="submitted-articles px-4 py-10">
-      <h2 className="text-center text-4xl font-bold mb-8">Articles by New World</h2>
+    <div className="max-w-[1440px] mx-auto submitted-articles px-4 py-10">
+      <h2 className="text-center text-4xl font-bold mb-8">Media Coverage</h2>
       <div className="flex flex-col gap-10">
         {articles.map((article, index) => (
           <div key={index} className="article-container flex flex-row-reverse items-start gap-6">
@@ -45,7 +45,12 @@ const Articles = () => {
             <div className="article-content flex-1">
               <h3 className="title text-xl font-semibold">{article.title}</h3>
               <p className="body-text mt-2 text-gray-800">{article.description}</p>
-              <a href={article.link} className="read-more mt-4 inline-block bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600 transition">
+              <a 
+                href={article.link} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="read-more mt-4 inline-block border border-black font-semibold py-2 px-4 rounded hover:bg-blue-600 transition"
+              >
                 Read More
               </a>
             </div>

@@ -1,11 +1,16 @@
 import React from 'react';
 
 const Footer = () => {
+  const email = "your-email@example.com"; // Replace with your email address
+  const subject = "Inquiry"; // Customize the subject line
+  const body = "Hello,\n\nI would like to inquire about..."; // Default body text
+  const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
   return (
-    <footer className="flex flex-col p-5">
+    <footer className="max-w-[1440px] mx-auto flex flex-col p-5">
       {/* Left Section */}
-      <div className="bg-purple-200 p-2 h-12 text-xl font-bold font-serif">
-        For inquiries, please feel free to <span className="underline">contact us via email</span>.
+      <div className="p-2 h-12 text-xl font-bold">
+        For inquiries, please feel free to <a href={mailtoLink} className="underline">contact us via email</a>.
       </div>
       
       {/* Right Section */}
@@ -19,7 +24,7 @@ const Footer = () => {
             <span>|</span>
             <a href="#" className="text-white no-underline">About Us</a>
             <span>|</span>
-            <a href="#" className="text-white no-underline">Contact</a>
+            <a href={mailtoLink} className="text-white no-underline">Contact</a>
           </div>
         </div>
       </div>

@@ -4,13 +4,15 @@ import solarPanelImage from '@/public/solarpanelmeadow.png';
 
 const HeroSection = () => {
   return (
-    <div className="relative flex items-center justify-center bg-green-200 overflow-hidden h-[650px]">
-      <div className="absolute inset-0 w-full h-full z-0">
-        <Image 
-          src={solarPanelImage}
-          alt="Solar Panel Field"
-          className="w-full h-full object-cover"
-        />
+    <div className="relative flex items-center justify-center overflow-hidden h-[650px]">
+      <div className="absolute inset-0 flex items-center justify-center z-0">
+        <div className="max-w-[1440px] w-full">
+          <Image 
+            src={solarPanelImage}
+            alt="Solar Panel Field"
+            className="w-full h-full object-cover"
+          />
+        </div>
       </div>
       
       <div className="absolute inset-0 flex items-center justify-center z-10 text-center text-white p-5">

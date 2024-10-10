@@ -17,6 +17,62 @@ body {
   justify-content: center;
 }
 
+/* Hero Text Styles */
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white; 
+  text-align: center;
+  z-index: 10; 
+}
+
+/* Width and Margin Utilities */
+.w-80 {
+  width: 20rem; 
+}
+
+.m-4 {
+  margin: 1rem; 
+}
+
+/* Company Overview and Album Layout */
+
+.company-overview {
+  flex: 1; 
+  padding-left: 0; 
+  
+}
+
+.album img {
+  border: 2px solid #4a5568; 
+  
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+  width: 100%; 
+  height: auto; 
+}
+
+.album button {
+  position: absolute; 
+  top: 50%; 
+  transform: translateY(-50%); 
+  background-color: rgba(255, 255, 255, 0.7); 
+  border: none; 
+  padding: 0.5rem; 
+  cursor: pointer; 
+  font-size: 24px; 
+  z-index: 1; 
+}
+
+.album button:first-of-type {
+  left: -30px; 
+}
+
+.album button:last-of-type {
+  right: -30px; 
+}
+
 
 
 
@@ -75,131 +131,3 @@ nav a:hover {
   margin-right: 10px; /* Space between logo and text */
 }
 
-
-/* Styles specific to the About page */
-.about-page .container {
-  display: flex;
-  flex-direction: column; /* Stack elements vertically */
-  align-items: flex-start; /* Align items to the left */
-  width: 100%; /* Ensure container takes full width */
-  max-width: 1200px; /* Optional: set a max width */
-  margin: 0 auto; /* Center the container */
-  padding: 0 2rem; /* Add horizontal padding */
-}
-
-/* Text Alignment for Sections */
-.about-page section {
-  width: 100%; /* Ensure sections take full width */
-  margin-bottom: 2rem; /* Spacing between sections */
-}
-
-/* Text Styles */
-.about-page h1, 
-.about-page h2, 
-.about-page h3, 
-.about-page p {
-  text-align: left; /* Align text to the left */
-  color: #333; /* Consistent text color */
-  margin: 0; /* Remove default margins */
-}
-
-/* Headings */
-.about-page h1 {
-  font-size: 2.5rem; /* Adjust heading sizes */
-  font-weight: bold;
-  margin-bottom: 1rem; /* Space below main heading */
-}
-
-.about-page h2 {
-  font-size: 2rem; /* Adjust subheading sizes */
-  font-weight: semi-bold;
-  margin-bottom: 0.5rem; /* Space below subheadings */
-
-}
-
-
-.about-page h3 {
-  font-size: 1.5rem; /* Adjust smaller heading sizes */
-  font-weight: bold;
-  margin-bottom: 0.5rem; /* Space below smaller headings */
-}
-
-/* Paragraphs */
-.about-page p {
-  font-size: 1rem; /* Set a base font size for paragraphs */
-  line-height: 1.5; /* Improve readability */
-  color: #666; /* Use a lighter color for body text */
-}
-
-/* Call to Action Styles */
-.about-page .bg-blue-600 {
-  padding: 1rem; /* Add padding for call to action */
-  border-radius: 0.5rem; /* Rounded corners */
-}
-
-/* Adjust Footer and Header Spacing */
-.about-page footer, 
-.about-page header {
-  padding: 1rem 0; /* Padding top and bottom */
-}
-
-/* Services Section Styles */
-
-.services-section {
-  padding: 2rem 0; /* Padding untuk section */
-  max-width: 1440px; /* Set max width for the section */
-  margin: 0 auto; /* Center section */
-}
-
-.service-item {
-  display: flex; /* Align image and text side by side */
-  flex-direction: column; /* Set direction to column for content */
-  align-items: center; /* Center items vertically */
-  width: calc(33.333% - 2rem); /* Set width for three items in a row */
-  margin: 1rem; /* Space between service items */
-}
-
-/* Optional: Styling for Images */
-.service-image {
-  width: 100%; /* Make image responsive */
-  max-height: 200px; /* Set max height for the image */
-  object-fit: cover; /* Maintain aspect ratio of image */
-  border-radius: 8px; /* Rounded corners for images */
-}
-
-.service-description {
-  flex: 1; /* Allow description to take up remaining space */
-  text-align: center; /* Center text for better alignment */
-}
-
-
-/* Ensure responsiveness */
-@media (min-width: 768px) {
-  .service-item {
-    flex-direction: row; /* Align items in a row on larger screens */
-    justify-content: flex-start; /* Align items to the left */
-    width: calc(33.333% - 2rem); /* Set width for three items in a row */
-    margin-right: 1rem; /* Space between items */
-  }
-
-  .service-item:last-child {
-    margin-right: 0; /* Remove right margin from the last item */
-  }
-
-  .service-image {
-    width: 30%; /* Set width for the image */
-    margin-right: 1rem; /* Space between image and text */
-  }
-
-  .service-description {
-    text-align: left; /* Left align description text */
-  }
-}
-
-  .three-canvas-container {
-  position: relative; /* Ensure it can be positioned */
-  width: 100%; /* Full width of the parent */
-  height: 100vh; /* Full height of the viewport */
-  overflow: hidden; /* Prevent scrollbars from appearing */
-  z-index: 1; /* Ensure it appears on top of other elements if necessary */
-}
