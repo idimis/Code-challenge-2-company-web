@@ -2,13 +2,17 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Image from 'next/image'; 
 
-
 import about1 from '@/public/about1.jpg';
 import about2 from '@/public/about2.jpeg';
 import about3 from '@/public/about3.png';
 import about4 from '@/public/about4.jpg';
 
 const About = () => {
+  const email = "your-email@example.com"; // Replace with your email address
+  const subject = "Inquiry"; // Customize the subject line
+  const body = "Hello,\n\nI would like to inquire about..."; // Default body text
+  const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
   return (
     <div className="min-h-screen bg-gray-100">
       <Header />
@@ -117,9 +121,9 @@ const About = () => {
                 Contact us today and become part of the renewable energy revolution.
               </p>
             </div>
-            <button className="bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg shadow hover:bg-blue-700">
+            <a href={mailtoLink} className="bg-transparent border border-black text-black font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-200 transition">
               Contact Us
-            </button>
+            </a>
           </div>
         </section>
       </div>

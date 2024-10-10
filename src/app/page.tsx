@@ -1,8 +1,7 @@
 "use client"; 
 
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '@/components/Header';
-import ThreeDScene from '@/components/ThreeDScene';
 import Footer from '@/components/Footer';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection'; 
@@ -11,17 +10,24 @@ import CompanyOverview from '@/components/CompanyOverview';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import ServicesSection from '@/components/ServicesSection';
 
-
+import SlideOutButton from '@/components/SlideOutButton';
+import Overlay from '@/components/Overlay';
 
 const HomePage = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // State to manage menu open/close
+
+  const toggleMenu = () => {
+    setIsMenuOpen(prev => !prev); // Toggle menu state
+  };
+
   return (
     <div>
-      
-      <Header/>
+      <Header />
       <HeroSection />
       <CompanyOverview /> 
-      <AboutSection />
-      
+      <AboutSection /> 
+      <SlideOutButton isOpen={isMenuOpen} closeMenu={toggleMenu} /> 
+      <Overlay />
       <ServicesSection />
       <Article /> 
       <TestimonialsSection />

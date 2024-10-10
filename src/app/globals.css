@@ -74,60 +74,36 @@ body {
 }
 
 
-
-
-/* Transition Effects */
-.transition-opacity {
-  transition: opacity 0.3s ease; 
-}
-
-/* Hover Effects for Team Member LinkedIn Overlay */
-.group:hover .group-hover\:bg-opacity-60 {
-  background-color: rgba(0, 0, 0, 0.6); /* Background color on hover */
-}
-
-.group:hover .group-hover\:opacity-100 {
-  opacity: 1; /* Show overlay on hover */
-}
-
 /* Header Styles */
-header {
-  position: relative; /* Keep the header relative */
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  padding: 1rem 2rem; /* Padding for header */
-  display: flex;
-  align-items: center; /* Center items vertically */
-  justify-content: space-between; /* Space between logo and nav links */
-  z-index: 10; /* Ensure header appears above other content */
-}
+
 
 /* Navigation Styles */
 nav {
-  flex-grow: 1; /* Allow nav to take up available space */
+  flex-grow: 1; 
   display: flex;
-  justify-content: center; /* Center the navigation links */
+  justify-content: center; 
 }
 
 nav a {
-  color: #333; /* Link color */
-  text-decoration: none; /* Remove underline */
-  padding: 0.5rem 1rem; /* Padding for links */
+  color: #333; 
+  text-decoration: none; 
+  padding: 0.5rem 1rem; 
 }
 
 nav a:hover {
-  color: #007BFF; /* Change color on hover */
+  color: #007BFF; 
 }
 
 /* Company Logo Styles */
 .logo {
   display: flex;
-  align-items: center; /* Center logo items vertically */
+  align-items: center; 
 }
 
 .logo img {
-  height: 40px; /* Adjust logo size */
-  margin-right: 10px; /* Space between logo and text */
+  height: 40px; 
+  margin-right: 10px; 
 }
+
+
 

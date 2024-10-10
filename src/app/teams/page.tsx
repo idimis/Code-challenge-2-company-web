@@ -12,48 +12,20 @@ const Teams = () => {
     { name: "Ngatirah Davis", title: "Head of Energy Storage", description: "Expert in energy storage solutions.", quote: "Energy storage is the key to a sustainable energy grid.", linkedIn: "https://www.linkedin.com/in/frank" },
     { name: "Sriyatun Lewis", title: "Chief Marketing Officer", description: "Marketing and branding expert.", quote: "Promoting renewable energy is not just a job, it's a passion.", linkedIn: "https://www.linkedin.com/in/grace" },
     { name: "Karyadi Ferdinand", title: "Head of Research & Development", description: "R&D expert leading innovation.", quote: "At X, we are always on the cutting edge of clean energy research.", linkedIn: "https://www.linkedin.com/in/henry" },
-    { name: "Mulyono van Helsing", title: "Chief Financial Officer", description: "Financial strategist and planner.", quote: "Sustainable energy solutions must be financially viable to create lasting impact.", linkedIn: "https://www.linkedin.com/in/irene" }
+    
   ];
 
   return (
     <div>
       <Header />
-      <h1 className="text-center text-4xl font-bold mt-10 mb-8">Our Team</h1>
+      <h1 className="text-center text-3xl font-bold mt-10 mb-8">Our Team</h1>
 
       <div className="container mx-auto px-4 py-8 max-w-screen-xl">
-        
+        {/* Using a single flex container for all members */}
         <div className="flex flex-wrap justify-center items-start mb-10">
-          {teamMembers.slice(0, 3).map((member, index) => (
+          {teamMembers.map((member, index) => (
             <TeamMember 
               key={index} 
-              name={member.name} 
-              title={member.title} 
-              description={member.description} 
-              quote={member.quote}
-              linkedIn={member.linkedIn}
-            />
-          ))}
-        </div>
-
-        
-        <div className="flex flex-wrap justify-center items-start mb-10">
-          {teamMembers.slice(3, 6).map((member, index) => (
-            <TeamMember 
-              key={index + 3} 
-              name={member.name} 
-              title={member.title} 
-              description={member.description} 
-              quote={member.quote}
-              linkedIn={member.linkedIn}
-            />
-          ))}
-        </div>
-
-        
-        <div className="flex flex-wrap justify-center items-start mb-10">
-          {teamMembers.slice(6, 9).map((member, index) => (
-            <TeamMember 
-              key={index + 6} 
               name={member.name} 
               title={member.title} 
               description={member.description} 
