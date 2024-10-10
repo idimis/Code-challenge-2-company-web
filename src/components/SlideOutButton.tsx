@@ -44,8 +44,8 @@ const Slideout: FC<SlideoutProps> = ({ isOpen, closeMenu }) => {
             </Link>
           </li>
           <li>
-            <Link href="/team" onClick={closeMenu}>
-              Team
+            <Link href="/teams" onClick={closeMenu}>
+              Teams
             </Link>
           </li>
         </ul>
