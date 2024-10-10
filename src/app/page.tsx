@@ -21,7 +21,7 @@ const HomePage = () => {
       <HeroSection />
       <CompanyOverview /> 
       <AboutSection />
-      <ThreeDScene />
+      
       <ServicesSection />
       <Article /> 
       <TestimonialsSection />

@@ -27,7 +27,7 @@ const articles = [
 
 const Articles = () => {
   return (
-    <div className="submitted-articles px-4 py-10 bg-green-200">
+    <div className="submitted-articles px-4 py-10">
       <h2 className="text-center text-4xl font-bold mb-8">Articles by New World</h2>
       <div className="flex flex-col gap-10">
         {articles.map((article, index) => (

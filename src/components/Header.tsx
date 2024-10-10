@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const Header = () => {
   return (
-    <header className="flex flex-col md:flex-row items-center justify-between p-5 bg-green-600 text-white">
+    <header className="flex flex-col md:flex-row items-center justify-between p-5 bg-white text-black">
       <div className="flex items-center mb-4 md:mb-0">
         <img src="/logo.png" alt="Company Logo" className="h-10" />
         <div className="ml-2">
@@ -11,10 +11,10 @@ const Header = () => {
         </div>
       </div>
       <nav className="flex-1 text-center">
-        <Link href="/" className="mx-4 text-white hover:underline">Home</Link>
-        <Link href="/about" className="mx-4 text-white hover:underline">About Us</Link>
-        <Link href="/services" className="mx-4 text-white hover:underline">Services</Link>
-        <Link href="/teams" className="mx-4 text-white hover:underline">Teams</Link>
+        <Link href="/" className="mx-4 text-black hover:underline">Home</Link>
+        <Link href="/about" className="mx-4 text-black hover:underline">About Us</Link>
+        <Link href="/services" className="mx-4 text-black hover:underline">Services</Link>
+        <Link href="/teams" className="mx-4 text-black hover:underline">Teams</Link>
       </nav>
     </header>
   );

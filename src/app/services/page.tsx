@@ -24,7 +24,7 @@ const Service = () => {
           to harness the power of nature and transition to clean, sustainable energy sources.
         </p>
 
-        {/* Services for Business (B2B) */}
+       
         <section className="mb-16">
           <h2 className="text-4xl font-semibold text-gray-800 mb-6 text-center">Services for Businesses </h2>
           <div className="flex flex-wrap justify-center gap-8 items-center">
@@ -60,7 +60,7 @@ const Service = () => {
           </div>
         </section>
 
-        {/* Services for Government (B2G) */}
+        
         <section className="mb-16">
           <h2 className="text-4xl font-semibold text-gray-800 mb-6 text-center">Services for Governments </h2>
           <div className="flex flex-wrap justify-center gap-8 items-center">
@@ -96,7 +96,7 @@ const Service = () => {
           </div>
         </section>
 
-        {/* Services for Communities (B2C) */}
+        
         <section className="mb-16">
           <h2 className="text-4xl font-semibold text-gray-800 mb-6 text-center">Services for Communities </h2>
           <div className="flex flex-wrap justify-center gap-8 items-center">

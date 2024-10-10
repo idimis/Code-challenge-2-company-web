@@ -17,90 +17,7 @@ body {
   justify-content: center;
 }
 
-/* Hero Text Styles */
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white; 
-  text-align: center;
-  z-index: 10; 
-}
 
-/* Width and Margin Utilities */
-.w-80 {
-  width: 20rem; 
-}
-
-.m-4 {
-  margin: 1rem; 
-}
-
-/* Company Overview and Album Layout */
-
-.company-album-container {
-  display: flex; /* Flexbox untuk menyamping */
-  max-width: 1440px; /* Set lebar maksimum jika perlu */
-  height: 650px; /* Set tinggi container */
-  margin: 0; /* Hapus margin otomatis */
-  padding: 0; /* Hapus padding untuk mentok ke kiri */
-}
-
-/* Adjust the width of each section */
-.company-overview {
-  flex: 1; /* Allow it to grow */
-  padding-left: 0; /* Hapus padding kiri agar mentok */
-  height: 600px; /* Set height for text area */
-  display: flex; /* Flex to align items vertically */
-  flex-direction: column; /* Arrange items in a column */
-  justify-content: flex-start; /* Align items to the top */
-  align-items: flex-start; /* Align items to the start */
-}
-
-.album {
-  width: 650px; /* Set width for the album section */
-  height: 840px; /* Set height for album area */
-  display: flex; /* Flexbox untuk menyamping */
-  flex-direction: column; /* Vertical arrangement for images */
-  align-items: flex-start; /* Align images to the start */
-  position: relative; /* To position buttons */
-  margin-left: 0; /* Pastikan tidak ada margin kiri */
-}
-
-.album img {
-  border: 2px solid #4a5568; /* Frame for the image */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Shadow for elegance */
-  width: 100%; /* Fill the width of the album */
-  height: auto; /* Maintain aspect ratio */
-}
-
-.album button {
-  position: absolute; /* Position buttons relative to the album */
-  top: 50%; /* Center vertically */
-  transform: translateY(-50%); /* Adjust for perfect centering */
-  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
-  border: none; /* Remove default border */
-  padding: 0.5rem; /* Padding for the button */
-  cursor: pointer; /* Change cursor to pointer */
-  font-size: 24px; /* Size of the buttons */
-  z-index: 1; /* Ensure buttons are above the image */
-}
-
-.album button:first-of-type {
-  left: -30px; /* Position previous button */
-}
-
-.album button:last-of-type {
-  right: -30px; /* Position next button */
-}
-
-.text-lg {
-  max-width: 100%; /* Make sure text fills the available width */
-  line-height: 1.5; /* Improve line spacing */
-  margin: 0; /* Remove default margin */
-}
 
 
 /* Transition Effects */
@@ -197,7 +114,9 @@ nav a:hover {
   font-size: 2rem; /* Adjust subheading sizes */
   font-weight: semi-bold;
   margin-bottom: 0.5rem; /* Space below subheadings */
+
 }
+
 
 .about-page h3 {
   font-size: 1.5rem; /* Adjust smaller heading sizes */

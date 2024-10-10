@@ -18,11 +18,11 @@ const Teams = () => {
   return (
     <div>
       <Header />
-      <h1 className="text-center text-4xl font-bold mt-10">Our Team</h1>
-      
-      <div className="container mx-auto px-4 py-8">
-        {/* First row */}
-        <div className="flex justify-center items-center flex-wrap mb-12">
+      <h1 className="text-center text-4xl font-bold mt-10 mb-8">Our Team</h1>
+
+      <div className="container mx-auto px-4 py-8 max-w-screen-xl">
+        
+        <div className="flex flex-wrap justify-center items-start mb-10">
           {teamMembers.slice(0, 3).map((member, index) => (
             <TeamMember 
               key={index} 
@@ -35,11 +35,11 @@ const Teams = () => {
           ))}
         </div>
 
-        {/* Second row */}
-        <div className="flex justify-center items-center flex-wrap mb-12">
+        
+        <div className="flex flex-wrap justify-center items-start mb-10">
           {teamMembers.slice(3, 6).map((member, index) => (
             <TeamMember 
-              key={index} 
+              key={index + 3} 
               name={member.name} 
               title={member.title} 
               description={member.description} 
@@ -49,11 +49,11 @@ const Teams = () => {
           ))}
         </div>
 
-        {/* Third row */}
-        <div className="flex justify-center items-center flex-wrap mb-12">
+        
+        <div className="flex flex-wrap justify-center items-start mb-10">
           {teamMembers.slice(6, 9).map((member, index) => (
             <TeamMember 
-              key={index} 
+              key={index + 6} 
               name={member.name} 
               title={member.title} 
               description={member.description} 
