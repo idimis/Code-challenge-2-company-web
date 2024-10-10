@@ -27,17 +27,17 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section className="py-10 px-5">
+    <section className="py-10 px-5 max-w-[1440px] mx-auto">
       <h2 className="text-4xl font-bold text-center mb-10">Our Services</h2>
-      <div className="flex flex-wrap justify-between items-start space-x-4">
+      <div className="flex justify-between space-x-4"> {/* Mengatur jarak antar item */}
         {services.map((service, index) => (
-          <div key={index} className="flex flex-col items-center border p-4 rounded-lg shadow w-full md:w-1/3"> {/* Flexbox untuk menyamping */}
+          <div key={index} className="flex flex-col items-center border p-4 rounded-lg shadow w-1/4"> {/* Mengubah w-1/3 menjadi w-1/4 untuk 4 item */}
             <Image 
               src={service.image} 
               alt={service.title} 
               className="rounded-lg mb-4" 
-              width={300} // Tentukan lebar gambar
-              height={200} // Tentukan tinggi gambar
+              width={300} 
+              height={200} 
             />
             <h3 className="text-2xl font-semibold text-center">{service.title}</h3>
             <p className="mt-2 text-center">{service.description}</p>

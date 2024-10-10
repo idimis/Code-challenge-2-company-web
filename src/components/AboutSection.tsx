@@ -6,7 +6,7 @@ import team1 from '@/public/team1.jpg'; // Pastikan path ini sesuai dengan lokas
 
 const AboutSection = () => {
   return (
-    <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between p-10 bg-gray-100">
+    <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between p-10">
       {/* Container untuk teks */}
       <div className="md:w-[600px] h-[650px] md:pr-10 flex flex-col justify-between">
         <div>

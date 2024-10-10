@@ -12,14 +12,16 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 import ServicesSection from '@/components/ServicesSection';
 
 
+
 const HomePage = () => {
   return (
     <div>
-      <ThreeDScene />
-      <Header />
+      
+      <Header/>
       <HeroSection />
-      <CompanyOverview />
+      <CompanyOverview /> 
       <AboutSection />
+      <ThreeDScene />
       <ServicesSection />
       <Article /> 
       <TestimonialsSection />

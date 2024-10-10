@@ -5,17 +5,23 @@ import * as THREE from 'three';
 
 const BirdFlyingScene = () => {
   useEffect(() => {
+    // Create a new scene, camera, and renderer
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ antialias: true });
 
     renderer.setSize(window.innerWidth, window.innerHeight);
-    document.body.appendChild(renderer.domElement);
+
+    // Get the container element and append the renderer to it
+    const canvasContainer = document.getElementById('three-canvas-container');
+    if (canvasContainer) {
+      canvasContainer.appendChild(renderer.domElement);
+    }
 
     // Set background color for the sky
     scene.background = new THREE.Color(0x87CEEB); // Light blue sky color
 
-    // Add trees to the scene
+    // Function to create trees
     const createTree = (x: number, z: number) => {
       const trunkGeometry = new THREE.BoxGeometry(0.5, 2, 0.5);
       const trunkMaterial = new THREE.MeshBasicMaterial({ color: 0x8B4513 }); // Brown color for trunk
@@ -37,7 +43,7 @@ const BirdFlyingScene = () => {
       }
     }
 
-    // Create a bird
+    // Function to create a bird
     const createBird = () => {
       const birdGeometry = new THREE.ConeGeometry(0.5, 1, 32);
       const birdMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 }); // Red color for the bird
@@ -67,13 +73,20 @@ const BirdFlyingScene = () => {
 
     animateBird();
 
-    // Cleanup function
+    // Cleanup function to remove the canvas from the container
     return () => {
-      document.body.removeChild(renderer.domElement);
+      if (canvasContainer) {
+        canvasContainer.removeChild(renderer.domElement);
+      }
     };
   }, []);
 
-  return null;
+  return (
+    <div
+      id="three-canvas-container"
+      style={{ position: 'relative', width: '100%', height: '100vh' }}
+    />
+  );
 };
 
 export default BirdFlyingScene;
