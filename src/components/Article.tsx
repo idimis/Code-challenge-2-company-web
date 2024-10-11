@@ -28,7 +28,8 @@ const articles = [
 const Articles = () => {
   return (
     <div className="max-w-[1440px] mx-auto submitted-articles px-4 py-10">
-      <h2 className="text-center text-4xl font-bold mb-8">Media Coverage</h2>
+      {/* Adjusted font size for title */}
+      <h2 className="text-center text-3xl md:text-4xl font-bold mb-8">Media Coverage</h2>
       <div className="flex flex-col gap-10">
         {articles.map((article, index) => (
           <div key={index} className="article-container flex flex-row-reverse items-start gap-6">

@@ -78,7 +78,7 @@ const DynamicDataDashboard: React.FC = () => {
   return (
     <div
       ref={dashboardRef}
-      className="flex flex-col items-center justify-center max-w-[1440px] mx-auto my-10 p-5 bg-gray-200 shadow-lg rounded-lg"
+      className="flex flex-col items-center justify-center max-w-[1440px] mx-auto my-10 p-5 shadow-lg rounded-lg"
     >
       <motion.div
         initial="hidden"
@@ -87,7 +87,7 @@ const DynamicDataDashboard: React.FC = () => {
         transition={{ duration: 1.2 }}
         className="text-black text-4xl font-bold mb-5 text-center"
       >
-        Let&apos;s contribute for our Mother Earth!
+        Let&apos;s contribute to Mother Earth!
       </motion.div>
 
       <motion.div

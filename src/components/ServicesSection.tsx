@@ -6,20 +6,20 @@ import solarPanelImage3 from '@/public/solarpanel3.png';
 
 const services = [
   {
-    title: "Solar Solutions",
-    description: "We offer state-of-the-art solar energy systems designed to meet your energy needs.",
+    title: "Off Grid Panel",
+    description: "We offer state-of-the-art solar energy systems designed to meet company needs.",
     link: "/services#solar-solutions",
     image: solarPanelImage1,
   },
   {
-    title: "Wind Energy Systems",
-    description: "Harness the power of wind with our innovative wind energy solutions.",
+    title: "Large-scale Panel & Windmill",
+    description: "Harness the sunlight & wind potential to help the government.",
     link: "/services#wind-energy-systems",
     image: solarPanelImage2,
   },
   {
-    title: "Energy Storage Solutions",
-    description: "Advanced storage technologies to ensure your energy is always available.",
+    title: "Hybrid Panel",
+    description: "Advanced on-off technologies to store potential energy to our community.",
     link: "/services#energy-storage-solutions",
     image: solarPanelImage3,
   },
@@ -28,7 +28,7 @@ const services = [
 const ServicesSection = () => {
   return (
     <section className="py-10 px-5 max-w-[1440px] mx-auto">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">Our Services</h2>
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">Latest Products</h2>
       <div className="flex flex-col md:flex-row justify-between space-y-6 md:space-y-0 md:space-x-4">
         {services.map((service, index) => (
           <div key={index} className="flex flex-col items-center border p-4 rounded-lg shadow w-full md:w-1/3"> 

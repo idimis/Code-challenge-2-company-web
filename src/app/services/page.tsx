@@ -14,7 +14,7 @@ import service9 from '@/public/services/service9.jpeg';
 
 const Service = () => {
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen">
       <Header />
       <div className="container mx-auto px-4 py-16">
         <h1 className="text-center text-5xl font-bold text-gray-800 mb-10">Our Services</h1>

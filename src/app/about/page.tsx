@@ -16,7 +16,7 @@ const About = () => {
   const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen">
       <Header />
       <div className="container mx-auto max-w-6xl px-4 py-10 md:py-20">
         

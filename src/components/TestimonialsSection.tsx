@@ -27,9 +27,10 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section className="py-10 px-5 bg-gray-100">
+    <section className="py-10 px-5">
       <div className="max-w-[1440px] mx-auto"> 
-        <h2 className="text-4xl font-bold text-center mb-5">What Our Clients Say</h2>
+        
+        <h2 className="text-3xl font-bold text-center mb-5">Client Testimonials</h2>
         <div className="flex flex-col space-y-6">
           {testimonials.map((testimonial, index) => (
             <div key={index} className="border p-6 rounded-lg shadow flex items-start space-x-4">
@@ -42,7 +43,7 @@ const TestimonialsSection = () => {
                 />
               </div>
               <div className="flex-1">
-                <p className="italic text-base text-justify">&quot;{testimonial.feedback}&quot;</p> {/* Changed text-lg to text-base */}
+                <p className="italic text-base text-justify">&quot;{testimonial.feedback}&quot;</p>
                 <p className="mt-2 font-bold text-right">
                   - {testimonial.name}, <span className="font-medium">{testimonial.office}, {testimonial.profession}</span>
                 </p>

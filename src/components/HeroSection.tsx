@@ -13,7 +13,7 @@ const HeroSection = () => {
             alt="Solar Panel Field"
             className="w-full h-full object-cover rounded-lg shadow-lg"
             sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
-            style={{ filter: 'brightness(60%)' }}  
+            style={{ filter: 'brightness(85%)' }}  
           />
         </div>
       </div>

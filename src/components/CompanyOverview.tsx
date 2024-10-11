@@ -19,7 +19,7 @@ const CompanyOverview = () => {
   };
 
   return (
-    <section className="company-album-container py-10 px-5 bg-white max-w-[1008px] mx-auto"> 
+    <section className="company-album-container py-10 px-5 max-w-[1008px] mx-auto"> 
       
       <div className="album relative mb-4">
         <Image
@@ -49,7 +49,8 @@ const CompanyOverview = () => {
       </div>
 
       <div className="company-overview flex-grow pl-0 mb-2">
-        <h2 className="text-4xl font-bold text-center mb-4">Company Overview</h2>
+        {/* Adjusted font size and alignment for title */}
+        <h2 className="text-3xl md:text-4xl font-bold text-center md:text-left mb-4">Company Overview</h2>
         <p className="text-base text-left mb-2 text-justify"> 
           Established in 2020, New World Co. has been at the forefront of the renewable energy revolution.
           Our dedicated team works tirelessly to deliver innovative solutions that empower communities while protecting

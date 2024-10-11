@@ -15,8 +15,8 @@ const Header = () => {
       <div className="max-w-[1440px] mx-auto flex items-center justify-between p-5">
         <div className="flex items-center ml-0">
           <div className="ml-2">
-            <h1 className="text-3xl md:text-4xl font-bold">New World</h1>
-            <h2 className="text-lg md:text-xl">Better Environment, Happier Generation</h2>
+            <h1 className="text-3xl md:text-4xl font-bold font-serif">New World</h1>  {/* Baskerville applied */}
+            <h2 className="text-base md:text-lg">Better Environment, <br />Happier Generation.</h2>  {/* Reduced size */}
           </div>
         </div>
 
@@ -28,7 +28,8 @@ const Header = () => {
           </button>
         </div>
 
-        <nav className="hidden md:flex items-center">
+       
+        <nav className="hidden md:flex items-center ml-5"> 
           <Link href="/" className="mx-4 text-black hover:underline">Home</Link>
           <Link href="/about" className="mx-4 text-black hover:underline">About Us</Link>
           <Link href="/services" className="mx-4 text-black hover:underline">Services</Link>
@@ -36,7 +37,7 @@ const Header = () => {
         </nav>
       </div>
 
-      {/* Mobile Menu */}
+      
       <div className={`md:hidden ${isMobileMenuOpen ? 'flex' : 'hidden'} flex-col items-center bg-white p-4`}>
         <Link href="/" className="my-2 text-black hover:underline">Home</Link>
         <Link href="/about" className="my-2 text-black hover:underline">About Us</Link>
