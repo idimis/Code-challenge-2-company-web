@@ -88,7 +88,7 @@ const DynamicDataDashboard: React.FC = () => {
         transition={{ duration: 1.2 }}
         className="text-black text-4xl font-bold mb-5"
       >
-        Let's contribute for our Mother Earth!
+        Let&apos;s contribute for our Mother Earth!
       </motion.div>
 
       <motion.div

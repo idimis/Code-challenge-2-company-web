@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { FaLinkedin } from 'react-icons/fa';
 
 interface TeamMemberProps {
@@ -17,7 +18,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({ name, title, description, quote
   return (
     <div className="bg-white shadow-lg p-3 rounded-lg w-full md:w-1/3 mx-2 mb-4 relative group"> 
       <div className="h-28 w-28 mx-auto mb-3 relative overflow-hidden rounded-full"> 
-        <img 
+        <Image 
           src={randomUserImage} 
           alt={`${name}`} 
           className="h-full w-full object-cover rounded-full transition duration-300 group-hover:opacity-50"
@@ -34,7 +35,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({ name, title, description, quote
       <h3 className="text-lg font-bold text-center">{name}</h3> 
       <h4 className="text-xs text-gray-500 text-center mb-1">{title}</h4> 
       <p className="text-center text-xs mb-2">{description}</p> 
-      <blockquote className="italic text-gray-600 text-center text-xs">"{quote}"</blockquote> 
+      <blockquote className="italic text-gray-600 text-center text-xs">&quot;{quote}&quot;</blockquote> 
     </div>
   );
 };

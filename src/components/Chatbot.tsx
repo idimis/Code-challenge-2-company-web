@@ -25,7 +25,7 @@ const ChatbotComponent: React.FC<ChatbotComponentProps> = ({ isVisible }) => {
           {isOpen && (
             <div className="chat-bubble bg-white shadow-lg rounded-lg p-4 mt-2">
               <h3 className="font-bold text-green-500">GreenBot</h3>
-              <p>Hello! I'm GreenBot. What can I do for you?</p>
+              <p>Hello! I am GreenBot. What can I do for you?</p>
             </div>
           )}
         </div>

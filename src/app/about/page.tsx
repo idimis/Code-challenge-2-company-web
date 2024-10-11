@@ -41,7 +41,7 @@ const About = () => {
                 expanded into wind, osmotic, and geothermal energy, becoming a global player in the renewable energy sector.
                 Our growth has been steady, marked by continuous innovation and collaboration with industry leaders. From 
                 humble beginnings, we have achieved a presence in over 50 countries, constantly pushing the boundaries of 
-                what's possible in the renewable energy space.
+                what is possible in the renewable energy space.
               </p>
             </div>
             <div className="md:w-1/2">

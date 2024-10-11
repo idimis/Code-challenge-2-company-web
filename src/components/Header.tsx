@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import Image from 'next/image';
-import logo1 from '@/public/logo1.png';
+// import Image from 'next/image';
+// import logo1 from '@/public/logo1.png';
 
 
 const Header = () => {
@@ -10,7 +10,7 @@ const Header = () => {
         
 
         <div className="flex items-center ml-0"> 
-          <Image src="/logo1.png" alt="Company Logo" width={80} height={80} className="h-10" /> 
+          {/* <Image src="/logo1.png" alt="Company Logo" width={80} height={80} className="h-10" />  */}
           <div className="ml-2">
             <h1 className="text-3xl md:text-4xl font-bold">New World</h1>
             <h2 className="text-lg md:text-xl">Better Environment, Happier Generation</h2>
