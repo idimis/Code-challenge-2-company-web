@@ -19,16 +19,16 @@ const CompanyOverview = () => {
   };
 
   return (
-    <section className="company-album-container py-10 px-5 bg-white max-w-[1008px] mx-auto"> {/* Mengurangi ukuran frame */}
+    <section className="company-album-container py-10 px-5 bg-white max-w-[1008px] mx-auto"> 
       
       <div className="album relative mb-4">
         <Image
           src={images[currentImage]}
           alt={`Image ${currentImage + 1}`}
           className="rounded-lg shadow-lg mb-4 transition-transform duration-300 transform hover:scale-105"
-          width={455}  // Mengurangi ukuran gambar sebesar 30%
-          height={588} // Menyesuaikan height agar proporsional
-          quality={100} // Menjaga kualitas gambar tetap tinggi
+          width={455}  
+          height={588} 
+          quality={100} 
         />
         <button onClick={prevImage} className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md">
           &lt;

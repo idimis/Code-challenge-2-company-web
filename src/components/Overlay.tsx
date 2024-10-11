@@ -1,5 +1,5 @@
 import { FC, useState, useEffect } from "react";
-import SlideOutButton from "@/components/SlideOutButton"; // Ensure this path is correct for the SlideOutButton component
+import SlideOutButton from "@/components/SlideOutButton"; 
 
 const Overlay: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

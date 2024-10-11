@@ -1,8 +1,8 @@
-// src/components/Chatbot.tsx
+
 import React from "react";
 
 interface ChatbotComponentProps {
-  isVisible: boolean; // Define the type for the isVisible prop
+  isVisible: boolean; 
 }
 
 const ChatbotComponent: React.FC<ChatbotComponentProps> = ({ isVisible }) => {

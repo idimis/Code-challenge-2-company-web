@@ -19,13 +19,13 @@ const HeroSection = () => {
         <div className="mt-10">
           <h1 
             className="text-5xl font-bold mb-5" 
-            style={{ textShadow: '2px 2px 0px black' }} // Added text shadow for outline
+            style={{ textShadow: '2px 2px 0px black' }} 
           >
             Harnessing the Power of Nature
           </h1>
           <p 
             className="text-xl mb-5" 
-            style={{ textShadow: '1px 1px 0px black' }} // Added text shadow for outline
+            style={{ textShadow: '1px 1px 0px black' }} 
           >
             Join us in creating a sustainable future through renewable energy solutions.
           </p>
