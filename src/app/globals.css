@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Baskerville&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,9 +8,33 @@
 body {
   margin: 0; 
   padding: 0; 
-  font-family: Arial, sans-serif; 
-  
+  font-family: 'Baskerville', serif; /* Changed font-family to Baskerville */
 }
+
+/* Typing Animation */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.typing-effect {
+  overflow: hidden; /* Ensures the text is hidden while typing */
+  white-space: nowrap; /* Prevents the text from wrapping */
+  border-right: 4px solid black; /* Creates a cursor effect */
+  animation: typing 2s steps(30, end) forwards, blink 0.75s step-end infinite; /* Adjust duration and steps for effect */
+}
+
+/* Blinking cursor effect */
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
 
 /* General Container Styles */
 .container {
