@@ -8,9 +8,9 @@ import about3 from '@/public/about3.png';
 import about4 from '@/public/about4.jpg';
 
 const About = () => {
-  const email = "your-email@example.com"; // Replace with your email address
-  const subject = "Inquiry"; // Customize the subject line
-  const body = "Hello,\n\nI would like to inquire about..."; // Default body text
+  const email = "your-email@example.com"; 
+  const subject = "Inquiry"; 
+  const body = "Hello,\n\nI would like to inquire about..."; 
   const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
   return (

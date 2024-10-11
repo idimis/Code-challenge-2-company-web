@@ -21,7 +21,7 @@ const Teams = () => {
       <h1 className="text-center text-3xl font-bold mt-10 mb-8">Our Team</h1>
 
       <div className="container mx-auto px-4 py-8 max-w-screen-xl">
-        {/* Using a single flex container for all members */}
+        
         <div className="flex flex-wrap justify-center items-start mb-10">
           {teamMembers.map((member, index) => (
             <TeamMember 

@@ -25,7 +25,7 @@ const Overlay: FC = () => {
         onMouseLeave={() => setIsHovered(false)}
         onClick={toggleMenu}
       >
-        {/* Animasi emoji globe tersenyum */}
+       
         <span className="emoji text-4xl animate-wiggle">🌍</span>
 
         {isHovered && (

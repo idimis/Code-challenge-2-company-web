@@ -8,12 +8,12 @@ const Footer = () => {
 
   return (
     <footer className="max-w-[1440px] mx-auto flex flex-col p-5">
-      {/* Left Section */}
+      
       <div className="p-2 h-12 text-xl font-bold">
         For inquiries, please feel free to <a href={mailtoLink} className="underline">contact us via email</a>.
       </div>
       
-      {/* Right Section */}
+     
       <div className="bg-gray-800 text-white p-2 flex justify-between items-center">
         <div className="flex justify-between w-full">
           <span>© 2023 New World. All rights reserved.</span>

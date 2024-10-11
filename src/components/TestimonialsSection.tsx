@@ -1,7 +1,7 @@
-// src/components/TestimonialsSection.tsx
+
 import React from 'react';
 
-// Sample testimonials with additional information
+
 const testimonials = [
   {
     name: "Muklas Spielberg",
@@ -29,7 +29,7 @@ const testimonials = [
 const TestimonialsSection = () => {
   return (
     <section className="py-10 px-5 bg-gray-100">
-      <div className="max-w-[1440px] mx-auto"> {/* Center the content with a max-width */}
+      <div className="max-w-[1440px] mx-auto"> 
         <h2 className="text-4xl font-bold text-center mb-5">What Our Clients Say</h2>
         <div className="flex flex-col space-y-6">
           {testimonials.map((testimonial, index) => (

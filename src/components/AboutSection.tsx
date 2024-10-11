@@ -2,12 +2,12 @@
 
 import React from 'react';
 import Image from 'next/image';
-import engineer from '@/public/engineer1.png'; // Make sure this path is correct
+import engineer from '@/public/engineer1.png'; 
 
 const AboutSection = () => {
   return (
     <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between p-10">
-      {/* Text Container */}
+      
       <div className="md:w-[600px] h-[650px] md:pr-10 flex flex-col justify-between">
         <div>
           <h2 className="text-4xl font-bold">About Us</h2>
@@ -34,7 +34,7 @@ const AboutSection = () => {
         </a>
       </div>
 
-      {/* Image Container */}
+      
       <div className="md:w-[840px] h-[650px] relative">
         <Image
           src={engineer}

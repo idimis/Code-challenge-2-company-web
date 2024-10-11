@@ -20,7 +20,7 @@ const CompanyOverview = () => {
 
   return (
     <section className="company-album-container py-10 px-5 bg-white max-w-[1440px] mx-auto">
-      {/* Album Section */}
+      
       <div className="album relative mb-4">
         <Image
           src={images[currentImage]}
@@ -37,18 +37,18 @@ const CompanyOverview = () => {
         </button>
       </div>
 
-      {/* Dots Indicator */}
+      
       <div className="flex justify-center space-x-2 mb-4">
         {images.map((_, index) => (
           <div
             key={index}
             className={`w-3 h-3 rounded-full cursor-pointer border-2 transition-colors duration-300 ${currentImage === index ? 'bg-black border-black' : 'bg-white border-black'}`}
-            onClick={() => setCurrentImage(index)} // Allow clicking on dots to change image
+            onClick={() => setCurrentImage(index)} 
           />
         ))}
       </div>
 
-      {/* Company Overview Section */}
+      
       <div className="company-overview flex-grow pl-0 mb-2">
         <h2 className="text-4xl font-bold text-center mb-4">Company Overview</h2>
         <p className="text-xl text-left mb-2 text-justify">

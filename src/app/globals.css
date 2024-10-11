@@ -4,9 +4,9 @@
 
 /* Global Styles */
 body {
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
-  font-family: Arial, sans-serif; /* Set default font */
+  margin: 0; 
+  padding: 0; 
+  font-family: Arial, sans-serif; 
   
 }
 
@@ -106,4 +106,33 @@ nav a:hover {
 }
 
 
+/* styles/globals.css */
+@keyframes sway {
+  0% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: rotate(-2deg);
+  }
+}
+
+.animate-sway {
+  animation: sway 1s infinite;
+}
+
+@keyframes cat {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+.animate-cat {
+  animation: cat 2s linear infinite;
+}
 
