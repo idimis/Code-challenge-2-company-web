@@ -1,7 +1,5 @@
-
 import Image from 'next/image';
 import React from 'react';
-
 
 const testimonials = [
   {
@@ -35,7 +33,14 @@ const TestimonialsSection = () => {
         <div className="flex flex-col space-y-6">
           {testimonials.map((testimonial, index) => (
             <div key={index} className="border p-6 rounded-lg shadow flex items-start space-x-4">
-              <Image src={testimonial.image} alt={`${testimonial.name}'s photo`} className="w-16 h-16 rounded-full" />
+              <div className="relative w-16 h-16 rounded-full overflow-hidden">
+                <Image 
+                  src={testimonial.image} 
+                  alt={`${testimonial.name}'s photo`} 
+                  layout="fill" 
+                  objectFit="cover" 
+                />
+              </div>
               <div className="flex-1">
                 <p className="italic text-lg">&quot;{testimonial.feedback}&quot;</p>
                 <p className="mt-2 font-bold text-right">
