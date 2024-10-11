@@ -8,7 +8,7 @@ const AboutSection = () => {
   return (
     <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between p-5 md:p-10">
       
-      <div className="md:w-[600px] flex flex-col justify-between">
+      <div className="md:w-[600px] flex flex-col justify-between md:mr-8"> 
         <div>
           <h2 className="text-3xl md:text-4xl font-bold">About Us</h2>
           <p className="mt-4 text-base md:text-lg text-justify">
@@ -18,17 +18,17 @@ const AboutSection = () => {
           </p>
         </div>
 
-        <ul className="mt-6 list-disc list-inside text-base md:text-lg">
-          <li>Trusted by 25 governments across various countries</li>
+        <ul className="mt-6 list-disc list-inside text-sm md:text-base">
+          <li>Trusted by 25 countries </li>
           <li>Collaborated with 50+ multinational companies</li>
-          <li>Conducted environmental workshops with 30+ NGOs</li>
+          <li>Conducted enviro-workshops with 30+ NGOs</li>
           <li>Shared knowledge with 25+ universities</li>
-          <li>Provided free installed mini-windmills to 50+ villages</li>
+          <li>Provided free mini-windmills to 50+ villages</li>
         </ul>
 
         <a
           href="/about"
-          className="mt-4 px-2 py-2 border border-gray-300 text-gray-700 font-semibold rounded hover:bg-gray-100 transition"
+          className="mt-4 inline-block bg-transparent border border-black text-black font-semibold py-1 px-3 rounded hover:bg-gray-200 transition"
         >
           Learn More
         </a>

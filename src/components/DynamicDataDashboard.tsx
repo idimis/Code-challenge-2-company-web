@@ -64,7 +64,6 @@ const DynamicDataDashboard: React.FC = () => {
     };
   }, [dashboardRef]);
 
-  // Function to generate random slide-in directions
   const getRandomDirection = () => {
     const directions = ['-100%', '100%', '-100%', '100%'];
     const randomIndex = Math.floor(Math.random() * directions.length);
@@ -79,14 +78,14 @@ const DynamicDataDashboard: React.FC = () => {
   return (
     <div
       ref={dashboardRef}
-      className="flex flex-col items-center justify-center max-w-1440 mx-auto my-10 p-5 bg-gray-200 shadow-lg rounded-lg"
+      className="flex flex-col items-center justify-center max-w-[1440px] mx-auto my-10 p-5 bg-gray-200 shadow-lg rounded-lg"
     >
       <motion.div
         initial="hidden"
         animate={isVisible ? "visible" : "hidden"}
         variants={{ hidden: { opacity: 0, x: getRandomDirection() }, visible: { opacity: 1, x: 0 } }}
         transition={{ duration: 1.2 }}
-        className="text-black text-4xl font-bold mb-5"
+        className="text-black text-4xl font-bold mb-5 text-center"
       >
         Let&apos;s contribute for our Mother Earth!
       </motion.div>
@@ -114,8 +113,8 @@ const DynamicDataDashboard: React.FC = () => {
           return (
             <motion.div
               key={key}
-              initial={{ opacity: 0, x: getRandomDirection(), y: getRandomDirection() }} // From random directions
-              animate={isVisible ? { opacity: 1, x: 0, y: 0 } : { opacity: 0 }} // End at original position when visible
+              initial={{ opacity: 0, x: getRandomDirection(), y: getRandomDirection() }}
+              animate={isVisible ? { opacity: 1, x: 0, y: 0 } : { opacity: 0 }}
               transition={{ duration: 1, delay: index * 0.2 }}
               className="p-5 border rounded-lg shadow-md bg-white"
             >

@@ -54,8 +54,15 @@ const About = () => {
               </p>
             </div>
             <div className="md:w-1/2">
-              <div className="bg-gray-300 h-64 w-full rounded-lg flex items-center justify-center">
-                <Image src={about2} alt="History Image" className="rounded-lg object-cover w-full h-full" layout="responsive" width={500} height={300} />
+              <div className="flex items-center justify-center h-64 overflow-hidden">
+                <Image 
+                  src={about2} 
+                  alt="History Image" 
+                  className="rounded-lg object-cover" 
+                  width={370} 
+                  height={240} 
+                  layout="intrinsic" 
+                /> 
               </div>
             </div>
           </div>
@@ -89,8 +96,15 @@ const About = () => {
             
             <div className="md:w-1/2 bg-white p-4 md:p-6 shadow-lg rounded-lg flex items-center mb-6">
               <div className="w-1/3">
-                <div className="bg-gray-300 h-32 w-full rounded-lg flex items-center justify-center">
-                  <Image src={about3} alt="HQ Image" className="rounded-lg object-cover w-full h-full" layout="responsive" width={500} height={300} />
+                <div className="flex items-center justify-center h-32 overflow-hidden">
+                  <Image 
+                    src={about3} 
+                    alt="HQ Image" 
+                    className="rounded-lg object-cover" 
+                    width={370} 
+                    height={240} 
+                    layout="intrinsic" 
+                  /> 
                 </div>
               </div>
               <div className="w-2/3 pl-2 md:pl-4">
@@ -105,8 +119,15 @@ const About = () => {
             
             <div className="md:w-1/2 bg-white p-4 md:p-6 shadow-lg rounded-lg flex items-center mb-6"> 
               <div className="w-1/3">
-                <div className="bg-gray-300 h-32 w-full rounded-lg flex items-center justify-center">
-                  <Image src={about4} alt="Regional Office Image" className="rounded-lg object-cover w-full h-full" layout="responsive" width={500} height={300} />
+                <div className="flex items-center justify-center h-32 overflow-hidden">
+                  <Image 
+                    src={about4} 
+                    alt="Regional Office Image" 
+                    className="rounded-lg object-cover" 
+                    width={370} 
+                    height={240} 
+                    layout="intrinsic" 
+                  /> 
                 </div>
               </div>
               <div className="w-2/3 pl-2 md:pl-4">

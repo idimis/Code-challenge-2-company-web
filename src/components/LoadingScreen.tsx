@@ -1,35 +1,37 @@
-import React, { useEffect, useState } from 'react';
-import Lottie from 'lottie-react';
+import React, { useEffect, useState, useMemo } from 'react';
+import dynamic from 'next/dynamic';
+
+
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 import animationData from '@/public/Animation - windmillsolarpanel.json';
 
 const LoadingScreen: React.FC<{ onLoadComplete: () => void }> = ({ onLoadComplete }) => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const timer = setInterval(() => {
+    const timer = setTimeout(() => {
       setProgress((prev) => {
         if (prev >= 100) {
-          clearInterval(timer);
           onLoadComplete();
           return prev;
         }
-        return prev + 10;
+        return prev + 10; 
       });
     }, 300);
 
-    return () => clearInterval(timer);
-  }, [onLoadComplete]);
+    return () => clearTimeout(timer);
+  }, [progress, onLoadComplete]);
 
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-white p-4">
       <div className="relative w-full h-full flex items-center justify-center flex-col">
-        <Lottie 
-          animationData={animationData} 
-          loop={true} 
-          style={{ width: '80%', height: 'auto', maxWidth: '500px' }} // Responsif
+        <Lottie
+          animationData={animationData}
+          loop={true}
+          style={{ width: '80%', height: 'auto', maxWidth: '500px' }} // Responsive
         />
         <div className="text-2xl font-bold mt-2 sm:text-3xl md:text-4xl">{`Loading ${progress}%`}</div>
-        
+
         <div className="text-lg mt-2 sm:text-xl md:text-2xl">
           <AnimatedDots />
         </div>
@@ -57,4 +59,4 @@ const AnimatedDots = () => {
   );
 };
 
-export default LoadingScreen;
+export default React.memo(LoadingScreen);

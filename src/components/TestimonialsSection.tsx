@@ -42,7 +42,7 @@ const TestimonialsSection = () => {
                 />
               </div>
               <div className="flex-1">
-                <p className="italic text-lg">&quot;{testimonial.feedback}&quot;</p>
+                <p className="italic text-base text-justify">&quot;{testimonial.feedback}&quot;</p> {/* Changed text-lg to text-base */}
                 <p className="mt-2 font-bold text-right">
                   - {testimonial.name}, <span className="font-medium">{testimonial.office}, {testimonial.profession}</span>
                 </p>
