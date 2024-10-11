@@ -19,15 +19,16 @@ const CompanyOverview = () => {
   };
 
   return (
-    <section className="company-album-container py-10 px-5 bg-white max-w-[1440px] mx-auto">
+    <section className="company-album-container py-10 px-5 bg-white max-w-[1008px] mx-auto"> {/* Mengurangi ukuran frame */}
       
       <div className="album relative mb-4">
         <Image
           src={images[currentImage]}
           alt={`Image ${currentImage + 1}`}
           className="rounded-lg shadow-lg mb-4 transition-transform duration-300 transform hover:scale-105"
-          width={650}
-          height={840}
+          width={455}  // Mengurangi ukuran gambar sebesar 30%
+          height={588} // Menyesuaikan height agar proporsional
+          quality={100} // Menjaga kualitas gambar tetap tinggi
         />
         <button onClick={prevImage} className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md">
           &lt;
@@ -37,7 +38,6 @@ const CompanyOverview = () => {
         </button>
       </div>
 
-      
       <div className="flex justify-center space-x-2 mb-4">
         {images.map((_, index) => (
           <div
@@ -48,7 +48,6 @@ const CompanyOverview = () => {
         ))}
       </div>
 
-      
       <div className="company-overview flex-grow pl-0 mb-2">
         <h2 className="text-4xl font-bold text-center mb-4">Company Overview</h2>
         <p className="text-xl text-left mb-2 text-justify">

@@ -1,5 +1,5 @@
 import { FC, useState, useEffect } from "react";
-import SlideOutButton from "@/components/SlideOutButton"; // Pastikan ini sesuai dengan path komponen SlideOutButton
+import SlideOutButton from "@/components/SlideOutButton"; // Ensure this path is correct for the SlideOutButton component
 
 const Overlay: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,12 +25,11 @@ const Overlay: FC = () => {
         onMouseLeave={() => setIsHovered(false)}
         onClick={toggleMenu}
       >
-       
         <span className="emoji text-4xl animate-wiggle">🌍</span>
 
         {isHovered && (
           <span className="absolute right-24 bg-green-200 text-black p-2 rounded-lg shadow-lg transition-opacity duration-300 ease-in-out opacity-100 w-64 text-center">
-            Hello, I'm Your <br />
+            Hello, I&apos;m Your <br />
             Green Energy Guide!😊
           </span>
         )}

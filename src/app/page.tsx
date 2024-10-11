@@ -1,4 +1,4 @@
-// src/app/page.tsx
+
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -13,13 +13,14 @@ import ServicesSection from '@/components/ServicesSection';
 import SlideOutButton from '@/components/SlideOutButton';
 import Overlay from '@/components/Overlay';
 import LoadingScreen from '@/components/LoadingScreen'; 
-import MultipleSwayingTrees from '@/components/LowPolyTree'; 
 import ChatbotComponent from '@/components/Chatbot'; 
+import DynamicDataDashboard from '@/components/DynamicDataDashboard';
+import AnimationHead from '@/components/AnimationHead';
 
 const HomePage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); 
   const [isLoading, setIsLoading] = useState(true); 
-  const [showChatbot, setShowChatbot] = useState(false); // State for chatbot visibility
+  const [showChatbot, setShowChatbot] = useState(false); 
 
   const toggleMenu = () => {
     setIsMenuOpen(prev => !prev); 
@@ -35,9 +36,9 @@ const HomePage = () => {
       if (footer) {
         const footerPosition = footer.getBoundingClientRect();
         if (footerPosition.top <= window.innerHeight) {
-          setShowChatbot(true); // Show chatbot when footer is in view
+          setShowChatbot(true); 
         } else {
-          setShowChatbot(false); // Hide chatbot when footer is out of view
+          setShowChatbot(false); 
         }
       }
     };
@@ -55,8 +56,9 @@ const HomePage = () => {
       ) : (
         <>
           <Header />
-          <MultipleSwayingTrees /> 
+          <AnimationHead />
           <HeroSection />
+          <DynamicDataDashboard /> 
           <CompanyOverview /> 
           <AboutSection /> 
           <ServicesSection />
@@ -64,7 +66,7 @@ const HomePage = () => {
           <TestimonialsSection />
           <SlideOutButton isOpen={isMenuOpen} closeMenu={toggleMenu} /> 
           <Overlay />
-          <ChatbotComponent isVisible={showChatbot} /> {/* Pass visibility prop */}
+          <ChatbotComponent isVisible={showChatbot} /> 
           <Footer />
         </>
       )}

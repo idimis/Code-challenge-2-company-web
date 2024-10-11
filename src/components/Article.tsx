@@ -49,7 +49,7 @@ const Articles = () => {
                 href={article.link} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="read-more mt-4 inline-block border border-black font-semibold py-2 px-4 rounded hover:bg-blue-600 transition"
+                className="read-more mt-4 inline-block border border-black font-semibold py-2 px-4 rounded hover:bg-gray-300 transition"
               >
                 Read More
               </a>
