@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'; 
 import Image from 'next/image';
 import solarPanelImage1 from '@/public/solarpanel1.png';
 import solarPanelImage2 from '@/public/solarpanel2.png';
@@ -28,10 +28,10 @@ const services = [
 const ServicesSection = () => {
   return (
     <section className="py-10 px-5 max-w-[1440px] mx-auto">
-      <h2 className="text-4xl font-bold text-center mb-10">Our Services</h2>
-      <div className="flex justify-between space-x-4">
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">Our Services</h2>
+      <div className="flex flex-col md:flex-row justify-between space-y-6 md:space-y-0 md:space-x-4">
         {services.map((service, index) => (
-          <div key={index} className="flex flex-col items-center border p-4 rounded-lg shadow w-1/4"> 
+          <div key={index} className="flex flex-col items-center border p-4 rounded-lg shadow w-full md:w-1/3"> 
             <Image 
               src={service.image} 
               alt={service.title} 
@@ -39,7 +39,7 @@ const ServicesSection = () => {
               width={300} 
               height={200} 
             />
-            <h3 className="text-2xl font-semibold text-center">{service.title}</h3>
+            <h3 className="text-xl md:text-2xl font-semibold text-center">{service.title}</h3>
             <p className="mt-2 text-center">{service.description}</p>
             <a 
               href={service.link} 

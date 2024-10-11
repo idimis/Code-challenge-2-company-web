@@ -11,6 +11,7 @@ interface TeamMemberProps {
 
 const TeamMember: React.FC<TeamMemberProps> = ({ name, title, description, quote, linkedIn }) => {
   
+  
   const isMale = ['Paijo Woodgate', 'Dalimin Smith', 'Mukidi Rooney', 'Karyadi Ferdinand', 'Mulyono van Helsing'].includes(name);
   const gender = isMale ? 'men' : 'women'; 
   const randomUserImage = `https://randomuser.me/api/portraits/${gender}/${Math.floor(Math.random() * 10)}.jpg`;
@@ -21,6 +22,8 @@ const TeamMember: React.FC<TeamMemberProps> = ({ name, title, description, quote
         <Image 
           src={randomUserImage} 
           alt={`${name}`} 
+          width={112} 
+          height={112} 
           className="h-full w-full object-cover rounded-full transition duration-300 group-hover:opacity-50"
         />
         <a 

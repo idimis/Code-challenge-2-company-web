@@ -21,16 +21,16 @@ const LoadingScreen: React.FC<{ onLoadComplete: () => void }> = ({ onLoadComplet
   }, [onLoadComplete]);
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-white">
+    <div className="flex flex-col items-center justify-center h-screen bg-white p-4">
       <div className="relative w-full h-full flex items-center justify-center flex-col">
         <Lottie 
           animationData={animationData} 
           loop={true} 
-          style={{ width: '500px', height: '500px' }} 
+          style={{ width: '80%', height: 'auto', maxWidth: '500px' }} // Responsif
         />
-        <div className="text-2xl font-bold mt-2">{`Loading ${progress}%`}</div>
+        <div className="text-2xl font-bold mt-2 sm:text-3xl md:text-4xl">{`Loading ${progress}%`}</div>
         
-        <div className="text-lg mt-2">
+        <div className="text-lg mt-2 sm:text-xl md:text-2xl">
           <AnimatedDots />
         </div>
       </div>
@@ -51,8 +51,8 @@ const AnimatedDots = () => {
 
   return (
     <div className="text-center">
-      <div>Please wait{dots}</div>
-      <div>Mother Earth is healing 🌱</div>
+      <div className="text-base sm:text-lg md:text-xl">Please wait{dots}</div>
+      <div className="text-base sm:text-lg md:text-xl">Mother Earth is healing 🌱</div>
     </div>
   );
 };

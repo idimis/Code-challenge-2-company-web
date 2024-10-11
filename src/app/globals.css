@@ -17,16 +17,7 @@ body {
   justify-content: center;
 }
 
-/* Hero Text Styles */
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white; 
-  text-align: center;
-  z-index: 10; 
-}
+
 
 /* Width and Margin Utilities */
 .w-80 {
@@ -72,9 +63,6 @@ body {
 .album button:last-of-type {
   right: -30px; 
 }
-
-
-/* Header Styles */
 
 
 /* Navigation Styles */
@@ -136,4 +124,8 @@ nav a:hover {
   animation: cat 2s linear infinite;
 }
 
-
+@media (max-width: 768px) {
+  .text-center {
+    padding: 10px; 
+  }
+}
