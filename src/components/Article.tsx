@@ -28,12 +28,11 @@ const articles = [
 const Articles = () => {
   return (
     <div className="max-w-[1440px] mx-auto submitted-articles px-4 py-10">
-      {/* Adjusted font size for title */}
       <h2 className="text-center text-3xl md:text-4xl font-bold mb-8">Media Coverage</h2>
       <div className="flex flex-col gap-10">
         {articles.map((article, index) => (
-          <div key={index} className="article-container flex flex-row-reverse items-start gap-6">
-            <div className="article-image flex-none" style={{ maxWidth: '150px', maxHeight: '90px' }}>
+          <div key={index} className="article-container flex flex-col md:flex-row-reverse items-start gap-6">
+            <div className="article-image flex-none mb-4" style={{ maxWidth: '150px', maxHeight: '90px' }}>
               <Image 
                 src={article.imageUrl} 
                 alt={article.title} 
@@ -44,13 +43,13 @@ const Articles = () => {
               />
             </div>
             <div className="article-content flex-1">
-              <h3 className="title text-xl font-semibold">{article.title}</h3>
-              <p className="body-text mt-2 text-gray-800">{article.description}</p>
+              <h3 className="title text-xl font-semibold mb-2">{article.title}</h3> 
+              <p className="body-text text-gray-800 mb-4">{article.description}</p> 
               <a 
                 href={article.link} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="read-more mt-4 inline-block border border-black font-semibold py-2 px-4 rounded hover:bg-gray-300 transition"
+                className="read-more inline-block border border-black font-semibold py-2 px-4 rounded hover:bg-gray-300 transition"
               >
                 Read More
               </a>

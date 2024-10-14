@@ -1,20 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Baskerville&display=swap');
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Global Styles */
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Baskerville', serif;
-  background-color: #f7f7ef; /* Light cream color for a classic book feel */
-  color: #4a4a4a; /* Dark gray text color */
+  background-color: #f7f7ef; 
+  color: #4a4a4a; 
+  overflow-x: hidden; 
+  max-width: 1440px; 
+  margin-left: auto; 
+  margin-right: auto; 
 }
 
+
  h2, h3, h4, h5, h6 {
-  color: #3c3c3c; /* Slightly darker gray for headings */
+  color: #3c3c3c; 
 }
 
 a {
@@ -71,7 +79,7 @@ a:hover {
 }
 
 .album img {
-  border: 2px solid #4a4a4a; /* Dark gray border for images */
+  border: 2px solid #4a4a4a; 
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   width: 100%;
   height: auto;

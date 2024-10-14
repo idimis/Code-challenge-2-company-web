@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
+import Slider from 'react-slick'; 
 import familyImage from '@/public/family2.jpg';
 import forestImage from '@/public/forest1.jpg';
 import workerImage1 from '@/public/worker1.jpg';
@@ -8,48 +9,44 @@ import workerImage2 from '@/public/worker2.jpg';
 const images = [familyImage, forestImage, workerImage1, workerImage2];
 
 const CompanyOverview = () => {
-  const [currentImage, setCurrentImage] = useState(0);
-
-  const nextImage = () => {
-    setCurrentImage((prev) => (prev + 1) % images.length);
-  };
-
-  const prevImage = () => {
-    setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
+  
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    adaptiveHeight: true, 
+    responsive: [
+      {
+        breakpoint: 768, 
+        settings: {
+          arrows: false, 
+        },
+      },
+    ],
   };
 
   return (
     <section className="company-album-container py-10 px-5 max-w-[1008px] mx-auto"> 
-      
       <div className="album relative mb-4">
-        <Image
-          src={images[currentImage]}
-          alt={`Image ${currentImage + 1}`}
-          className="rounded-lg shadow-lg mb-4 transition-transform duration-300 transform hover:scale-105"
-          width={455}  
-          height={588} 
-          quality={100} 
-        />
-        <button onClick={prevImage} className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md">
-          &lt;
-        </button>
-        <button onClick={nextImage} className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md">
-          &gt;
-        </button>
-      </div>
-
-      <div className="flex justify-center space-x-2 mb-4">
-        {images.map((_, index) => (
-          <div
-            key={index}
-            className={`w-3 h-3 rounded-full cursor-pointer border-2 transition-colors duration-300 ${currentImage === index ? 'bg-black border-black' : 'bg-white border-black'}`}
-            onClick={() => setCurrentImage(index)} 
-          />
-        ))}
+        <Slider {...settings}>
+          {images.map((image, index) => (
+            <div key={index}>
+              <Image
+                src={image}
+                alt={`Image ${index + 1}`}
+                className="rounded-lg shadow-lg mb-4 transition-transform duration-300 transform hover:scale-105"
+                width={455}  
+                height={588} 
+                quality={100} 
+              />
+            </div>
+          ))}
+        </Slider>
       </div>
 
       <div className="company-overview flex-grow pl-0 mb-2">
-        {/* Updated h2 with text-center and flex justify-center */}
         <h2 className="text-4xl font-bold text-center mb-4">Company Overview</h2>
         <p className="text-base text-left mb-2 text-justify"> 
           Established in 1995, New World Co. has been at the forefront of the renewable energy revolution.

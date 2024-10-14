@@ -23,12 +23,12 @@ const LoadingScreen: React.FC<{ onLoadComplete: () => void }> = ({ onLoadComplet
   }, [progress, onLoadComplete]);
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-white p-4">
+    <div className="flex flex-col items-center justify-center h-screen p-4">
       <div className="relative w-full h-full flex items-center justify-center flex-col">
         <Lottie
           animationData={animationData}
           loop={true}
-          style={{ width: '80%', height: 'auto', maxWidth: '500px' }} // Responsive
+          style={{ width: '80%', height: 'auto', maxWidth: '500px' }} 
         />
         <div className="text-2xl font-bold mt-2 sm:text-3xl md:text-4xl">{`Loading ${progress}%`}</div>
 

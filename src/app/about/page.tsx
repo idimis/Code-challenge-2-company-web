@@ -8,6 +8,7 @@ import about1 from '@/public/about1.jpg';
 import about2 from '@/public/about2.jpeg';
 import about3 from '@/public/about3.png';
 import about4 from '@/public/about4.jpg';
+import about5 from '@/public/about5.jpg'; 
 
 const About = () => {
   const email = "your-email@example.com"; 
@@ -89,6 +90,35 @@ const About = () => {
           </div>
         </section>
 
+          
+        <section className="mb-10 md:mb-20">
+          <h2 className="text-left text-3xl md:text-4xl font-semibold text-gray-800 mb-4">Our Culture</h2>
+          <div className="flex flex-col md:flex-row items-center md:justify-between">
+            <p className="text-base md:text-lg text-gray-600 mb-6 text-justify md:w-1/2">
+              At our company, we believe that a positive and vibrant culture is key to our success. We foster an environment 
+              where collaboration, innovation, and creativity thrive. Our team members are encouraged to share their ideas, 
+              take risks, and learn from each other. We prioritize work-life balance and ensure that our workplace is 
+              inclusive, fun, and supportive. Regular team-building activities, wellness programs, and open communication 
+              contribute to a healthy workplace culture where everyone feels valued and engaged. 
+              <br /><br />
+              We also celebrate diversity and inclusion, recognizing that our differences make us stronger. By creating a 
+              supportive environment, we empower our employees to reach their full potential and contribute to our mission.
+            </p>
+            <div className="md:w-1/2 mb-6 md:mb-0 flex justify-center">
+              <div className="w-full max-w-md bg-gray-300 rounded-lg flex items-center justify-center overflow-hidden"> 
+                <Image 
+                  src={about5} 
+                  alt="Company Culture Image" 
+                  className="rounded-lg object-cover" 
+                  layout="responsive" 
+                  width={500} 
+                  height={300} 
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
         
         <section className="mb-10 md:mb-20"> 
           <h2 className="text-left text-3xl md:text-4xl font-semibold text-gray-800 mb-4">Global Presence</h2>
@@ -111,7 +141,8 @@ const About = () => {
                 <h3 className="text-xl font-bold text-gray-800 mb-2">Headquarters</h3>
                 <p className="text-gray-600">
                   Our global headquarters are located in New York City, where we manage worldwide operations, research, 
-                  and strategic partnerships.
+                  and strategic partnerships. Our central location enables us to efficiently coordinate projects and 
+                  initiatives across different regions.
                 </p>
               </div>
             </div>
@@ -134,13 +165,14 @@ const About = () => {
                 <h3 className="text-xl font-bold text-gray-800 mb-2">Regional Offices</h3>
                 <p className="text-gray-600">
                   We have regional offices in Europe (London), Asia (Tokyo), and Africa (Cape Town), where we manage 
-                  projects and collaborate with local governments and businesses.
+                  projects and collaborate with local governments and businesses. Each regional office plays a vital 
+                  role in our global strategy, helping us adapt our solutions to meet local needs and foster community 
+                  engagement.
                 </p>
               </div>
             </div>
           </div>
         </section>
-
         
         <section className="mb-10 md:mb-20">
           <div className="bg-white text-black shadow-lg p-6 md:p-10 rounded-lg flex flex-col md:flex-row justify-between items-center">
