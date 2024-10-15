@@ -192,32 +192,6 @@ const personalityTypes = [
         link.click();
       }
     };
-    
-    const shareToInstagram = async () => {
-      const resultDiv = document.getElementById("result");
-      if (resultDiv) {
-        const canvas = await html2canvas(resultDiv);
-        const dataURL = canvas.toDataURL("image/png");
-  
-        
-        const imageBlob = await fetch(dataURL).then(res => res.blob());
-        const formData = new FormData();
-        formData.append("file", imageBlob, "green_personality_result.png");
-  
-        window.open(`https://instagram.com/share?url=${encodeURIComponent("https://new-world-web.vercel.app/quiz")}`);
-      }
-    };
-  
-    const tweetResult = async () => {
-      const resultDiv = document.getElementById("result");
-      if (resultDiv) {
-        const canvas = await html2canvas(resultDiv);
-        const dataURL = canvas.toDataURL("image/png");
-  
-        const tweetUrl = `https://twitter.com/intent/tweet?text=I just took the Eco-friendly quiz and I'm a ${result?.name}!&url=https://new-world-web.vercel.app/quiz&image=${dataURL}`;
-        window.open(tweetUrl, "_blank");
-      }
-    };
   
   
   return (
@@ -303,7 +277,8 @@ const personalityTypes = [
 
     </div>
   </div>
-    )}
+
+)}
     </div>
   );
 };
