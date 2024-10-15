@@ -12,7 +12,9 @@ const AboutSection: React.FC = () => {
         {/* Left Section: Text Content */}
         <div className="md:w-1/2 flex flex-col">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold">About Us</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-center md:text-left"> {/* Added text-center for mobile */}
+              About Us
+            </h2>
             <p className="mt-4 text-base md:text-lg text-justify leading-relaxed">
               We are a leading renewable energy company committed to providing sustainable solutions 
               that empower communities and protect the environment. Our innovative approach has made 
