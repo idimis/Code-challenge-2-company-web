@@ -53,6 +53,14 @@ const Slideout: FC<SlideoutProps> = ({ isOpen, closeMenu }) => {
               </span>
             </Link>
           </li>
+          {/* New Quiz Link */}
+          <li>
+            <Link href="/quiz" onClick={closeMenu}>
+              <span className="text-white hover:text-cyan-400 transition-colors duration-300">
+                Take the Quiz!
+              </span>
+            </Link>
+          </li>
         </ul>
 
         {/* Social Links */}

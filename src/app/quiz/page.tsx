@@ -71,52 +71,52 @@ const Header = () => {
 
 const questions = [
   {
-    question: "What do you do when you find litter in your community?",
+    question: "1/10: What do you do when you find litter in your community?",
     options: ["Ignore it", "Pick it up and dispose of it", "Use it for a DIY project"],
     scores: [0, 1, 2],
   },
   {
-    question: "How often do you use public transportation?",
+    question: "2/10: How often do you use public transportation?",
     options: ["Never", "Sometimes", "Always"],
     scores: [0, 1, 2],
   },
   {
-    question: "How do you feel about recycling?",
+    question: "3/10: How do you feel about recycling?",
     options: ["It's not worth the effort", "I recycle occasionally", "I always recycle everything I can"],
     scores: [0, 1, 2],
   },
   {
-    question: "What type of products do you prefer to buy?",
+    question: "4/10: What type of products do you prefer to buy?",
     options: ["Single-use products", "Some reusable products", "Mainly reusable and sustainable products"],
     scores: [0, 1, 2],
   },
   {
-    question: "How do you dispose of food waste?",
+    question: "5/10: How do you dispose of food waste?",
     options: ["Throw it in the regular trash", "Compost it if possible", "I have a composting system at home"],
     scores: [0, 1, 2],
   },
   {
-    question: "How do you travel long distances?",
+    question: "6/10: How do you travel long distances?",
     options: ["By car or plane", "By train or bus", "By bike or walking"],
     scores: [0, 1, 2],
   },
   {
-    question: "How often do you support local environmental initiatives?",
+    question: "7/10: How often do you support local environmental initiatives?",
     options: ["Never", "Occasionally", "Regularly"],
     scores: [0, 1, 2],
   },
   {
-    question: "What do you think about climate change?",
+    question: "8/10: What do you think about climate change?",
     options: ["I don't believe it's real", "I've heard about it, but I'm not sure", "I believe it's a serious issue that needs urgent action"],
     scores: [0, 1, 2],
   },
   {
-    question: "How do you handle energy consumption at home?",
+    question: "9/10: How do you handle energy consumption at home?",
     options: ["I leave lights and devices on", "I turn off lights when not in use", "I use energy-efficient appliances"],
     scores: [0, 1, 2],
   },
   {
-    question: "How often do you educate others about sustainability?",
+    question: "10/10: How often do you educate others about sustainability?",
     options: ["Never", "Sometimes", "Often"],
     scores: [0, 1, 2],
   },
@@ -182,18 +182,23 @@ const GreenPersonQuiz = () => {
         </div>
       ) : result ? (
         <div className="text-center mt-8">
-            <h3 className="text-2xl flex justify-center items-center font-semibold mb-2">{result.name}</h3>
-             
-             <Image 
-                src={result.illustration} 
-                alt={result.name} 
-                className="rounded-full mt-4" 
-                width={400} 
-                height={400}
-            
-          />
+          <h3 className="text-2xl flex justify-center items-center font-semibold mb-2">{result.name}</h3>
+          
+          <div className="flex justify-center">
+            <Image 
+              src={result.illustration} 
+              alt={result.name} 
+              className="rounded-full" 
+              width={400} 
+              height={400}
+            />
+          </div>
+          
           <p className="text-lg mb-4">{result.description}</p>
-          <button onClick={takeQuizAgain} className="border-2 rounded-lg py-2 px-4 bg-transparent text-black rounded mb-4 hover:bg-gray-200">
+          <button 
+            onClick={takeQuizAgain} 
+            className="border-2 rounded-lg py-2 px-4 bg-transparent text-black mb-4 hover:bg-gray-200"
+          >
             Take Quiz Again?
           </button>
         </div>
@@ -236,7 +241,7 @@ const GreenPersonQuiz = () => {
       <a href={`https://twitter.com/intent/tweet?text=I just took the Eco-friendly quiz and I'm a ${result.name}!`} target="_blank" rel="noopener noreferrer">
         <Image src={twitterIcon} alt="Share on Twitter" width={40} height={40} />
       </a>
-      <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}&quote=I just took the Eco-friendly quiz and I'm a ${result.name}!`} target="_blank" rel="noopener noreferrer">
+      <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}&quote=I just took the New-world green personality quiz and I'm a ${result.name}!`} target="_blank" rel="noopener noreferrer">
         <Image src={facebookIcon} alt="Share on Facebook" width={40} height={40} />
       </a>
       <a href={`https://www.instagram.com/?url=${encodeURIComponent(window.location.href)}`} target="_blank" rel="noopener noreferrer">
