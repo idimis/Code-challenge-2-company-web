@@ -59,7 +59,7 @@ const HomePage = () => {
           <AnimationHead />
           <HeroSection />
           <DynamicDataDashboard /> 
-          <CompanyOverview /> 
+          <CompanyOverview />
           <AboutSection /> 
           <ServicesSection />
           <Article /> 
