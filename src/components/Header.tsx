@@ -28,21 +28,21 @@ const Header = () => {
           </button>
         </div>
 
-       
         <nav className="hidden md:flex items-center ml-5"> 
           <Link href="/" className="mx-4 text-black hover:underline">Home</Link>
           <Link href="/about" className="mx-4 text-black hover:underline">About Us</Link>
           <Link href="/services" className="mx-4 text-black hover:underline">Services</Link>
           <Link href="/teams" className="mx-4 text-black hover:underline">Teams</Link>
+          <Link href="/quiz" className="mx-4 text-black hover:underline">Take the Quiz!</Link>
         </nav>
       </div>
 
-      
       <div className={`md:hidden ${isMobileMenuOpen ? 'flex' : 'hidden'} flex-col items-center bg-white p-4`}>
         <Link href="/" className="my-2 text-black hover:underline">Home</Link>
         <Link href="/about" className="my-2 text-black hover:underline">About Us</Link>
         <Link href="/services" className="my-2 text-black hover:underline">Services</Link>
         <Link href="/teams" className="my-2 text-black hover:underline">Teams</Link>
+        <Link href="/quiz" className="my-2 text-black hover:underline">Take the Quiz!</Link>
       </div>
     </header>
   );
