@@ -31,27 +31,29 @@ const CompanyOverview = () => {
   };
 
   return (
-    <section className="company-album-container py-6 px-5 max-w-[1008px] mx-auto"> 
-      <div className="album relative mb-2">
+    <section className="company-album-container py-10 px-5 max-w-[1008px] mx-auto"> 
+      <div className="album relative mb-4 h-auto"> 
         <Slider {...settings}>
           {images.map((image, index) => (
-            <div key={index}>
+            <div key={index} className="flex justify-center items-center h-full">
               <Image
                 src={image}
                 alt={`Image ${index + 1}`}
                 className="rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105"
-                width={455}  
-                height={588} 
+                layout="responsive"
+                width={455}
+                height={588}
                 quality={100} 
+                priority // Load this image with priority
               />
             </div>
           ))}
         </Slider>
       </div>
 
-      <div className="company-overview flex-grow pl-0">
-        <h2 className="text-4xl font-bold text-center mb-3">Company Overview</h2>
-        <p className="text-base text-left mb-3 text-justify"> 
+      <div className="company-overview flex-grow pl-0 mb-0 md:mb-2"> {/* Adjusted margin bottom for desktop */}
+        <h2 className="text-4xl font-bold text-center mb-2 md:mb-2">Company Overview</h2>
+        <p className="text-base text-left mb-0 text-justify">
           Established in 1995, New World Co. has been at the forefront of the renewable energy revolution.
           Our dedicated team works tirelessly to deliver innovative solutions that empower communities while protecting
           the environment. With a commitment to sustainability, we lead the charge towards a greener future. Our
