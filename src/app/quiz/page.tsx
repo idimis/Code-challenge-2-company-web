@@ -3,7 +3,9 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image, { StaticImageData } from 'next/image';
+import html2canvas from "html2canvas";
 
+import saveIcon from '@/public/icons/save.jpg';
 import twitterIcon from '@/public/icons/twitter.png';
 import instagramIcon from '@/public/icons/instagram.png';
 import facebookIcon from '@/public/icons/facebook.jpg';
@@ -76,17 +78,17 @@ const Header = () => {
 const questions = [
   {
     question: "1/10: What do you do when you find litter in your community?",
-    options: ["Ignore it", "Pick it up and dispose of it", "Use it for a DIY project"],
+    options: ["Hoping that somebody will pick it up", "Pick it up and dispose of it", "Use it for a DIY project"],
     scores: [0, 1, 2],
   },
   {
     question: "2/10: How often do you use public transportation?",
-    options: ["Never", "Sometimes", "Always"],
+    options: ["Rarely", "Sometimes", "Always"],
     scores: [0, 1, 2],
   },
   {
     question: "3/10: How do you feel about recycling?",
-    options: ["It's not worth the effort", "I recycle occasionally", "I always recycle everything I can"],
+    options: ["It's too much hassle", "I recycle occasionally", "I always recycle everything I can"],
     scores: [0, 1, 2],
   },
   {
@@ -100,44 +102,44 @@ const questions = [
     scores: [0, 1, 2],
   },
   {
-    question: "6/10: How do you travel long distances?",
-    options: ["By car or plane", "By train or bus", "By bike or walking"],
+    question: "6/10: How do you travel to work?",
+    options: ["By car", "By train or bus", "By bike or walking"],
     scores: [0, 1, 2],
   },
   {
     question: "7/10: How often do you support local environmental initiatives?",
-    options: ["Never", "Occasionally", "Regularly"],
+    options: ["Sometimes", "Often", "Always"],
     scores: [0, 1, 2],
   },
   {
     question: "8/10: What do you think about climate change?",
-    options: ["I don't believe it's real", "I've heard about it, but I'm not sure", "I believe it's a serious issue that needs urgent action"],
+    options: ["I've heard about it, but I'm not sure", "I knew it, but just in the surface", "I believe it's a serious issue that needs urgent action"],
     scores: [0, 1, 2],
   },
   {
     question: "9/10: How do you handle energy consumption at home?",
-    options: ["I leave lights and devices on", "I turn off lights when not in use", "I use energy-efficient appliances"],
+    options: ["I rarely turn off my lights", "I turn off lights when not in use", "I use energy-efficient appliances"],
     scores: [0, 1, 2],
   },
   {
     question: "10/10: How often do you educate others about sustainability?",
-    options: ["Never", "Sometimes", "Often"],
+    options: ["Rarely", "Sometimes", "Often"],
     scores: [0, 1, 2],
   },
 ];
 
 const personalityTypes = [
-    { name: "The Inventor", description: "You are always looking for new ways to reduce your carbon footprint.", illustration: inventorIcon },
-    { name: "The Campaigner", description: "You actively promote sustainability and encourage others to change.", illustration: campaignerIcon },
-    { name: "The Warrior", description: "You are deeply committed to the environment and take real action.", illustration: warriorIcon },
-    { name: "The Observer", description: "You are interested in environmental issues but haven't engaged actively.", illustration: observerIcon },
-    { name: "The Skeptic", description: "You are aware of environmental issues but remain unconvinced of their urgency.", illustration: skepticIcon },
-    { name: "The Adventurer", description: "You believe in living simply, explore the nature and avoiding excess.", illustration: adventurerIcon },
-    { name: "The Builder", description: "You work with others to create a sustainable community.", illustration: builderIcon },
-    { name: "The Educator", description: "You strive to inform others about the importance of environmental conservation.", illustration: teacherIcon }, 
-    { name: "The Researcher", description: "You analyze data and evidence to understand environmental issues.", illustration: researcherIcon },
-    { name: "The Philosopher", description: "You take this universe seriously and in the most contemplative and reflective way.", illustration: philosopherIcon },
-  ];
+  { name: "The Skeptic", description: "You are aware of environmental issues but remain unconvinced of their urgency.", illustration: skepticIcon, scoreRange: [0, 4] },
+  { name: "The Adventurer", description: "You believe in living simply, explore the nature and avoiding excess.", illustration: adventurerIcon, scoreRange: [5, 8] },
+  { name: "The Builder", description: "You work with others to create a sustainable community.", illustration: builderIcon, scoreRange: [9, 12] },
+  { name: "The Warrior", description: "You are deeply committed to the environment and take real action.", illustration: warriorIcon, scoreRange: [13, 16] },
+  { name: "The Campaigner", description: "You actively promote sustainability and encourage others to change.", illustration: campaignerIcon, scoreRange: [17, 20] },
+  { name: "The Observer", description: "You are interested in environmental issues but haven't engaged actively.", illustration: observerIcon, scoreRange: [21, 24] },
+  { name: "The Educator", description: "You strive to inform others about the importance of environmental conservation.", illustration: teacherIcon, scoreRange: [25, 28] },
+  { name: "The Researcher", description: "You analyze data and evidence to understand environmental issues.", illustration: researcherIcon, scoreRange: [29, 32] },
+  { name: "The Inventor", description: "You are always looking for new ways to reduce your carbon footprint.", illustration: inventorIcon, scoreRange: [33, 36] },
+  { name: "The Philosopher", description: "You take this universe seriously and in the most contemplative and reflective way.", illustration: philosopherIcon, scoreRange: [37, 40] },
+];
 
   const GreenPersonQuiz = () => {
     const [answers, setAnswers] = useState(Array(questions.length).fill(0));
@@ -162,10 +164,15 @@ const personalityTypes = [
   
     const calculateResult = () => {
       const totalScore = answers.reduce((a, b) => a + b, 0);
-      const personalityIndex = Math.min(Math.floor(totalScore / 3), personalityTypes.length - 1);
-      setResult(personalityTypes[personalityIndex]);
+      
+      const personality = personalityTypes.find(type => 
+        totalScore >= type.scoreRange[0] && totalScore <= type.scoreRange[1]
+      );
+      
+      setResult(personality || null); 
       setLoading(false); 
     };
+    
   
     const takeQuizAgain = () => {
       setAnswers(Array(questions.length).fill(0));
@@ -173,9 +180,46 @@ const personalityTypes = [
       setResult(null);
       setLoading(false);
     };
+    const saveImage = async () => {
+      const resultDiv = document.getElementById("result");
+      if (resultDiv) {
+        const canvas = await html2canvas(resultDiv);
+        const dataURL = canvas.toDataURL("image/png");
+    
+        const link = document.createElement("a");
+        link.href = dataURL;
+        link.download = "green_personality_result.png";
+        link.click();
+      }
+    };
+    
+    const shareToInstagram = async () => {
+      const resultDiv = document.getElementById("result");
+      if (resultDiv) {
+        const canvas = await html2canvas(resultDiv);
+        const dataURL = canvas.toDataURL("image/png");
+  
+        
+        const imageBlob = await fetch(dataURL).then(res => res.blob());
+        const formData = new FormData();
+        formData.append("file", imageBlob, "green_personality_result.png");
+  
+        window.open(`https://instagram.com/share?url=${encodeURIComponent("https://new-world-web.vercel.app/quiz")}`);
+      }
+    };
+  
+    const tweetResult = async () => {
+      const resultDiv = document.getElementById("result");
+      if (resultDiv) {
+        const canvas = await html2canvas(resultDiv);
+        const dataURL = canvas.toDataURL("image/png");
+  
+        const tweetUrl = `https://twitter.com/intent/tweet?text=I just took the Eco-friendly quiz and I'm a ${result?.name}!&url=https://new-world-web.vercel.app/quiz&image=${dataURL}`;
+        window.open(tweetUrl, "_blank");
+      }
+    };
   
   
-
   return (
     <div className="max-w-[800px] mx-auto p-4 flex flex-col items-center justify-center h-screen">
       <h2 className="text-3xl font-bold mb-4 text-center mt-10">What Type of <span className="text-green-600">Green</span> Personality Are You?</h2>
@@ -205,6 +249,7 @@ const personalityTypes = [
           >
             Take Quiz Again?
           </button>
+          
         </div>
       ) : (
         <div className="w-full">
@@ -239,6 +284,10 @@ const personalityTypes = [
   <div className="mt-8">
     <h4 className="text-lg font-bold mb-2">Share your results!</h4>
     <div className="flex space-x-4">
+
+      <a onClick={saveImage} className="cursor-pointer" title="Save Image">
+              <Image src={saveIcon} alt="Save to Phone" width={40} height={40} />
+      </a>
       <a href={`https://api.whatsapp.com/send?text=I just took the Eco-friendly quiz and I'm a ${result.name}!`} target="_blank" rel="noopener noreferrer">
         <Image src={whatsappIcon} alt="Share on WhatsApp" width={40} height={40} />
       </a>
@@ -249,8 +298,9 @@ const personalityTypes = [
         <Image src={facebookIcon} alt="Share on Facebook" width={40} height={40} />
       </a>
       <a href={`https://www.instagram.com/?url=${encodeURIComponent(window.location.href)}`} target="_blank" rel="noopener noreferrer">
-        <Image src={instagramIcon} alt="Share on Instagram" width={40} height={40} />
+      <Image src={instagramIcon} alt="Share on Instagram" width={40} height={40} />
       </a>
+
     </div>
   </div>
     )}
