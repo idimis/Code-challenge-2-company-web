@@ -4,13 +4,14 @@ import TeamMember from '@/components/TeamMember';
 
 const Teams = () => {
   const teamMembers = [
-    { name: "Paijo Woodgate", title: "CEO", description: "Leader and visionary.", quote: "Creating New World has allowed me to realize my dream of leading the renewable energy revolution.", linkedIn: "https://www.linkedin.com/in/alice" },
-    { name: "Dalimin Smith", title: "CTO", description: "Tech expert in renewable energy.", quote: "Innovation drives us forward, and at New World, we push the boundaries of technology.", linkedIn: "https://www.linkedin.com/in/bob" },
-    { name: "Rukiyah Parker", title: "COO", description: "Operational strategist.", quote: "Our mission of sustainability keeps me motivated every single day.", linkedIn: "https://www.linkedin.com/in/catherine" },
+    { name: "Paijo Woodgate", title: "Chief Executive Officer", description: "Leader and visionary.", quote: "Creating New World has allowed me to realize my dream of leading the renewable energy revolution.", linkedIn: "https://www.linkedin.com/in/alice" },
+    { name: "Dalimin Smith", title: "Chief Technology Officer", description: "Tech expert in renewable energy.", quote: "Innovation drives us forward, and at New World, we push the boundaries of technology.", linkedIn: "https://www.linkedin.com/in/bob" },
+    { name: "Rukiyah Parker", title: "Chief Operation  Officer", description: "Operational strategist.", quote: "Our mission of sustainability keeps me motivated every single day.", linkedIn: "https://www.linkedin.com/in/catherine" },
+    { name: "Sriyatun Lewis", title: "Chief Marketing Officer", description: "Marketing and branding expert.", quote: "Promoting renewable energy is not just a job, it's a passion.", linkedIn: "https://www.linkedin.com/in/grace" },
     { name: "Srintil Shearer", title: "Head of Solar Energy", description: "Leading solar energy projects.", quote: "At New World, we harness the power of the sun for a brighter future.", linkedIn: "https://www.linkedin.com/in/david" },
     { name: "Mukidi Rooney", title: "Head of Wind Energy", description: "Wind power specialist.", quote: "The wind is our partner in creating clean energy solutions.", linkedIn: "https://www.linkedin.com/in/eve" },
     { name: "Ngatirah Davis", title: "Head of Energy Storage", description: "Expert in energy storage solutions.", quote: "Energy storage is the key to a sustainable energy grid.", linkedIn: "https://www.linkedin.com/in/frank" },
-    { name: "Sriyatun Lewis", title: "Chief Marketing Officer", description: "Marketing and branding expert.", quote: "Promoting renewable energy is not just a job, it's a passion.", linkedIn: "https://www.linkedin.com/in/grace" },
+    
     { name: "Karyadi Ferdinand", title: "Head of Research & Development", description: "R&D expert leading innovation.", quote: "At New World, we are always on the cutting edge of clean energy research.", linkedIn: "https://www.linkedin.com/in/henry" },
   ];
 

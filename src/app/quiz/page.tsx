@@ -3,9 +3,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image, { StaticImageData } from 'next/image';
-import html2canvas from "html2canvas";
 
-import saveIcon from '@/public/icons/save.jpg';
+
 import twitterIcon from '@/public/icons/twitter.png';
 import instagramIcon from '@/public/icons/instagram.png';
 import facebookIcon from '@/public/icons/facebook.jpg';
