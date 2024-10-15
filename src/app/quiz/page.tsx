@@ -180,18 +180,6 @@ const personalityTypes = [
       setResult(null);
       setLoading(false);
     };
-    const saveImage = async () => {
-      const resultDiv = document.getElementById("result");
-      if (resultDiv) {
-        const canvas = await html2canvas(resultDiv);
-        const dataURL = canvas.toDataURL("image/png");
-    
-        const link = document.createElement("a");
-        link.href = dataURL;
-        link.download = "green_personality_result.png";
-        link.click();
-      }
-    };
   
   
   return (
@@ -259,9 +247,6 @@ const personalityTypes = [
     <h4 className="text-lg font-bold mb-2">Share your results!</h4>
     <div className="flex space-x-4">
 
-      <a onClick={saveImage} className="cursor-pointer" title="Save Image">
-              <Image src={saveIcon} alt="Save to Phone" width={40} height={40} />
-      </a>
       <a href={`https://api.whatsapp.com/send?text=I just took the Eco-friendly quiz and I'm a ${result.name}!`} target="_blank" rel="noopener noreferrer">
         <Image src={whatsappIcon} alt="Share on WhatsApp" width={40} height={40} />
       </a>
