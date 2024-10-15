@@ -2,8 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 
 import twitterIcon from '@/public/icons/twitter.png';
 import instagramIcon from '@/public/icons/instagram.png';
@@ -22,6 +21,11 @@ import teacherIcon from '@/public/personality/teacher.jpg'
 import warriorIcon from '@/public/personality/warrior.jpg'
 
 
+interface PersonalityType {
+  name: string;
+  description: string;
+  illustration: StaticImageData; 
+}
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -135,42 +139,42 @@ const personalityTypes = [
     { name: "The Philosopher", description: "You take this universe seriously and in the most contemplative and reflective way.", illustration: philosopherIcon },
   ];
 
-const GreenPersonQuiz = () => {
-  const [answers, setAnswers] = useState(Array(questions.length).fill(0));
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [result, setResult] = useState(null);
-  const [loading, setLoading] = useState(false);
-
-  const handleOptionChange = (score) => {
-    const newAnswers = [...answers];
-    newAnswers[currentQuestion] = score;
-    setAnswers(newAnswers);
-  };
-
-  const nextQuestion = () => {
-    if (currentQuestion < questions.length - 1) {
-      setCurrentQuestion(currentQuestion + 1);
-    } else {
-      setLoading(true); 
-      setTimeout(calculateResult, 1500); 
-    }
-  };
-
-  const calculateResult = () => {
-    const totalScore = answers.reduce((a, b) => a + b, 0);
-    const personalityIndex = Math.min(Math.floor(totalScore / 3), personalityTypes.length - 1);
-    setResult(personalityTypes[personalityIndex]);
-    setLoading(false); 
-  };
-
-  const takeQuizAgain = () => {
-    setAnswers(Array(questions.length).fill(0));
-    setCurrentQuestion(0);
-    setResult(null);
-    setLoading(false);
-  };
- 
-
+  const GreenPersonQuiz = () => {
+    const [answers, setAnswers] = useState(Array(questions.length).fill(0));
+    const [currentQuestion, setCurrentQuestion] = useState(0);
+    const [result, setResult] = useState<PersonalityType | null>(null); 
+    const [loading, setLoading] = useState(false);
+  
+    const handleOptionChange = (score: number) => {
+      const newAnswers = [...answers];
+      newAnswers[currentQuestion] = score;
+      setAnswers(newAnswers);
+    };
+  
+    const nextQuestion = () => {
+      if (currentQuestion < questions.length - 1) {
+        setCurrentQuestion(currentQuestion + 1);
+      } else {
+        setLoading(true); 
+        setTimeout(calculateResult, 1500); 
+      }
+    };
+  
+    const calculateResult = () => {
+      const totalScore = answers.reduce((a, b) => a + b, 0);
+      const personalityIndex = Math.min(Math.floor(totalScore / 3), personalityTypes.length - 1);
+      setResult(personalityTypes[personalityIndex]);
+      setLoading(false); 
+    };
+  
+    const takeQuizAgain = () => {
+      setAnswers(Array(questions.length).fill(0));
+      setCurrentQuestion(0);
+      setResult(null);
+      setLoading(false);
+    };
+  
+  
 
   return (
     <div className="max-w-[800px] mx-auto p-4 flex flex-col items-center justify-center h-screen">

@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
       {/* Contact Section */}
       <div className="p-2 text-xl font-bold text-center">
         For inquiries, please feel free to{' '}
-        <a href={mailtoLink} className="underline text-blue-600 hover:text-blue-800">
+        <a href={mailtoLink} className="underline text-lightseagreen hover:text-lightseagreen">
           contact us via email
         </a>
         .
