@@ -146,14 +146,21 @@ const personalityTypes = [
     const [result, setResult] = useState<PersonalityType | null>(null); 
     const [loading, setLoading] = useState(false);
     const [showFeedbackForm, setShowFeedbackForm] = useState(false);
+    const [fade, setFade] = useState(false);
+
 
   
     const handleOptionChange = (score: number) => {
       const newAnswers = [...answers];
       newAnswers[currentQuestion] = score;
       setAnswers(newAnswers);
+
+      setFade(true);
+      setTimeout(() => {
+        nextQuestion(); 
+      }, 200); 
     };
-  
+    
     const nextQuestion = () => {
       if (currentQuestion < questions.length - 1) {
         setCurrentQuestion(currentQuestion + 1);
@@ -161,6 +168,7 @@ const personalityTypes = [
         setLoading(true); 
         setTimeout(calculateResult, 1500); 
       }
+      setFade(false)
     };
   
     const calculateResult = () => {
@@ -229,30 +237,25 @@ const personalityTypes = [
       </div>
       ) : (
         <div className="w-full">
-            <h3 className="text-xl font-semibold mb-4">{questions[currentQuestion].question}</h3>
-            <div className="flex flex-col">
-             {questions[currentQuestion].options.map((option, index) => (
-                 <button
-             key={index}
-             className={`border-2 rounded-lg p-4 mb-2 text-left ${answers[currentQuestion] === questions[currentQuestion].scores[index] ? 'bg-gray-200 text-lightseagreen' : 'bg-transparent text-black hover:bg-gray-400'}`}
-             onClick={() => handleOptionChange(questions[currentQuestion].scores[index])}
-                >
+        <h3 className="text-xl font-semibold mb-4">{questions[currentQuestion].question}</h3>
+        <div className="flex flex-col">
+          {questions[currentQuestion].options.map((option, index) => {
+            const isSelected = answers[currentQuestion] === questions[currentQuestion].scores[index];
+            return (
+              <button
+                key={index}
+                className={`border-2 rounded-lg p-4 mb-2 text-left 
+                  ${isSelected ? 'text-lightseagreen' : 'bg-transparent text-black'}
+                  hover:bg-gray-200`} 
+                onClick={() => handleOptionChange(questions[currentQuestion].scores[index])}
+              >
                 {option}
-        </button>
-            ))}
-          </div>
-          <div className="flex justify-end mt-4">
-             <button
-             onClick={nextQuestion}
-             className={`border-2 rounded-lg py-2 px-4 mb-2 text-left 
-                ${answers[currentQuestion] === 'selected' ? 
-                 'bg-gray-200 text-lightseagreen' : 
-            'bg-transparent text-black hover:bg-gray-200 active:bg-gray-200 active:text-lightseagreen'}`}
-                 >
-             {currentQuestion < questions.length - 1 ? "Next Question" : "Finish Quiz"}
-                </button>
-                </div>
-         </div>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+      
          
 
 )}
