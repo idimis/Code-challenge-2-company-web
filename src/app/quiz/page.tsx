@@ -18,7 +18,7 @@ import observerIcon from '@/public/personality/observer.jpg'
 import philosopherIcon from '@/public/personality/philosopher.jpg'
 import researcherIcon from '@/public/personality/researcher.jpg'
 import skepticIcon from '@/public/personality/skeptic.jpg'
-import teacherIcon from '@/public/personality/teacher.jpg'
+import educatorIcon from '@/public/personality/educator.jpg'
 import warriorIcon from '@/public/personality/warrior.jpg'
 
 
@@ -133,7 +133,7 @@ const personalityTypes = [
   { name: "The Adventurer", description: "You believe in living simply, explore the nature and avoiding excess.", illustration: adventurerIcon, scoreRange: [5, 6] },
   { name: "The Campaigner", description: "You actively promote sustainability and encourage others to change.", illustration: campaignerIcon, scoreRange: [7, 8] },
   { name: "The Builder", description: "You work with others to create a sustainable community.", illustration: builderIcon, scoreRange: [9, 10] },
-  { name: "The Educator", description: "You strive to inform others about the importance of environmental conservation.", illustration: teacherIcon, scoreRange: [11, 12] },
+  { name: "The Educator", description: "You strive to inform others about the importance of environmental conservation.", illustration: educatorIcon, scoreRange: [11, 12] },
   { name: "The Researcher", description: "You analyze data and evidence to understand environmental issues.", illustration: researcherIcon, scoreRange: [13, 14] },
   { name: "The Inventor", description: "You are always looking for new ways to reduce your carbon footprint.", illustration: inventorIcon, scoreRange: [15, 16] },
   { name: "The Philosopher", description: "You take this universe seriously and in the most contemplative and reflective way.", illustration: philosopherIcon, scoreRange: [17, 18] },
@@ -195,8 +195,8 @@ const personalityTypes = [
 
   
     return (
-      <div className="max-w-[800px] mx-auto p-4 flex flex-col items-center justify-center h-screen">
-        <h2 className="text-3xl font-bold mb-4 text-center mt-10">What Type of <span className="text-green-600">Green</span> Personality Are You?</h2>
+      <div className="max-w-[800px] mx-auto p-4 flex flex-col items-center justify-center min-h-screen pt-16 md:pt-24">
+        <h2 className="text-3xl font-bold mb-4 text-center mt-10 leading-snug">What Type of <span className="text-green-600">Green</span> Personality Are You?</h2>
         {loading ? (
           <div className="text-center">
             <p className="text-xl">Please wait for a moment...</p>
@@ -215,6 +215,7 @@ const personalityTypes = [
                 height={300}
               />
             </div>
+            <p className="mt-4 text-lg">{result.description}</p>
             
             <div className="flex flex-col items-center space-y-4 mt-6">
               <button 
@@ -256,8 +257,8 @@ const personalityTypes = [
           </div>
         )}
         {result && (
-          <div className="mt-8">
-            <h4 className="text-lg font-bold mb-2">Share your results!</h4>
+          <div className="mt-6 md:mt-8">
+            <h4 className="text-lg font-bold mb-2 text-center">Share your results!</h4>
             <div className="flex space-x-4">
               <a href={`https://api.whatsapp.com/send?text=I just took the Eco-friendly quiz from https://new-world-web.vercel.app/ and I'm a ${result.name}!`} target="_blank" rel="noopener noreferrer">
                 <Image src={whatsappIcon} alt="Share on WhatsApp" width={40} height={40} />
