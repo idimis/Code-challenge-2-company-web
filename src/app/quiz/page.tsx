@@ -136,7 +136,7 @@ const personalityTypes = [
   { name: "The Educator", description: "You strive to inform others about the importance of environmental conservation.", illustration: educatorIcon, scoreRange: [11, 12] },
   { name: "The Researcher", description: "You analyze data and evidence to understand environmental issues.", illustration: researcherIcon, scoreRange: [13, 14] },
   { name: "The Inventor", description: "You are always looking for new ways to reduce your carbon footprint.", illustration: inventorIcon, scoreRange: [15, 16] },
-  { name: "The Philosopher", description: "You take this universe seriously and in the most contemplative and reflective way.", illustration: philosopherIcon, scoreRange: [17, 18] },
+  { name: "The Philosopher", description: "You take this universe seriously, having deep contemplation on our environment and its preservation.", illustration: philosopherIcon, scoreRange: [17, 18] },
   { name: "The Warrior", description: "You are deeply committed to the environment and take real action.", illustration: warriorIcon, scoreRange: [19, 20] },
 ];
 
@@ -196,7 +196,7 @@ const personalityTypes = [
   
     return (
       <div className="max-w-[800px] mx-auto p-4 flex flex-col items-center justify-center min-h-screen pt-16 md:pt-24">
-        <h2 className="text-3xl font-bold mb-4 text-center mt-10 leading-snug">What Type of <span className="text-green-600">Green</span> Personality Are You?</h2>
+        <h2 className="text-3xl font-bold mb-4 text-center mt-10 leading-snug">What <span className="text-green-600">Green</span> Personality Are You?</h2>
         {loading ? (
           <div className="text-center">
             <p className="text-xl">Please wait for a moment...</p>
