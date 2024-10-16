@@ -211,8 +211,8 @@ const personalityTypes = [
                 src={result.illustration} 
                 alt={result.name} 
                 className="rounded-full" 
-                width={400} 
-                height={400}
+                width={300} 
+                height={300}
               />
             </div>
             
@@ -259,10 +259,10 @@ const personalityTypes = [
           <div className="mt-8">
             <h4 className="text-lg font-bold mb-2">Share your results!</h4>
             <div className="flex space-x-4">
-              <a href={`https://api.whatsapp.com/send?text=I just took the Eco-friendly quiz and I'm a ${result.name}!`} target="_blank" rel="noopener noreferrer">
+              <a href={`https://api.whatsapp.com/send?text=I just took the Eco-friendly quiz from https://new-world-web.vercel.app/ and I'm a ${result.name}!`} target="_blank" rel="noopener noreferrer">
                 <Image src={whatsappIcon} alt="Share on WhatsApp" width={40} height={40} />
               </a>
-              <a href={`https://twitter.com/intent/tweet?text=I just took the Eco-friendly quiz and I'm a ${result.name}!`} target="_blank" rel="noopener noreferrer">
+              <a href={`https://twitter.com/intent/tweet?text=I just took the Eco-friendly quiz from https://new-world-web.vercel.app/  and I'm a ${result.name}!`} target="_blank" rel="noopener noreferrer">
                 <Image src={twitterIcon} alt="Share on Twitter" width={40} height={40} />
               </a>
               <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}&quote=I just took the New-world green personality quiz and I'm a ${result.name}!`} target="_blank" rel="noopener noreferrer">
