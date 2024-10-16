@@ -164,9 +164,10 @@ nav a:hover {
   animation: cat 2s linear infinite;
 }
 
-/* Media queries for responsiveness */
+
 @media (max-width: 768px) {
   .text-center {
     padding: 10px;
   }
 }
+

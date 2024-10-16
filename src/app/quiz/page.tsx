@@ -128,16 +128,16 @@ const questions = [
 ];
 
 const personalityTypes = [
-  { name: "The Skeptic", description: "You are aware of environmental issues but remain unconvinced of their urgency.", illustration: skepticIcon, scoreRange: [0, 4] },
-  { name: "The Adventurer", description: "You believe in living simply, explore the nature and avoiding excess.", illustration: adventurerIcon, scoreRange: [5, 8] },
-  { name: "The Builder", description: "You work with others to create a sustainable community.", illustration: builderIcon, scoreRange: [9, 12] },
-  { name: "The Warrior", description: "You are deeply committed to the environment and take real action.", illustration: warriorIcon, scoreRange: [13, 16] },
-  { name: "The Campaigner", description: "You actively promote sustainability and encourage others to change.", illustration: campaignerIcon, scoreRange: [17, 20] },
-  { name: "The Observer", description: "You are interested in environmental issues but haven't engaged actively.", illustration: observerIcon, scoreRange: [21, 24] },
-  { name: "The Educator", description: "You strive to inform others about the importance of environmental conservation.", illustration: teacherIcon, scoreRange: [25, 28] },
-  { name: "The Researcher", description: "You analyze data and evidence to understand environmental issues.", illustration: researcherIcon, scoreRange: [29, 32] },
-  { name: "The Inventor", description: "You are always looking for new ways to reduce your carbon footprint.", illustration: inventorIcon, scoreRange: [33, 36] },
-  { name: "The Philosopher", description: "You take this universe seriously and in the most contemplative and reflective way.", illustration: philosopherIcon, scoreRange: [37, 40] },
+  { name: "The Skeptic", description: "You are aware of environmental issues but remain unconvinced of their urgency.", illustration: skepticIcon, scoreRange: [0, 1] },
+  { name: "The Observer", description: "You are interested in environmental issues but haven't engaged actively.", illustration: observerIcon, scoreRange: [2, 4] },
+  { name: "The Adventurer", description: "You believe in living simply, explore the nature and avoiding excess.", illustration: adventurerIcon, scoreRange: [5, 6] },
+  { name: "The Campaigner", description: "You actively promote sustainability and encourage others to change.", illustration: campaignerIcon, scoreRange: [7, 8] },
+  { name: "The Builder", description: "You work with others to create a sustainable community.", illustration: builderIcon, scoreRange: [9, 10] },
+  { name: "The Educator", description: "You strive to inform others about the importance of environmental conservation.", illustration: teacherIcon, scoreRange: [11, 12] },
+  { name: "The Researcher", description: "You analyze data and evidence to understand environmental issues.", illustration: researcherIcon, scoreRange: [13, 14] },
+  { name: "The Inventor", description: "You are always looking for new ways to reduce your carbon footprint.", illustration: inventorIcon, scoreRange: [15, 16] },
+  { name: "The Philosopher", description: "You take this universe seriously and in the most contemplative and reflective way.", illustration: philosopherIcon, scoreRange: [17, 18] },
+  { name: "The Warrior", description: "You are deeply committed to the environment and take real action.", illustration: warriorIcon, scoreRange: [19, 20] },
 ];
 
   const GreenPersonQuiz = () => {
@@ -145,7 +145,6 @@ const personalityTypes = [
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [result, setResult] = useState<PersonalityType | null>(null); 
     const [loading, setLoading] = useState(false);
-    const [showFeedbackForm, setShowFeedbackForm] = useState(false);
     const [fade, setFade] = useState(false);
 
 
@@ -168,7 +167,7 @@ const personalityTypes = [
         setLoading(true); 
         setTimeout(calculateResult, 1500); 
       }
-      setFade(false)
+      setFade(false);
     };
   
     const calculateResult = () => {
@@ -195,103 +194,95 @@ const personalityTypes = [
     };
 
   
-  return (
-    <div className="max-w-[800px] mx-auto p-4 flex flex-col items-center justify-center h-screen">
-      <h2 className="text-3xl font-bold mb-4 text-center mt-10">What Type of <span className="text-green-600">Green</span> Personality Are You?</h2>
-      {loading ? (
-        <div className="text-center">
-          <p className="text-xl">Please wait for a moment...</p>
-          <p className="text-lg">Calculating your result...</p>
-        </div>
-      ) : result ? (
-        <div className="text-center mt-8">
-          <h3 className="text-2xl flex justify-center items-center font-semibold mb-2">{result.name}</h3>
-          
-          <div className="flex justify-center">
-            <Image 
-              src={result.illustration} 
-              alt={result.name} 
-              className="rounded-full" 
-              width={400} 
-              height={400}
-            />
+    return (
+      <div className="max-w-[800px] mx-auto p-4 flex flex-col items-center justify-center h-screen">
+        <h2 className="text-3xl font-bold mb-4 text-center mt-10">What Type of <span className="text-green-600">Green</span> Personality Are You?</h2>
+        {loading ? (
+          <div className="text-center">
+            <p className="text-xl">Please wait for a moment...</p>
+            <p className="text-lg">Calculating your result...</p>
           </div>
-          
-          <div className="flex flex-col items-center space-y-4 mt-6">
-          <button 
-            onClick={takeQuizAgain} 
-            className="border-2 border-black rounded-lg py-2 px-4 bg-transparent text-gray-600 hover:bg-gray-200"
-          >
-            Take Quiz Again?
-          </button>
-
-          <button
-            onClick={openFeedbackForm}
-            className="border-2 border-black rounded-lg py-2 px-4 bg-transparent text-gray-600 hover:bg-gray-200"
-          >
-            Give us Feedback
-          </button>
-        </div>
-
-        
-      </div>
-      ) : (
-        <div className="w-full">
-        <h3 className="text-xl font-semibold mb-4">{questions[currentQuestion].question}</h3>
-        <div className="flex flex-col">
-          {questions[currentQuestion].options.map((option, index) => {
-            const isSelected = answers[currentQuestion] === questions[currentQuestion].scores[index];
-            return (
-              <button
-                key={index}
-                className={`border-2 rounded-lg p-4 mb-2 text-left 
-                  ${isSelected ? 'text-lightseagreen' : 'bg-transparent text-black'}
-                  hover:bg-gray-200`} 
-                onClick={() => handleOptionChange(questions[currentQuestion].scores[index])}
+        ) : result ? (
+          <div className="text-center mt-8">
+            <h3 className="text-2xl flex justify-center items-center font-semibold mb-2">{result.name}</h3>
+            
+            <div className="flex justify-center">
+              <Image 
+                src={result.illustration} 
+                alt={result.name} 
+                className="rounded-full" 
+                width={400} 
+                height={400}
+              />
+            </div>
+            
+            <div className="flex flex-col items-center space-y-4 mt-6">
+              <button 
+                onClick={takeQuizAgain} 
+                className="border-2 border-black rounded-lg py-2 px-4 bg-transparent text-gray-600 hover:bg-gray-200"
               >
-                {option}
+                Take Quiz Again?
               </button>
-            );
-          })}
-        </div>
+  
+              <button
+                onClick={openFeedbackForm}
+                className="border-2 border-black rounded-lg py-2 px-4 bg-transparent text-gray-600 hover:bg-gray-200"
+              >
+                Give us Feedback
+              </button>
+            </div>
+          </div>
+        ) : (
+          <div className="w-full">
+            <h3 className="text-xl font-semibold mb-4">{questions[currentQuestion].question}</h3>
+            <div className={`transition-opacity duration-200 ${fade ? 'opacity-0' : 'opacity-100'}`}>
+              <div className="flex flex-col">
+                {questions[currentQuestion].options.map((option, index) => {
+                  const isSelected = answers[currentQuestion] === questions[currentQuestion].scores[index];
+                  return (
+                    <button
+                      key={index}
+                      className={`border-2 rounded-lg p-4 mb-2 text-left 
+                        ${isSelected ? 'text-lightseagreen' : 'bg-transparent text-black'}
+                        hover:bg-gray-400`}  
+                      onClick={() => handleOptionChange(questions[currentQuestion].scores[index])}
+                    >
+                      {option}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        )}
+        {result && (
+          <div className="mt-8">
+            <h4 className="text-lg font-bold mb-2">Share your results!</h4>
+            <div className="flex space-x-4">
+              <a href={`https://api.whatsapp.com/send?text=I just took the Eco-friendly quiz and I'm a ${result.name}!`} target="_blank" rel="noopener noreferrer">
+                <Image src={whatsappIcon} alt="Share on WhatsApp" width={40} height={40} />
+              </a>
+              <a href={`https://twitter.com/intent/tweet?text=I just took the Eco-friendly quiz and I'm a ${result.name}!`} target="_blank" rel="noopener noreferrer">
+                <Image src={twitterIcon} alt="Share on Twitter" width={40} height={40} />
+              </a>
+              <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}&quote=I just took the New-world green personality quiz and I'm a ${result.name}!`} target="_blank" rel="noopener noreferrer">
+                <Image src={facebookIcon} alt="Share on Facebook" width={40} height={40} />
+              </a>
+              <a href={`https://www.instagram.com/?url=${encodeURIComponent(window.location.href)}`} target="_blank" rel="noopener noreferrer">
+                <Image src={instagramIcon} alt="Share on Instagram" width={40} height={40} />
+              </a>
+            </div>
+          </div>
+        )}
       </div>
-      
-         
-
-)}
-{result && (
-  <div className="mt-8">
-    <h4 className="text-lg font-bold mb-2">Share your results!</h4>
-    <div className="flex space-x-4">
-
-      <a href={`https://api.whatsapp.com/send?text=I just took the Eco-friendly quiz and I'm a ${result.name}!`} target="_blank" rel="noopener noreferrer">
-        <Image src={whatsappIcon} alt="Share on WhatsApp" width={40} height={40} />
-      </a>
-      <a href={`https://twitter.com/intent/tweet?text=I just took the Eco-friendly quiz and I'm a ${result.name}!`} target="_blank" rel="noopener noreferrer">
-        <Image src={twitterIcon} alt="Share on Twitter" width={40} height={40} />
-      </a>
-      <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}&quote=I just took the New-world green personality quiz and I'm a ${result.name}!`} target="_blank" rel="noopener noreferrer">
-        <Image src={facebookIcon} alt="Share on Facebook" width={40} height={40} />
-      </a>
-      <a href={`https://www.instagram.com/?url=${encodeURIComponent(window.location.href)}`} target="_blank" rel="noopener noreferrer">
-      <Image src={instagramIcon} alt="Share on Instagram" width={40} height={40} />
-      </a>
-
-    </div>
-  </div>
-
-)}
-    </div>
-  );
-};
-
-export default function GreenPersonalityQuiz() {
-  return (
-    <div>
-      <Header />
-      <GreenPersonQuiz />
-    </div>
-  );
-}
-
-
+    );
+  };
+  
+  export default function GreenPersonalityQuiz() {
+    return (
+      <div>
+        <Header />
+        <GreenPersonQuiz />
+      </div>
+    );
+  }
