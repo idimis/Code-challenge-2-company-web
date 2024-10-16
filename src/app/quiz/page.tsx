@@ -145,6 +145,8 @@ const personalityTypes = [
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [result, setResult] = useState<PersonalityType | null>(null); 
     const [loading, setLoading] = useState(false);
+    const [showFeedbackForm, setShowFeedbackForm] = useState(false);
+
   
     const handleOptionChange = (score: number) => {
       const newAnswers = [...answers];
@@ -179,7 +181,11 @@ const personalityTypes = [
       setResult(null);
       setLoading(false);
     };
-  
+
+    const openFeedbackForm = () => {
+      window.open('https://tc937352e8l.typeform.com/to/nVg9PjfZ', '_blank'); 
+    };
+
   
   return (
     <div className="max-w-[800px] mx-auto p-4 flex flex-col items-center justify-center h-screen">
@@ -203,15 +209,24 @@ const personalityTypes = [
             />
           </div>
           
-          <p className="text-lg mb-4">{result.description}</p>
+          <div className="flex flex-col items-center space-y-4 mt-6">
           <button 
             onClick={takeQuizAgain} 
-            className="border-2 rounded-lg py-2 px-4 bg-transparent text-black mb-4 hover:bg-gray-200"
+            className="border-2 border-black rounded-lg py-2 px-4 bg-transparent text-gray-600 hover:bg-gray-200"
           >
             Take Quiz Again?
           </button>
-          
+
+          <button
+            onClick={openFeedbackForm}
+            className="border-2 border-black rounded-lg py-2 px-4 bg-transparent text-gray-600 hover:bg-gray-200"
+          >
+            Give us Feedback
+          </button>
         </div>
+
+        
+      </div>
       ) : (
         <div className="w-full">
             <h3 className="text-xl font-semibold mb-4">{questions[currentQuestion].question}</h3>
