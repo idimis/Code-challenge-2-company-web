@@ -249,16 +249,18 @@ const GreenPersonQuiz = () => {
   };
 
   return (
-    <div className="max-w-[800px] mx-auto p-4 flex flex-col items-center justify-center min-h-screen pt-4 md:pt-6"> {/* Kurangi padding top di sini */}
+    <div className="max-w-[800px] mx-auto p-4 flex flex-col items-center justify-center min-h-screen pt-4 md:pt-6"> 
     <h2 className="text-4xl font-bold mb-2 text-center leading-snug mt-0"> 
       What <span className="text-green-600">Green</span> Personality Are You?
     </h2>
     {!quizStarted ? (
       <div className="flex flex-col items-center mt-4"> 
-        <p className="mb-4 text-lg text-center">
-          This quiz will help you discover your environmental personality <br /> 
-          based on your values, habits, and preferences. <br />
+        <p className="mb-4 text-lg text-center max-w-md">
+          This quiz will help you discover your environmental personality 
+          based on your values, habits, and preferences.
+          <span className="block mt-4">
           Please enter your name to start:
+          </span>
         </p>
                   <input 
                       type="text" 
