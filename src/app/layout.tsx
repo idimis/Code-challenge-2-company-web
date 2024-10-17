@@ -16,7 +16,7 @@ const geistMono = localFont({
 
 
 export const metadata: Metadata = {
-  title: "Ciptadaya",
+  title: "c i p t a d a y a",
   description: "A humble initiative for a greener and better future",
   keywords: "Ciptadaya, green initiative, sustainability, renewable energy, green company, future, personality test, quiz, ",
   viewport: "width=device-width, initial-scale=1.0", 
