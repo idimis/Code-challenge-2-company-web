@@ -16,17 +16,13 @@ import ChatbotComponent from '@/components/Chatbot';
 import DynamicDataDashboard from '@/components/DynamicDataDashboard';
 
 
+
 const HomePage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); 
-  const [isLoading, setIsLoading] = useState(true); 
   const [showChatbot, setShowChatbot] = useState(false); 
 
   const toggleMenu = () => {
     setIsMenuOpen(prev => !prev); 
-  };
-
-  const handleLoadComplete = () => {
-    setIsLoading(false); 
   };
 
   useEffect(() => {
@@ -50,7 +46,7 @@ const HomePage = () => {
 
   return (
     <div className="relative">
-          <Analytics /> 
+      <Analytics /> 
           <Header />
           <HeroSection />
           <DynamicDataDashboard /> 
@@ -62,6 +58,8 @@ const HomePage = () => {
           <SlideOutButton isOpen={isMenuOpen} closeMenu={toggleMenu} /> 
           <Overlay />
           <ChatbotComponent isVisible={showChatbot} /> 
+          <Footer />
+      )
     </div>
   );
 };
