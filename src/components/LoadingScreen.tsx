@@ -16,7 +16,7 @@ const LoadingScreen: React.FC<{ onLoadComplete: () => void }> = ({ onLoadComplet
         }
         return prev + 10; 
       });
-    }, 100);
+    }, 275);
 
     return () => clearTimeout(timer);
   }, [progress, onLoadComplete]);

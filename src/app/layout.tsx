@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -14,17 +13,24 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-
 export const metadata: Metadata = {
   title: "c i p t a d a y a",
   description: "A humble initiative for a greener and better future",
-  keywords: "Ciptadaya, green initiative, sustainability, renewable energy, green company, future, personality test, quiz, ",
-  viewport: "width=device-width, initial-scale=1.0", 
+  keywords: "Ciptadaya, green initiative, sustainability, renewable energy, green company, future, personality test, quiz",
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1.0,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
