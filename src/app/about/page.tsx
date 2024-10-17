@@ -122,7 +122,7 @@
           <section className="mb-10 md:mb-20">
           <h2 className="text-left text-3xl md:text-4xl font-semibold text-gray-800 mb-4">Global Presence</h2>
           <div className="flex flex-col gap-8 md:flex-row md:gap-8">
-            {/** Headquarters **/}
+            
             <div className="md:w-1/2 flex flex-col items-center">
               <Image src={about3} alt="HQ Image" className="rounded-lg object-cover" layout="intrinsic" width={370} height={240} />
               <h3 className="text-xl font-bold text-gray-800 mt-4">Headquarters</h3>
@@ -131,7 +131,7 @@
               </p>
             </div>
 
-            {/** Regional Offices **/}
+            
             <div className="md:w-1/2 flex flex-col items-center">
               <Image src={about4} alt="Regional Office Image" className="rounded-lg object-cover" layout="intrinsic" width={370} height={240} />
               <h3 className="text-xl font-bold text-gray-800 mt-4">Regional Offices</h3>

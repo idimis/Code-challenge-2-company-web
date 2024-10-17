@@ -4,24 +4,28 @@ import solarPanelImage from '@/public/solarpanelb.jpg';
 
 const HeroSection = () => {
   return (
-    <div className="relative flex items-center justify-center overflow-hidden min-h-[300px] md:min-h-[800px] mt-10"> 
-      
+    <div className="relative flex items-center justify-center overflow-hidden min-h-[300px] md:min-h-[800px] mt-10">
+      {/* Background Image Wrapper */}
       <div className="absolute inset-0 flex items-center justify-center z-0">
         <div className="max-w-[1440px] w-full">
           <Image
             src={solarPanelImage}
             alt="Solar Panel Field"
-            className="w-full h-full object-cover rounded-lg shadow-lg"    
-            sizes="(max-width: 768px) 100vw, (min-width: 769px) 100vw" 
+            className="w-full h-full object-cover rounded-lg shadow-lg"
+            sizes="(max-width: 768px) 100vw, (min-width: 769px) 100vw"
             style={{ 
               filter: 'brightness(85%)', 
-              objectFit: 'cover',  
-              objectPosition: 'top center'  
-            }}  
+              objectFit: 'cover', 
+              objectPosition: 'top center',
+            }}
+            loading="lazy"  
+            priority={false} 
+            placeholder="blur" 
           />
         </div>
       </div>
 
+      {/* Text Overlay */}
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10 text-center text-white p-5">
         <div className="mt-5 max-w-md mx-auto">
           <h1 
