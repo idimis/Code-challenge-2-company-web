@@ -14,21 +14,18 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+
 export const metadata: Metadata = {
   title: "Ciptadaya",
-  description: "A humble initiative for greener and better future",
+  description: "A humble initiative for a greener and better future",
+  keywords: "Ciptadaya, green initiative, sustainability, renewable energy, green company, future, personality test, quiz, ",
+  viewport: "width=device-width, initial-scale=1.0", 
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
     </html>

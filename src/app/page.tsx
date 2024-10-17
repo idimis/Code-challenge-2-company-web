@@ -59,6 +59,7 @@ const HomePage = () => {
       ) : (
         <>
           <Header />
+          
           <AnimationHead />
           <HeroSection />
           <DynamicDataDashboard /> 

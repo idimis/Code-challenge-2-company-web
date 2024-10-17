@@ -18,9 +18,10 @@ const HeroSection = () => {
               objectFit: 'cover', 
               objectPosition: 'top center',
             }}
-            loading="lazy"  
-            priority={false} 
+            loading="eager"  // Change to eager for hero image
+            priority={true}   // Set priority to true for faster loading
             placeholder="blur" 
+            blurDataURL="/path-to-low-res-image.jpg" // Optional: Add a low-res image for blur effect
           />
         </div>
       </div>

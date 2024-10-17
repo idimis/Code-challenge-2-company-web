@@ -3,11 +3,13 @@ import Image from 'next/image';
 import Slider from 'react-slick'; 
 
 import frontImage from '@/public/park3.jpg';
+import parkImage1 from '@/public/park1.jpg';
 import childrenImage from '@/public/children.jpg';
+import parkImage2 from '@/public/park2.jpg';
 import sitevisitImage from '@/public/sitevisit.png';
 import workerImage2 from '@/public/worker2.jpg';
 
-const images = [frontImage, childrenImage, sitevisitImage, workerImage2];
+const images = [frontImage, parkImage1, childrenImage, parkImage2, sitevisitImage, workerImage2];
 
 const CompanyOverview = () => {
   
@@ -37,7 +39,7 @@ const CompanyOverview = () => {
               <Image
                 src={image}
                 alt={`Image ${index + 1}`}
-                className="rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105"
+                className="rounded-lg shadow-lg justify-center transition-transform duration-300 transform hover:scale-105"
                 layout="responsive"
                 width={455}
                 height={588}

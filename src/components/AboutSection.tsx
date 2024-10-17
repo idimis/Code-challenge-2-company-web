@@ -15,7 +15,7 @@ const AboutSection: React.FC = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-center md:text-left">
               About Us
             </h2>
-            <p className="mt-4 text-base md:text-lg text-left leading-relaxed">
+            <p className="mt-4 text-base text-left md:text-justify leading-relaxed">
               We are a leading renewable energy company committed to providing sustainable solutions 
               that empower communities and protect the environment. Our innovative approach has made 
               us a trusted partner in the energy sector worldwide. With a dedicated team of experts, 
