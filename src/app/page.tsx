@@ -59,7 +59,7 @@ const HomePage = () => {
       ) : (
         <>
           <Header />
-          
+          <link rel="icon" href="/favicon.ico" />
           <AnimationHead />
           <HeroSection />
           <DynamicDataDashboard /> 

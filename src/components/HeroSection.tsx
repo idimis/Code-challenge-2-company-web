@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import solarPanelImage from '@/public/solarpanelb.jpg';
+import solarPanelImage from '@/public/solarpanelba.jpg';
 
 const HeroSection = () => {
   return (
@@ -17,11 +17,9 @@ const HeroSection = () => {
               filter: 'brightness(85%)', 
               objectFit: 'cover', 
               objectPosition: 'top center',
+             
             }}
-            loading="eager"  // Change to eager for hero image
-            priority={true}   // Set priority to true for faster loading
-            placeholder="blur" 
-            blurDataURL="/path-to-low-res-image.jpg" // Optional: Add a low-res image for blur effect
+            
           />
         </div>
       </div>
