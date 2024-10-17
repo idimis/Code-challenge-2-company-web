@@ -9,10 +9,10 @@ const AboutSection: React.FC = () => {
     <section className="max-w-[1440px] mx-auto px-5 md:px-10 overflow-hidden">
       <div className="flex flex-col md:flex-row items-center justify-between gap-10 md:gap-20">
         
-        {/* Left Section: Text Content */}
+       
         <div className="md:w-1/2 flex flex-col">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-center md:text-left"> {/* Added text-center for mobile */}
+            <h2 className="text-3xl md:text-4xl font-bold text-center md:text-left">
               About Us
             </h2>
             <p className="mt-4 text-base md:text-lg text-justify leading-relaxed">
@@ -24,7 +24,7 @@ const AboutSection: React.FC = () => {
             </p>
           </div>
 
-          {/* Bullet Points */}
+          
           <ul className="mt-6 list-disc list-inside text-sm md:text-base space-y-2">
             <li>Trusted by 25 countries</li>
             <li>Collaborated with 50+ multinational companies</li>
@@ -33,7 +33,7 @@ const AboutSection: React.FC = () => {
             <li>Provided free mini-windmills to 50+ villages</li>
           </ul>
 
-          {/* Learn More Button */}
+          
           <a
             href="/about"
             className="mt-6 inline-block border border-black text-black font-semibold py-2 px-4 rounded 
@@ -43,7 +43,7 @@ const AboutSection: React.FC = () => {
           </a>
         </div>
 
-        {/* Right Section: Image */}
+        
         <div className="md:w-1/2 relative">
           <Image
             src={engineer}

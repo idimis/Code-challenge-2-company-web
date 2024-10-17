@@ -7,19 +7,19 @@ import article3 from '@/public/storage.png';
 const articles = [
   {
     title: "Transforming Communities with Solar Energy",
-    description: "New World has successfully implemented solar energy projects in various communities, empowering them with sustainable power solutions.",
+    description: "Ciptadaya has successfully implemented solar energy projects in various communities, empowering them with sustainable power solutions.",
     imageUrl: article1,
     link: "https://heliumrenewable.com/Home/UpdatesDetails/9",
   },
   {
     title: "Wind Energy: A New Era for Renewable Resources",
-    description: "Through innovative wind energy projects, New World is leading the charge in harnessing wind power for a cleaner future.",
+    description: "Through innovative wind energy projects, Ciptadaya is leading the charge in harnessing wind power for a cleaner future.",
     imageUrl: article2,
     link: "https://www.enelgreenpower.com/learning-hub/gigawhat/search-articles/articles/2023/07/fossils-new-era-renewables",
   },
   {
     title: "Innovative Energy Storage Solutions",
-    description: "New World has developed state-of-the-art energy storage systems, enhancing the efficiency of renewable energy utilization.",
+    description: "Ciptadaya has developed state-of-the-art energy storage systems, enhancing the efficiency of renewable energy utilization.",
     imageUrl: article3,
     link: "https://www.greyb.com/blog/energy-storage-innovation-trends/",
   },

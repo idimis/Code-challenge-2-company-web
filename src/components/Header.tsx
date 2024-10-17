@@ -15,7 +15,7 @@ const Header = () => {
       <div className="max-w-[1440px] mx-auto flex items-center justify-between p-5">
         <div className="flex items-center ml-0">
           <div className="ml-2">
-            <h1 className="text-3xl md:text-4xl font-bold font-serif">New World</h1>  
+            <h1 className="text-3xl md:text-4xl font-bold font-serif">Ciptadaya</h1>  
             <h2 className="text-base md:text-lg">Better Environment, <br />Happier Generation.</h2>  
           </div>
         </div>

@@ -15,7 +15,7 @@ const testimonials: Testimonial[] = [
   {
     name: "Muklas Spielberg",
     feedback:
-      "New World Co. provided excellent service and helped us transition to solar energy seamlessly. Their expertise and commitment to sustainability are truly commendable. I couldn't have asked for a better partner in this transition.",
+      "Ciptadaya provided excellent service and helped us transition to solar energy seamlessly. Their expertise and commitment to sustainability are truly commendable. I couldn't have asked for a better partner in this transition.",
     office: "Hawthorne Heights Ltd",
     profession: "Project Manager",
     image: "https://randomuser.me/api/portraits/men/1.jpg",

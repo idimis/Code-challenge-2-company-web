@@ -19,14 +19,14 @@ const Footer: React.FC = () => {
         .
       </div>
 
-      {/* Footer Links Section */}
+      
       <div className="bg-gray-800 text-white p-4 flex flex-col md:flex-row justify-between items-center mt-4">
-        {/* Copyright Section */}
+        
         <div className="w-full md:w-auto text-center md:text-left mb-2 md:mb-0">
-          © 2023 New World. All rights reserved.
+          © 2023 Ciptadaya. All rights reserved.
         </div>
 
-        {/* Navigation Links */}
+        
         <div className="flex flex-wrap justify-center md:justify-end gap-2 md:gap-4">
           <a href="/" className="text-white no-underline hover:underline">
             Homepage

@@ -36,9 +36,9 @@ const TeamMember: React.FC<TeamMemberProps> = ({ name, title, description, quote
         </a>
       </div>
       <h3 className="text-lg font-bold text-center">{name}</h3> 
-      <h4 className="text-xs text-gray-500 text-center mb-1">{title}</h4> 
-      <p className="text-center text-xs mb-2">{description}</p> 
-      <blockquote className="italic text-gray-600 text-center text-xs">&quot;{quote}&quot;</blockquote> 
+      <h4 className="text-s text-gray-500 text-center mb-1">{title}</h4> 
+      <p className="text-center text-s mb-2">{description}</p> 
+      <blockquote className="italic text-gray-600 text-center text-s">&quot;{quote}&quot;</blockquote> 
     </div>
   );
 };
