@@ -44,7 +44,7 @@ const CompanyOverview = () => {
                 width={455}
                 height={588}
                 quality={100} 
-                priority // Load this image with priority
+                priority 
               />
             </div>
           ))}

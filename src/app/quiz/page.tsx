@@ -1,11 +1,8 @@
 "use client";
 
 import React, { useState } from 'react';
-import Link from 'next/link';
 import Image, { StaticImageData } from 'next/image';
 import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-
 
 import twitterIcon from '@/public/icons/twitter.png';
 import instagramIcon from '@/public/icons/instagram.png';
