@@ -12,11 +12,9 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 import ServicesSection from '@/components/ServicesSection';
 import SlideOutButton from '@/components/SlideOutButton';
 import Overlay from '@/components/Overlay';
-import LoadingScreen from '@/components/LoadingScreen';
 import ChatbotComponent from '@/components/Chatbot'; 
 import DynamicDataDashboard from '@/components/DynamicDataDashboard';
-import AnimationHead from '@/components/AnimationHead';
-import VideoSection from '@/components/VideoSection';
+
 
 const HomePage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); 
@@ -52,27 +50,18 @@ const HomePage = () => {
 
   return (
     <div className="relative">
-      <Analytics /> 
-      {isLoading ? (
-        <LoadingScreen onLoadComplete={handleLoadComplete} /> 
-      ) : (
-        <>
+          <Analytics /> 
           <Header />
-          <AnimationHead />
           <HeroSection />
           <DynamicDataDashboard /> 
           <CompanyOverview />
           <AboutSection /> 
-          <VideoSection />
           <ServicesSection />
           <Article /> 
           <TestimonialsSection />
           <SlideOutButton isOpen={isMenuOpen} closeMenu={toggleMenu} /> 
           <Overlay />
           <ChatbotComponent isVisible={showChatbot} /> 
-          <Footer />
-        </>
-      )}
     </div>
   );
 };
