@@ -49,7 +49,7 @@ const Service = () => {
                   <Image src={service.image} alt={service.title} layout="fill" objectFit="cover" className="rounded-lg" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-800">{service.title}</h3>
-                <p className="text-gray-600 text-justify">{service.description}</p>
+                <p className="text-gray-600 text-left">{service.description}</p>
               </div>
             ))}
           </div>
@@ -80,7 +80,7 @@ const Service = () => {
                   <Image src={service.image} alt={service.title} layout="fill" objectFit="cover" className="rounded-lg" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-800">{service.title}</h3>
-                <p className="text-gray-600 text-justify">{service.description}</p>
+                <p className="text-gray-600 text-left">{service.description}</p>
               </div>
             ))}
           </div>
@@ -111,7 +111,7 @@ const Service = () => {
                   <Image src={service.image} alt={service.title} layout="fill" objectFit="cover" className="rounded-lg" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-800">{service.title}</h3>
-                <p className="text-gray-600 text-justify">{service.description}</p>
+                <p className="text-gray-600 text-left">{service.description}</p>
               </div>
             ))}
           </div>

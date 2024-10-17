@@ -12,10 +12,11 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 import ServicesSection from '@/components/ServicesSection';
 import SlideOutButton from '@/components/SlideOutButton';
 import Overlay from '@/components/Overlay';
-import LoadingScreen from '@/components/LoadingScreen'; 
+import LoadingScreen from '@/components/LoadingScreen';
 import ChatbotComponent from '@/components/Chatbot'; 
 import DynamicDataDashboard from '@/components/DynamicDataDashboard';
 import AnimationHead from '@/components/AnimationHead';
+import VideoSection from '@/components/VideoSection';
 
 const HomePage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); 
@@ -62,6 +63,7 @@ const HomePage = () => {
           <DynamicDataDashboard /> 
           <CompanyOverview />
           <AboutSection /> 
+          <VideoSection />
           <ServicesSection />
           <Article /> 
           <TestimonialsSection />

@@ -53,7 +53,7 @@ const CompanyOverview = () => {
 
       <div className="company-overview flex-grow pl-0 mb-0 md:mb-2"> 
         <h2 className="text-4xl font-bold text-center mb-2 md:mb-2">Company Overview</h2>
-        <p className="text-base text-left mb-0 text-justify">
+        <p className="text-base mb-0 text-left md:text-justify">
           Established in 1995, Ciptadaya has been at the forefront of the renewable energy revolution.
           Our dedicated team works tirelessly to deliver innovative solutions that empower communities while protecting
           the environment. With a commitment to sustainability, we lead the charge towards a greener future. Our

@@ -1,17 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Baskerville&display=swap');
-@import "~slick-carousel/slick/slick.css";
-@import "~slick-carousel/slick/slick-theme.css";
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet');
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Baskerville', serif;
+  font-family: 'Lora', serif;
   background-color: #f7f7ef; 
   color: #4a4a4a; 
   overflow-x: hidden; 
@@ -122,16 +120,6 @@ nav a:hover {
   color: lightseagreen; 
 }
 
-/* Company Logo Styles */
-.logo {
-  display: flex;
-  align-items: center;
-}
-
-.logo img {
-  height: 40px;
-  margin-right: 10px;
-}
 
 /* Keyframes for sway animation */
 @keyframes sway {

@@ -16,7 +16,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Ciptadaya",
-  description: "For Greener Future",
+  description: "A humble initiative for greener and better future",
 };
 
 export default function RootLayout({

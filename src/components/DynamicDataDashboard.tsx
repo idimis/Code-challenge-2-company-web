@@ -85,7 +85,7 @@ const DynamicDataDashboard: React.FC = () => {
         animate={isVisible ? "visible" : "hidden"}
         variants={{ hidden: { opacity: 0, x: getRandomDirection() }, visible: { opacity: 1, x: 0 } }}
         transition={{ duration: 1.2 }}
-        className="text-black text-4xl font-bold mb-5 text-center"
+        className="text-#4a4a4a text-4xl font-bold mb-5 text-center"
       >
         Let&apos;s contribute to Mother Earth!
       </motion.div>
@@ -102,10 +102,10 @@ const DynamicDataDashboard: React.FC = () => {
             'Trees Cut:',
             'World Pollution:',
             'Losses from Non-Renewable Energy:',
-            'Efforts for Renewable Energy:',
+            'Renewable Energy Efforts:',
             'Trees Planted:',
             'Carbon Reduction:',
-            'Company Efforts (New World):',
+            'Company Efforts (Ciptadaya):',
             'Emerging Green Jobs:',
             'Water Saved:',
           ];
@@ -123,12 +123,22 @@ const DynamicDataDashboard: React.FC = () => {
                 {key === 'worldPollution' ? (value / 1_000_000_000).toFixed(2) :
                   key === 'lossesFromNonRenewable' ? `$${value.toLocaleString()}` :
                   key === 'carbonReduction' ? (value / 1_000_000).toFixed(2) :
+                  key === 'treesPlanted' ? value.toLocaleString() : 
+                  key === 'treesCut' ? value.toLocaleString() : 
+                  key === 'emergingGreenJobs' ? value.toLocaleString() :         
+                  key === 'renewableEfforts' ? value.toLocaleString() :
+                  key === 'companyEfforts' ? value.toLocaleString() :      
                   value.toLocaleString()}
                 <span className="text-sm">
                   {key === 'worldPollution' ? ' billion tons' :
                   key === 'lossesFromNonRenewable' ? ' billion USD' :
                   key === 'carbonReduction' ? ' million tons of CO₂' :
                   key === 'waterSaved' ? ' liters' :
+                  key === 'treesPlanted' ? ' trees' : 
+                  key === 'treesCut' ? ' trees' :                
+                  key === 'emergingGreenJobs' ? ' jobs' :                          
+                  key === 'renewableEfforts' ? ' efforts' :
+                  key === 'companyEfforts' ? ' efforts ' :                
                   ' units'}
                 </span>
               </motion.p>

@@ -23,7 +23,7 @@
           
           <section className="mb-10 md:mb-20 flex flex-col items-center mt-8"> 
             <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 text-center">About Us</h1>
-            <p className="text-base md:text-lg text-gray-600 mb-6 max-w-2xl mx-auto text-justify leading-relaxed">
+            <p className="text-base md:text-lg text-gray-600 mb-6 max-w-2xl mx-auto text-left leading-relaxed">
               We are a global leader in renewable energy, committed to transforming the way the world generates power. 
               With cutting-edge technology, we aim to create a cleaner and more sustainable future.
             </p>
@@ -46,7 +46,7 @@
             <h2 className="text-left text-3xl md:text-4xl font-semibold text-gray-800 mb-4">Our History</h2>
             <div className="flex flex-col md:flex-row justify-between items-start gap-4 md:gap-8">
               <div className="md:w-1/2">
-                <p className="text-base md:text-lg text-gray-600 mb-6 text-justify"> 
+                <p className="text-base md:text-lg text-gray-600 mb-6 text-left"> 
                   Founded in 1995, our company began as a small startup focused on solar energy. Over the years, we have 
                   expanded into wind, osmotic, and geothermal energy, becoming a global player in the renewable energy sector.
                   Our growth has been steady, marked by continuous innovation and collaboration with industry leaders. From 
@@ -94,7 +94,7 @@
           <section className="mb-10 md:mb-20">
             <h2 className="text-left text-3xl md:text-4xl font-semibold text-gray-800 mb-4">Our Culture</h2>
             <div className="flex flex-col md:flex-row items-center md:justify-between">
-              <p className="text-base md:text-lg text-gray-600 mb-6 text-justify md:w-1/2">
+              <p className="text-base md:text-lg text-gray-600 mb-6 text-left md:w-1/2">
                 At our company, we believe that a positive and vibrant culture is key to our success. We foster an environment 
                 where collaboration, innovation, and creativity thrive. Our team members are encouraged to share their ideas, 
                 take risks, and learn from each other. We prioritize work-life balance and ensure that our workplace is 
@@ -152,7 +152,8 @@
                   Contact us today and become part of the renewable energy revolution.
                 </p>
               </div>
-              <a href={mailtoLink} className="bg-transparent border border-black font-semibold px-4 md:px-6 py-2 rounded-lg shadow hover:bg-gray-200 transition">
+              <a href={mailtoLink} className="bg-transparent border border-black font-semibold 
+              px-4 md:px-6 py-2 rounded-lg shadow hover:bg-gray-200 transition md:ml-4">
                 Contact Us
               </a>
             </div>
