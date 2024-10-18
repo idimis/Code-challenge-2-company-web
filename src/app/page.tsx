@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Analytics } from "@vercel/analytics/react"; 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import HeroSection from '@/components/HeroSection';
+// import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import LoadingScreen from '@/components/LoadingScreen'; 
 import Article from '@/components/Article';
@@ -61,7 +61,7 @@ const HomePage = () => {
           <Header />
           <link rel="icon" href="/favicon.ico" />
           <AnimationHead />
-          <HeroSection />
+          
           <DynamicDataDashboard /> 
           <CompanyOverview />
           <AboutSection /> 
