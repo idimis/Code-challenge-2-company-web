@@ -20,10 +20,12 @@ const Header = () => {
         <div className="flex items-center ml-5">
           <Image 
             src={logoImage} 
-            alt="Logo Brand"
-            width={200}
-            height={200}
-            className="object-contain w-[100px] h-[auto] md:w-[200px]" 
+            alt="Company Logo" 
+            width={150} 
+            height={50} 
+            priority 
+            layout="intrinsic" 
+            className="object-contain" 
           />
         </div>
 
@@ -36,7 +38,7 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Navigation Links */}
+        {/* Desktop Navigation Links */}
         <nav className="hidden md:flex items-center ml-5">
           <Link href="/" className="mx-4 text-black hover:underline">Home</Link>
           <Link href="/about" className="mx-4 text-black hover:underline">About Us</Link>
