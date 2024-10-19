@@ -2,18 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet');
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Lora', serif;
+  font-family: 'Poppins', sans-serif;
   background-color: white; 
   color: black; 
   overflow-x: hidden; 
-  max-width: 1440px; 
   margin-left: auto; 
   margin-right: auto; 
   

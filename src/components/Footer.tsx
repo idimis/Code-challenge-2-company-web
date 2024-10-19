@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
   )}&body=${encodeURIComponent(body)}`;
 
   return (
-    <footer className="max-w-[1440px] mx-auto p-5">
+    <footer className="mx-auto p-5">
       {/* Contact Section */}
       <div className="p-2 text-xl font-bold text-center">
         For inquiries, please feel free to{' '}

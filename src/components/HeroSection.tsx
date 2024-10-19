@@ -1,43 +1,79 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import solarPanelImage from '@/public/solarpanelba.jpg';
+import { motion, AnimatePresence } from 'framer-motion';
+import goodlifeImage from '@/public/goodlife.jpg';
+
+
+const textArray = [
+  "It starts today. There is no tomorrow.",
+  "For our children, we nurture the land.",
+  "Preserving the earth, we heal and grow.",
+  "With every plant, we take a stand.",
+  "From the soil, we harvest hope in flow.",
+  "A sustainable future starts with our hands."
+];
+
 
 const HeroSection = () => {
-  return (
-    <div className="relative flex items-center justify-center overflow-hidden min-h-[300px] md:min-h-[800px] mt-10">
-      {/* Background Image */}
-      <Image
-        src={solarPanelImage}
-        alt="Solar Panel Field"
-        layout="fill"
-        objectFit="cover"
-        objectPosition="top center"
-        loading="lazy" 
-        className="z-0 brightness-[85%]" 
-      />
+  const [currentText, setCurrentText] = useState(0);
 
-      {/* Text Overlay */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center z-10 text-center text-white p-5">
-        <div className="mt-5 max-w-md mx-auto">
-          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 drop-shadow-md">
-            Harnessing the Power of Nature
-          </h1>
-          <p className="text-sm sm:text-base md:text-lg mb-3 drop-shadow-sm">
-            Join us in creating a sustainable future through renewable energy solutions.
-          </p>
-          <div className="flex justify-center">
-            <a
-              href="/about"
-              className="inline-block px-3 py-2 bg-transparent border border-white text-white font-semibold rounded hover:bg-gray-200 hover:text-black transition"
-              style={{ fontSize: '0.75rem', minWidth: '100px' }}
-            >
-              Discover More
-            </a>
-          </div>
-        </div> 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentText((prev) => (prev + 1) % textArray.length);
+    }, 3000); 
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="relative flex bg-gray-800 items-center justify-center overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 top-0">
+        <Image
+          src={goodlifeImage}
+          alt="farm sustainable"
+          className="w-full h-full object-cover z-0 opacity-60"
+          loading="lazy"
+        />
+      </div>
+
+     {/* Content Container with Text */}
+<div className="max-w-[1440px] flex flex-col relative z-10 p-8 md:p-16 text-center h-screen mt-60">
+  <AnimatePresence mode="wait">
+    <motion.h1
+      key={currentText}
+      className="text-4xl md:text-6xl font-bold text-white leading-relaxed mb-4"
+      initial={{ opacity: 0, y: 32 }}  
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 20 }}
+      transition={{ duration: 0.5 }}
+    >
+      {textArray[currentText]}
+    </motion.h1>
+  </AnimatePresence>
+
+  <p className="text-lg md:text-2xl text-white my-2">
+    Renewable energy solutions designed to create a cleaner, greener, and brighter future for all.
+  </p>
+</div>
+
+      
+      <div className="absolute bottom-0 right-0 mb-10 mr-10 flex space-x-4"> 
+        <a
+          href="/services"
+          className="px-8 py-3 bg-transparent border border-black text-white font-semibold rounded-md hover:bg-gray-200 transition"
+        >
+          Let&apos;s collaborate!
+        </a>
+        <a
+          href="/about"
+          className="px-8 py-3 bg-transparent border border-black text-white font-semibold rounded-md hover:bg-gray-200 transition"
+        >
+          Learn More
+        </a>
       </div>
     </div>
   );
-};
+}
 
 export default HeroSection;

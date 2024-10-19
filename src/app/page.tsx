@@ -1,5 +1,6 @@
 "use client";
 
+import { Analytics } from "@vercel/analytics/react"; 
 import React, { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -52,10 +53,12 @@ const HomePage = () => {
 
   return (
     <div className="relative"> 
+        <Analytics />
       {isLoading ? (
         <LoadingScreen onLoadComplete={handleLoadComplete} /> 
       ) : (
         <>
+          
           <Header />
           <link rel="icon" href="/favicon.ico" />
           <HeroSection />

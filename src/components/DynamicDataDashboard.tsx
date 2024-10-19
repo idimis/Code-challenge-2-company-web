@@ -78,7 +78,7 @@ const DynamicDataDashboard: React.FC = () => {
   return (
     <div
       ref={dashboardRef}
-      className="flex flex-col items-center justify-center max-w-[1440px] mx-auto my-10 p-5 shadow-lg rounded-lg"
+      className="flex flex-col items-center justify-center mx-auto my-10 p-5 rounded-lg"
     >
       <motion.div
         initial="hidden"
