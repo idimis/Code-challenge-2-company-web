@@ -17,15 +17,15 @@ const Service = () => {
     <div className="min-h-screen">
       <Header />
       <div className="container mx-auto px-4 py-16">
-        <h1 className="text-center text-5xl font-bold text-gray-800 mb-10">Our Services</h1>
+        <h1 className="text-center text-5xl font-bold mb-10">Our Services</h1>
 
-        <p className="text-center text-lg text-gray-600 mx-5 mb-10">
+        <p className="text-center text-lg mx-5 mb-10">
           We provide innovative renewable energy solutions, empowering businesses, governments, and communities  
           to harness the power of nature and transition to clean, sustainable energy sources.
         </p>
 
         <section className="mb-16">
-          <h2 className="text-4xl font-semibold text-gray-800 mb-6 text-center">Services for Businesses</h2>
+          <h2 className="text-4xl font-semibold mb-6 text-center">Services for Businesses</h2>
           <div className="flex flex-wrap justify-center gap-6 md:gap-8">
             {[
               {
@@ -48,15 +48,15 @@ const Service = () => {
                 <div className="w-full h-64 relative mb-4">
                   <Image src={service.image} alt={service.title} layout="fill" objectFit="cover" className="rounded-lg" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-800">{service.title}</h3>
-                <p className="text-gray-600 text-left">{service.description}</p>
+                <h3 className="text-2xl font-bold">{service.title}</h3>
+                <p className="text-left">{service.description}</p>
               </div>
             ))}
           </div>
         </section>
 
         <section className="mb-16">
-          <h2 className="text-4xl font-semibold text-gray-800 mb-6 text-center">Services for Governments</h2>
+          <h2 className="text-4xl font-semibold mb-6 text-center">Services for Governments</h2>
           <div className="flex flex-wrap justify-center gap-6 md:gap-8">
             {[
               {
@@ -79,15 +79,15 @@ const Service = () => {
                 <div className="w-full h-64 relative mb-4">
                   <Image src={service.image} alt={service.title} layout="fill" objectFit="cover" className="rounded-lg" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-800">{service.title}</h3>
-                <p className="text-gray-600 text-left">{service.description}</p>
+                <h3 className="text-2xl font-bold">{service.title}</h3>
+                <p className="text-left">{service.description}</p>
               </div>
             ))}
           </div>
         </section>
 
         <section className="mb-16">
-          <h2 className="text-4xl font-semibold text-gray-800 mb-6 text-center">Services for Communities</h2>
+          <h2 className="text-4xl font-semibold mb-6 text-center">Services for Communities</h2>
           <div className="flex flex-wrap justify-center gap-6 md:gap-8">
             {[
               {
@@ -110,8 +110,8 @@ const Service = () => {
                 <div className="w-full h-64 relative mb-4">
                   <Image src={service.image} alt={service.title} layout="fill" objectFit="cover" className="rounded-lg" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-800">{service.title}</h3>
-                <p className="text-gray-600 text-left">{service.description}</p>
+                <h3 className="text-2xl font-bold">{service.title}</h3>
+                <p className="text-left">{service.description}</p>
               </div>
             ))}
           </div>

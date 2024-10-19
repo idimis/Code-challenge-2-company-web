@@ -22,8 +22,8 @@
         <div className="container mx-auto max-w-6xl px-4 py-10 md:py-20">
           
           <section className="mb-10 md:mb-20 flex flex-col items-center mt-8"> 
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 text-center">About Us</h1>
-            <p className="text-base md:text-lg text-gray-600 mb-6 max-w-2xl mx-auto text-left leading-relaxed">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center">About Us</h1>
+            <p className="text-base md:text-lg mb-6 max-w-2xl mx-auto text-left leading-relaxed">
               We are a global leader in renewable energy, committed to transforming the way the world generates power. 
               With cutting-edge technology, we aim to create a cleaner and more sustainable future.
             </p>
@@ -43,10 +43,10 @@
 
           
           <section className="mb-10 md:mb-20"> 
-            <h2 className="text-left text-3xl md:text-4xl font-semibold text-gray-800 mb-4">Our History</h2>
+            <h2 className="text-left text-3xl md:text-4xl font-semibold mb-4">Our History</h2>
             <div className="flex flex-col md:flex-row justify-between items-start gap-4 md:gap-8">
               <div className="md:w-1/2">
-                <p className="text-base md:text-lg text-gray-600 mb-6 text-left"> 
+                <p className="text-base md:text-lg mb-6 text-left"> 
                   Founded in 1995, our company began as a small startup focused on solar energy. Over the years, we have 
                   expanded into wind, osmotic, and geothermal energy, becoming a global player in the renewable energy sector.
                   Our growth has been steady, marked by continuous innovation and collaboration with industry leaders. From 
@@ -71,18 +71,18 @@
 
           
           <section className="mb-10 md:mb-20"> 
-            <h2 className="text-left text-3xl md:text-4xl font-semibold text-gray-800 mb-4">Vision & Mission</h2>
+            <h2 className="text-left text-3xl md:text-4xl font-semibold mb-4">Vision & Mission</h2>
             <div className="flex flex-col md:flex-row justify-between items-start gap-4 md:gap-8">
               <div className="md:w-1/2 bg-white p-4 md:p-6 shadow-lg rounded-lg mb-6"> 
-                <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-2">Our Vision</h3>
-                <p className="text-base md:text-lg text-gray-600">
+                <h3 className="text-xl md:text-2xl font-bold mb-2">Our Vision</h3>
+                <p className="text-base md:text-lg">
                   To be the world leader in renewable energy, creating sustainable solutions that empower communities and 
                   preserve the planet for future generations.
                 </p>
               </div>
               <div className="md:w-1/2 bg-white p-4 md:p-6 shadow-lg rounded-lg mb-6"> 
-                <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-2">Our Mission</h3>
-                <p className="text-base md:text-lg text-gray-600">
+                <h3 className="text-xl md:text-2xl font-bold mb-2">Our Mission</h3>
+                <p className="text-base md:text-lg">
                   Our mission is to develop innovative and efficient renewable energy systems that reduce dependency on 
                   fossil fuels, foster sustainable development, and enhance quality of life globally.
                 </p>
@@ -92,9 +92,9 @@
 
             
           <section className="mb-10 md:mb-20">
-            <h2 className="text-left text-3xl md:text-4xl font-semibold text-gray-800 mb-4">Our Culture</h2>
+            <h2 className="text-left text-3xl md:text-4xl font-semibold mb-4">Our Culture</h2>
             <div className="flex flex-col md:flex-row items-center md:justify-between">
-              <p className="text-base md:text-lg text-gray-600 mb-6 text-left md:w-1/2">
+              <p className="text-base md:text-lg mb-6 text-left md:w-1/2">
                 At our company, we believe that a positive and vibrant culture is key to our success. We foster an environment 
                 where collaboration, innovation, and creativity thrive. Our team members are encouraged to share their ideas, 
                 take risks, and learn from each other. We prioritize work-life balance and ensure that our workplace is 
@@ -120,13 +120,13 @@
           </section>
 
           <section className="mb-10 md:mb-20">
-          <h2 className="text-left text-3xl md:text-4xl font-semibold text-gray-800 mb-4">Global Presence</h2>
+          <h2 className="text-left text-3xl md:text-4xl font-semibold mb-4">Global Presence</h2>
           <div className="flex flex-col gap-8 md:flex-row md:gap-8">
             
             <div className="md:w-1/2 flex flex-col items-center">
               <Image src={about3} alt="HQ Image" className="rounded-lg object-cover" layout="intrinsic" width={370} height={240} />
-              <h3 className="text-xl font-bold text-gray-800 mt-4">Headquarters</h3>
-              <p className="text-gray-600 text-center">
+              <h3 className="text-xl font-bold mt-4">Headquarters</h3>
+              <p className="text-center">
                 Our global headquarters are located in New York City, managing worldwide operations, research, and partnerships.
               </p>
             </div>
@@ -134,8 +134,8 @@
             
             <div className="md:w-1/2 flex flex-col items-center">
               <Image src={about4} alt="Regional Office Image" className="rounded-lg object-cover" layout="intrinsic" width={370} height={240} />
-              <h3 className="text-xl font-bold text-gray-800 mt-4">Regional Offices</h3>
-              <p className="text-gray-600 text-center">
+              <h3 className="text-xl font-bold mt-4">Regional Offices</h3>
+              <p className="text-center">
                 We manage projects across Europe, Asia, and Africa through offices in London, Tokyo, and Cape Town.
               </p>
             </div>
