@@ -8,6 +8,19 @@ import instagramIcon from '@/public/icons/instagram.png';
 import facebookIcon from '@/public/icons/facebook.jpg';
 import whatsappIcon from '@/public/icons/whatsapp.png';
 
+
+type FooterColumnProps = {
+  title: string;
+  children: React.ReactNode;
+};
+
+const FooterColumn: React.FC<FooterColumnProps> = ({ title, children }) => (
+  <div className="flex flex-col items-center md:items-start space-y-3">
+    <h4 className="text-lg font-bold">{title}</h4>
+    {children}
+  </div>
+);
+
 const Footer: React.FC = () => {
   const email = 'your-email@example.com';
   const subject = 'General Inquiry';
@@ -98,16 +111,5 @@ const Footer: React.FC = () => {
   );
 };
 
-type FooterColumnProps = {
-  title: string;
-  children: React.ReactNode;
-};
-
-const FooterColumn: React.FC<FooterColumnProps> = ({ title, children }) => (
-  <div className="flex flex-col items-center md:items-start space-y-3">
-    <h4 className="text-lg font-bold">{title}</h4>
-    {children}
-  </div>
-);
 
 export default Footer;

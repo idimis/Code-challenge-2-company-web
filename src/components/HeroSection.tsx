@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'; 
+import React, { useState, useEffect } from 'react';  
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import goodlifeImage from '@/public/goodlife.jpg';
@@ -30,45 +30,42 @@ const HeroSection = () => {
     if (audioRef.current) {
       if (isPlaying) {
         audioRef.current.pause();
-        console.log("Audio paused");
       } else {
-        audioRef.current.play().then(() => {
-          console.log("Audio playing");
-        }).catch(error => {
-          console.error("Error playing audio:", error);
-        });
+        audioRef.current.play().catch(error => console.error("Error playing audio:", error));
       }
       setIsPlaying(!isPlaying);
-    } else {
-      console.error("Audio reference is null");
     }
   };
 
   return (
-    <div className="relative flex bg-green-800 items-center justify-center overflow-hidden h-screen">
-      {/* Background Image */}
-      <div className="absolute inset-0 opacity-50">
-        <Image
-          src={goodlifeImage}
-          alt="farm sustainable"
-          className="w-full h-full object-cover"
-          loading="lazy"
-          style={{ objectFit: 'cover' }}
-        />
+    <div className="relative flex flex-col items-center overflow-hidden min-h-[200px] md:min-h-[900px] mt-0">
+      <div className="absolute inset-0 flex items-center justify-center z-0">
+        <div className="max-w-[1920px] w-full">
+          <Image
+            src={goodlifeImage}
+            alt="farm sustainable"
+            className="w-full h-full object-cover rounded-lg shadow-lg"    
+            sizes="(max-width: 768px) 100vw, (min-width: 769px) 100vw" 
+            style={{ 
+              filter: 'brightness(85%)', 
+              objectFit: 'cover',  
+              objectPosition: 'top center'  
+            }}  
+          />
+        </div>
       </div>
 
-      {/* Audio Element */}
       <audio ref={audioRef} loop>
         <source src="/ods.ogg" type="audio/ogg" />
         Your browser does not support the audio element.
       </audio>
 
-      {/* Content Container with Text */}
-      <div className="flex flex-col justify-center items-center relative z-10 p-4 sm:p-8 md:p-12 text-center h-full mb-60">
+      {/* Adjusted Text Container */}
+      <div className="content-container absolute inset-0 flex flex-col justify-center items-center p-4 md:p-12 z-10">
         <AnimatePresence mode="wait">
           <motion.h1
             key={currentText}
-            className="text-2xl sm:text-4xl md:text-6xl font-bold text-white leading-relaxed mb-1 md:mb-2"
+            className="hero-text text-1x1 sm:text-4xl md:text-5xl font-bold text-white leading-relaxed mb-1 md:mb-2"
             initial={{ opacity: 0, y: 20 }}  
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -78,35 +75,26 @@ const HeroSection = () => {
           </motion.h1>
         </AnimatePresence>
 
-        <p className="text-sm sm:text-lg md:text-2xl text-white my-1 md:mb-2">
+        <p className="text-xs sm:text-lg md:text-2xl text-white my-1 md:mb-2 text-center">
           Renewable energy solutions designed to create a cleaner, greener, and brighter future for all.
         </p>
 
-        {/* Sound Toggle Button */}
-        <button 
-          onClick={toggleAudio} 
-          className="mt-4 px-4 py-2 bg-white text-green-800 font-semibold rounded-md transition hover:bg-gray-200 flex items-center"
-        >
-          {isPlaying ? <FaVolumeMute className="text-green-800" /> : <FaVolumeUp className="text-green-800" />}
-        </button>
-      </div>
-
-      <div className="absolute bottom-0 right-0 mb-4 sm:mb-6 mr-4 sm:mr-10 flex space-x-2 sm:space-x-4">
-        <a
-          href="/services"
-          className="px-6 sm:px-8 py-2 sm:py-3 bg-transparent border border-black text-white font-semibold rounded-md hover:bg-gray-200 transition"
-        >
-          Let&apos;s collaborate!
-        </a>
         <a
           href="/about"
-          className="px-6 sm:px-8 py-2 sm:py-3 bg-transparent border border-black text-white font-semibold rounded-md hover:bg-gray-200 transition"
+          className="px-2 sm:px-6 py-1.5 sm:py-2.5 bg-transparent border border-white text-white text-xs sm:text-base font-semibold rounded-md hover:bg-gray-200 transition"
         >
           Learn More
         </a>
       </div>
+
+      <button 
+        onClick={toggleAudio} 
+        className="absolute top-4 left-4 px-3 py-2 bg-white font-semibold rounded-md transition hover:bg-gray-200 flex items-center z-20"
+      >
+        {isPlaying ? <FaVolumeMute /> : <FaVolumeUp />}
+      </button>
     </div>
   );
-}
+};
 
 export default HeroSection;
