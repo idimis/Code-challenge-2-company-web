@@ -4,7 +4,7 @@ const TermsOfUse: React.FC = () => {
   return (
     <div className="max-w-2xl mx-auto px-4 py-12">
       <h1 className="text-3xl font-bold mb-6">Terms of Use</h1>
-      <p className="text-lg mb-4"><strong>Effective Date:</strong> [Insert Date]</p>
+      <p className="text-lg mb-4"><strong>Effective Date:</strong> 02 July 2024 </p>
       <p className="mb-4">
         Welcome to Ciptadaya, a green energy company. By accessing or using our website, products, and services, you agree to comply with these Terms of Use. Please read them carefully.
       </p>

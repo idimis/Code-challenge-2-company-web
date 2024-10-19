@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';  
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import goodlifeImage from '@/public/goodlife.jpg';
-import { FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
 
 const textArray = [
   "It starts today, no more sorrow.",
@@ -15,8 +14,6 @@ const textArray = [
 
 const HeroSection = () => {
   const [currentText, setCurrentText] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const audioRef = React.useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -26,75 +23,56 @@ const HeroSection = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const toggleAudio = () => {
-    if (audioRef.current) {
-      if (isPlaying) {
-        audioRef.current.pause();
-      } else {
-        audioRef.current.play().catch(error => console.error("Error playing audio:", error));
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
-
   return (
-    <div className="relative flex flex-col items-center overflow-hidden min-h-[200px] md:min-h-[900px] mt-0">
-      <div className="absolute inset-0 flex items-center justify-center z-0">
-        <div className="max-w-[1920px] w-full">
-          <Image
-            src={goodlifeImage}
-            alt="farm sustainable"
-            className="w-full h-full object-cover rounded-lg shadow-lg"    
-            sizes="(max-width: 768px) 100vw, (min-width: 769px) 100vw" 
-            style={{ 
-              filter: 'brightness(85%)', 
-              objectFit: 'cover',  
-              objectPosition: 'top center'  
-            }}  
-          />
-        </div>
+    <div className="relative flex bg-gray-800 items-center justify-center overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 top-0">
+        <Image
+          src={goodlifeImage}
+          alt="farm sustainable"
+          className="w-full h-full object-cover z-0 opacity-80"
+          loading="lazy"
+        />
       </div>
 
-      <audio ref={audioRef} loop>
-        <source src="/ods.ogg" type="audio/ogg" />
-        Your browser does not support the audio element.
-      </audio>
+     {/* Content Container with Text */}
+<div className="max-w-[1440px] flex flex-col relative z-10 p-8 md:p-16 text-center h-screen mt-60">
+  <AnimatePresence mode="wait">
+    <motion.h1
+      key={currentText}
+      className="text-4xl md:text-6xl font-bold text-white leading-relaxed mb-4"
+      initial={{ opacity: 0, y: 32 }}  
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 20 }}
+      transition={{ duration: 0.5 }}
+    >
+      {textArray[currentText]}
+    </motion.h1>
+  </AnimatePresence>
 
-      {/* Adjusted Text Container */}
-      <div className="content-container absolute inset-0 flex flex-col justify-center items-center p-4 md:p-12 z-10">
-        <AnimatePresence mode="wait">
-          <motion.h1
-            key={currentText}
-            className="hero-text text-1x1 sm:text-4xl md:text-5xl font-bold text-white leading-relaxed mb-1 md:mb-2"
-            initial={{ opacity: 0, y: 20 }}  
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5 }}
-          >
-            {textArray[currentText]}
-          </motion.h1>
-        </AnimatePresence>
+  <p className="text-lg md:text-2xl text-white my-2">
+    Renewable energy solutions designed to create a cleaner, greener, and brighter future for all.
+  </p>
+</div>
 
-        <p className="text-xs sm:text-lg md:text-2xl text-white my-1 md:mb-2 text-center">
-          Renewable energy solutions designed to create a cleaner, greener, and brighter future for all.
-        </p>
+<div className="absolute bottom-0 right-0 mb-10 mr-10 flex space-x-4 z-10 pointer-events-auto">
+  <a
+    href="/services"
+    className="px-4 md:px-8 py-3 bg-transparent border border-white text-white font-semibold rounded-md hover:bg-gray-200 transition"
+  >
+    Let&apos;s collaborate!
+  </a>
+  <a
+    href="/about"
+    className="px-4 md:px-8 py-3 bg-transparent border border-white text-white font-semibold rounded-md hover:bg-gray-200 transition"
+  >
+    Learn More
+  </a>
+</div>
 
-        <a
-          href="/about"
-          className="px-2 sm:px-6 py-1.5 sm:py-2.5 bg-transparent border border-white text-white text-xs sm:text-base font-semibold rounded-md hover:bg-gray-200 transition"
-        >
-          Learn More
-        </a>
-      </div>
-
-      <button 
-        onClick={toggleAudio} 
-        className="absolute top-4 left-4 px-3 py-2 bg-white font-semibold rounded-md transition hover:bg-gray-200 flex items-center z-20"
-      >
-        {isPlaying ? <FaVolumeMute /> : <FaVolumeUp />}
-      </button>
+      
     </div>
   );
-};
+}
 
 export default HeroSection;

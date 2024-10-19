@@ -152,6 +152,7 @@ const GreenPersonQuiz = () => {
   const [name, setName] = useState('');
   const [quizStarted, setQuizStarted] = useState(false); 
 
+
   const handleOptionChange = (score: number) => {
       const newAnswers = [...answers];
       newAnswers[currentQuestion] = score;
@@ -200,6 +201,8 @@ const GreenPersonQuiz = () => {
   const startQuiz = () => {
       setQuizStarted(true); 
   };
+
+  
 
   return (
     <div className="max-w-[800px] mx-auto p-4 flex flex-col items-center justify-center min-h-screen pt-4 md:pt-6"> 

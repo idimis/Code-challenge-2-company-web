@@ -4,7 +4,7 @@ const PrivacyPolicy: React.FC = () => {
   return (
     <div className="max-w-2xl mx-auto px-4 py-12">
       <h1 className="text-3xl font-bold mb-6">Privacy Policy</h1>
-      <p className="text-lg mb-4"><strong>Effective Date:</strong> [Insert Date]</p>
+      <p className="text-lg mb-4"><strong>Effective Date:</strong> 02 July 2024 </p>
       <p className="mb-4">
         At Ciptadaya, we are committed to protecting your privacy. This Privacy Policy outlines how we collect, use, and safeguard your information when you visit our website or use our services.
       </p>

@@ -93,15 +93,15 @@ const Footer: React.FC = () => {
 
         {/* Bottom Section */}
         <div className="flex flex-col items-center justify-between gap-6 mt-6 md:flex-row">
-          <p className="text-sm text-gray-400 text-center">
+          <p className="text-sm text-gray-600 text-center">
             © 2024 Ciptadaya. All rights reserved.
           </p>
 
           <div className="flex gap-4">
-            <Link href="/terms" className="text-gray-400 hover:text-white">
+            <Link href="/terms" className="text-sm text-gray-600 hover:text-white">
               Terms of Use
             </Link>
-            <Link href="/privacy-policy" className="text-gray-400 hover:text-white">
+            <Link href="/privacy-policy" className="text-sm text-gray-600 hover:text-white">
               Privacy Policy
             </Link>
           </div>
