@@ -16,7 +16,7 @@ const Header = () => {
     <header className="bg-white text-black shadow">
       <div className="max-w-[1440px] mx-auto flex items-center justify-between p-5">
         
-        {/* Logo */}
+        
         <div className="flex items-center ml-5">
           <Image 
             src={logoImage} 
@@ -27,7 +27,7 @@ const Header = () => {
           />
         </div>
 
-        {/* Mobile Menu Button */}
+        
         <div className="md:hidden flex items-center">
           <button onClick={toggleMobileMenu} className="text-black focus:outline-none">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -36,7 +36,7 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Navigation Links */}
+        
         <nav className="hidden md:flex items-center ml-5">
           <Link href="/" className="mx-4 text-black hover:underline">Home</Link>
           <Link href="/about" className="mx-4 text-black hover:underline">About Us</Link>

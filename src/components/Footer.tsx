@@ -30,9 +30,9 @@ const Footer: React.FC = () => {
   return (
     <footer className="text-black">
       <div className="max-w-screen-xl mx-auto px-6 py-12">
-        {/* Top Section */}
+        
         <div className="flex flex-col items-center gap-10 md:flex-row md:justify-between">
-          {/* Logo */}
+          
           <Image
             src={logoImage}
             alt="Logo Brand"
@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
             className="object-contain w-[100px] h-auto md:w-[200px]"
           />
 
-          {/* Links & Columns */}
+          
           <div className="flex flex-wrap justify-center gap-8 md:gap-10 md:justify-between w-full">
             <FooterColumn title="Company">
               <ul className="space-y-2">
@@ -88,10 +88,10 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Divider */}
+        
         <div className="mt-8 border-t border-gray-700" />
 
-        {/* Bottom Section */}
+        
         <div className="flex flex-col items-center justify-between gap-6 mt-6 md:flex-row">
           <p className="text-sm text-gray-600 text-center">
             © 2024 Ciptadaya. All rights reserved.
