@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import Header from '@/components/Header';
 
@@ -143,6 +143,7 @@ const personalityTypes = [
   },
 ];
 
+
 const GreenPersonQuiz = () => {
   const [answers, setAnswers] = useState(Array(questions.length).fill(0));
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -195,128 +196,150 @@ const GreenPersonQuiz = () => {
   };
 
   const openFeedbackForm = () => {
-      window.open('https://tc937352e8l.typeform.com/to/nVg9PjfZ', '_blank'); 
+    window.open('https://tc937352e8l.typeform.com/to/nVg9PjfZ', '_blank'); 
   };
 
   const startQuiz = () => {
-      setQuizStarted(true); 
+    setQuizStarted(true); 
   };
-
+  
   
 
   return (
-    <div className="max-w-[800px] mx-auto p-4 flex flex-col items-center justify-center min-h-screen pt-4 md:pt-6"> 
-    <h2 className="text-4xl font-bold mb-2 text-center leading-snug mt-0"> 
-      What <span className="text-green-600">Green</span> Personality Are You?
-    </h2>
-    {!quizStarted ? (
-      <div className="flex flex-col items-center mt-4"> 
-        <p className="mb-4 text-lg text-center max-w-md">
-          This quiz will help you discover your environmental personality 
-          based on your values, habits, and preferences.
-          <span className="block mt-4">
-          Please enter your name to start:
-          </span>
-        </p>
-                  <input 
-                      type="text" 
-                      value={name} 
-                      onChange={(e) => setName(e.target.value)} 
-                      placeholder="Your name" 
-                      className="border-2 border-black p-2 mb-4 bg-transparent rounded-lg"
-                      
-                  />
-                  <button 
-                      onClick={startQuiz} 
-                      className="border-2 border-black rounded-lg py-2 px-4 bg-transparent text-gray-600 hover:bg-gray-200"
+    <div className="max-w-[1400px] mx-auto p-6 flex flex-col items-center justify-center min-h-screen pt-4 md:pt-12"> 
+      <h2 className="text-4xl font-bold mb-2 text-center leading-snug mt-0"> 
+        What <span className="text-green-600">Green</span> Personality Are You?
+      </h2>
+      {!quizStarted ? (
+        <div className="flex flex-col items-center mt-4"> 
+          <p className="mb-4 text-lg text-center max-w-md">
+            This quiz will help you discover your environmental personality 
+            based on your values, habits, and preferences.
+            <span className="block mt-4">
+              Please enter your name to start:
+            </span>
+          </p>
+          <input 
+            type="text" 
+            value={name} 
+            onChange={(e) => setName(e.target.value)} 
+            placeholder="Your name" 
+            className="border-2 border-black p-2 mb-4 bg-transparent rounded-lg"
+          />
+          <button 
+            onClick={startQuiz} 
+            className="border-2 border-black rounded-lg py-3 px-4 bg-transparent text-gray-600 hover:bg-gray-200"
+          >
+            Start Quiz
+          </button>
+  
+        
+          <div className="flex flex-col md:flex-row justify-center w-full mt-8 text-center space-y-4 md:space-y-0 md:space-x-12 md:mt-20">
+  {/* Web Visitors */}
+  <div className="flex flex-col items-center w-full md:w-1/3 space-y-1">
+    <span className="text-lg font-semibold">Web Visitors</span>
+    <span className="text-3xl font-bold animate-pulse text-yellow-700 p-5">1000+</span>
+  </div>
+
+  {/* Quiz Participants */}
+  <div className="flex flex-col items-center w-full md:w-1/3 space-y-1">
+    <span className="text-lg font-semibold">Quiz Participants</span>
+    <span className="text-3xl font-bold animate-pulse text-yellow-700 p-5">800+</span>
+  </div>
+
+  {/* Most Common Personality */}
+  <div className="flex flex-col items-center w-full md:w-1/3 space-y-1">
+    <span className="text-lg font-semibold">Most Personality</span>
+    <span className="text-3xl font-bold animate-pulse text-yellow-700 p-5 whitespace-nowrap">The Inventor</span>
+  </div>
+</div>
+
+        </div>
+
+      ) : loading ? (
+        <div className="text-center">
+          <p className="text-xl">Please wait for a moment...</p>
+          <p className="text-lg">Calculating your result...</p>
+        </div>
+      ) : result ? (
+        <div className="text-center mt-2">
+          <h3 className="text-2xl flex flex-col items-center mb-4 mt-2">
+            Hey {name}! You are
+            <span className="text-4xl font-semibold">{result.name}</span>
+          </h3>
+          <div className="flex justify-center">
+            <Image 
+              src={result.illustration} 
+              alt={result.name} 
+              className="rounded-full" 
+              width={300} 
+              height={300}
+            />
+          </div>
+          <p className="mt-4 text-lg">{result.description}</p>
+          
+          <div className="flex flex-col items-center space-y-4 mt-6">
+            <button 
+              onClick={takeQuizAgain} 
+              className="border-2 border-black rounded-lg py-2 px-4 bg-transparent text-gray-600 hover:bg-gray-200"
+            >
+              Take Quiz Again?
+            </button>
+  
+            <button
+              onClick={openFeedbackForm}
+              className="border-2 border-black rounded-lg py-2 px-4 bg-transparent text-gray-600 hover:bg-gray-200"
+            >
+              Give us Feedback
+            </button>
+          </div>
+        </div>
+      ) : (
+        <div className="w-full">
+          <h3 className="text-xl font-semibold mb-4">{questions[currentQuestion].question}</h3>
+          <div className={`transition-opacity duration-200 ${fade ? 'opacity-0' : 'opacity-100'}`}>
+            <div className="flex flex-col">
+              {questions[currentQuestion].options.map((option, index) => {
+                const isSelected = answers[currentQuestion] === questions[currentQuestion].scores[index];
+                return (
+                  <button
+                    key={index}
+                    className={`border-2 rounded-lg p-4 mb-2 text-left 
+                      ${isSelected ? 'text-lightseagreen' : 'bg-transparent text-black'}
+                      hover:bg-gray-300`}  
+                    onClick={() => handleOptionChange(questions[currentQuestion].scores[index])}
                   >
-                      Start Quiz
+                    {option}
                   </button>
-              </div>
-          ) : loading ? (
-              <div className="text-center">
-                  <p className="text-xl">Please wait for a moment...</p>
-                  <p className="text-lg">Calculating your result...</p>
-              </div>
-          ) : result ? (
-              <div className="text-center mt-2">
-                  <h3 className="text-2xl flex flex-col items-center mb-4 mt-2">
-                    Hey {name}! You are
-                        <span className="text-4xl font-semibold">{result.name}</span>
-                            </h3>
-                  <div className="flex justify-center">
-                      <Image 
-                          src={result.illustration} 
-                          alt={result.name} 
-                          className="rounded-full" 
-                          width={300} 
-                          height={300}
-                      />
-                  </div>
-                  <p className="mt-4 text-lg">{result.description}</p>
-                  
-                  <div className="flex flex-col items-center space-y-4 mt-6">
-                      <button 
-                          onClick={takeQuizAgain} 
-                          className="border-2 border-black rounded-lg py-2 px-4 bg-transparent text-gray-600 hover:bg-gray-200"
-                      >
-                          Take Quiz Again?
-                      </button>
-
-                      <button
-                          onClick={openFeedbackForm}
-                          className="border-2 border-black rounded-lg py-2 px-4 bg-transparent text-gray-600 hover:bg-gray-200"
-                      >
-                          Give us Feedback
-                      </button>
-                  </div>
-              </div>
-          ) : (
-              <div className="w-full">
-                  <h3 className="text-xl font-semibold mb-4">{questions[currentQuestion].question}</h3>
-                  <div className={`transition-opacity duration-200 ${fade ? 'opacity-0' : 'opacity-100'}`}>
-                      <div className="flex flex-col">
-                          {questions[currentQuestion].options.map((option, index) => {
-                              const isSelected = answers[currentQuestion] === questions[currentQuestion].scores[index];
-                              return (
-                                  <button
-                                      key={index}
-                                      className={`border-2 rounded-lg p-4 mb-2 text-left 
-                                          ${isSelected ? 'text-lightseagreen' : 'bg-transparent text-black'}
-                                          hover:bg-gray-300`}  
-                                      onClick={() => handleOptionChange(questions[currentQuestion].scores[index])}
-                                  >
-                                      {option}
-                                  </button>
-                              );
-                          })}
-                      </div>
-                  </div>
-              </div>
-          )}
-          {result && (
-              <div className="mt-6 md:mt-8">
-                  <h4 className="text-lg font-bold mb-2 text-center">Share your results!</h4>
-                  <div className="flex space-x-4">
-                      <a href={`https://api.whatsapp.com/send?text=I just took the Eco-friendly quiz from https://new-world-web.vercel.app/ and I'm a ${result.name}!`} target="_blank" rel="noopener noreferrer">
-                          <Image src={whatsappIcon} alt="Share on WhatsApp" width={40} height={40} />
-                      </a>
-                      <a href={`https://twitter.com/intent/tweet?text=I just took the Eco-friendly quiz from https://new-world-web.vercel.app/  and I'm a ${result.name}!`} target="_blank" rel="noopener noreferrer">
-                          <Image src={twitterIcon} alt="Share on Twitter" width={40} height={40} />
-                      </a>
-                      <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}&quote=I just took the New-world green personality quiz and I'm a ${result.name}!`} target="_blank" rel="noopener noreferrer">
-                          <Image src={facebookIcon} alt="Share on Facebook" width={40} height={40} />
-                      </a>
-                      <a href={`https://www.instagram.com/?url=${encodeURIComponent(window.location.href)}`} target="_blank" rel="noopener noreferrer">
-                          <Image src={instagramIcon} alt="Share on Instagram" width={40} height={40} />
-                      </a>
-                  </div>
-              </div>
-          )}
-      </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      )}
+      {result && (
+        <div className="mt-6 md:mt-8">
+          <h4 className="text-lg font-bold mb-2 text-center">Share your results!</h4>
+          <div className="flex space-x-4">
+            <a href={`https://api.whatsapp.com/send?text=I just took the Eco-friendly quiz from https://new-world-web.vercel.app/ and I'm a ${result.name}!`} target="_blank" rel="noopener noreferrer">
+              <Image src={whatsappIcon} alt="Share on WhatsApp" width={40} height={40} />
+            </a>
+            <a href={`https://twitter.com/intent/tweet?text=I just took the Eco-friendly quiz from https://new-world-web.vercel.app/  and I'm a ${result.name}!`} target="_blank" rel="noopener noreferrer">
+              <Image src={twitterIcon} alt="Share on Twitter" width={40} height={40} />
+            </a>
+            <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}&quote=I just took the New-world green personality quiz and I'm a ${result.name}!`} target="_blank" rel="noopener noreferrer">
+              <Image src={facebookIcon} alt="Share on Facebook" width={40} height={40} />
+            </a>
+            <a href={`https://www.instagram.com/?url=${encodeURIComponent(window.location.href)}`} target="_blank" rel="noopener noreferrer">
+              <Image src={instagramIcon} alt="Share on Instagram" width={40} height={40} />
+            </a>
+          </div>
+        </div>
+      )}
+    </div>
   );
-};
-
+  
+}
   
   
   export default function GreenPersonalityQuiz() {

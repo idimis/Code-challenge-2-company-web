@@ -58,6 +58,7 @@ const HeroSection = () => {
       {/* Audio Element */}
       <audio ref={audioRef} loop>
         <source src="/ods.ogg" type="audio/ogg" />
+        <source src="/ods.mp3" type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
 

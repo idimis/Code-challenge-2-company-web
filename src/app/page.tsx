@@ -19,6 +19,7 @@ import DynamicDataDashboard from '@/components/DynamicDataDashboard';
 
 
 
+
 const HomePage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); 
   const [isLoading, setIsLoading] = useState(true); 
