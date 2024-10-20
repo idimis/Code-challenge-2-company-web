@@ -54,7 +54,7 @@ const HomePage = () => {
   return (
     <div className="relative"> 
         <Analytics />
-      // {isLoading ? (
+       {isLoading ? (
         <LoadingScreen onLoadComplete={handleLoadComplete} /> 
       ) : (
         <>
