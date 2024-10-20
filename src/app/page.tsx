@@ -6,7 +6,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
-// import LoadingScreen from '@/components/LoadingScreen'; 
+import LoadingScreen from '@/components/LoadingScreen'; 
 import Article from '@/components/Article';
 import CompanyOverview from '@/components/CompanyOverview';
 import TestimonialsSection from '@/components/TestimonialsSection';
@@ -22,16 +22,16 @@ import DynamicDataDashboard from '@/components/DynamicDataDashboard';
 
 const HomePage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); 
- // const [isLoading, setIsLoading] = useState(true); 
+  const [isLoading, setIsLoading] = useState(true); 
   const [showChatbot, setShowChatbot] = useState(false); 
 
   const toggleMenu = () => {
     setIsMenuOpen(prev => !prev); 
   };
 
- // const handleLoadComplete = () => {
-  //  setIsLoading(false); 
- // };
+  const handleLoadComplete = () => {
+    setIsLoading(false); 
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,10 +55,10 @@ const HomePage = () => {
   return (
     <div className="relative"> 
         <Analytics />
-      {/* {isLoading ? ( */}
-        {/* <LoadingScreen onLoadComplete={handleLoadComplete} />  */}
-      {/* ) : ( */}
-        {/* <> */}
+      {isLoading ? (
+        <LoadingScreen onLoadComplete={handleLoadComplete} /> 
+      ) : (
+        <>
           
           <Header />
           <link rel="icon" href="/favicon.ico" />
@@ -74,8 +74,8 @@ const HomePage = () => {
           <Overlay />
           <ChatbotComponent isVisible={showChatbot} /> 
           <Footer />
-          {/* </> */}
-      {/* )} */}
+          </>
+      )}
     </div>
   );
 };
