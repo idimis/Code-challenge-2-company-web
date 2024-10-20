@@ -28,7 +28,7 @@ const CompanyOverview = () => {
   };
 
   return (
-    <section className="company-album-container py-10 px-5 max-w-[1008px] mx-auto"> 
+    <section className="company-album-container py-10 px-5 max-w-[1008px] mx-auto overflow-hidden"> 
       <div className="album relative mb-4 h-auto"> 
         <Slider {...settings}>
           {images.map((image, index) => (

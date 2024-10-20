@@ -27,7 +27,7 @@ const articles = [
 
 const Articles = () => {
   return (
-    <div className="max-w-[1440px] mx-auto px-6 py-10">
+    <div className="max-w-[1440px] mx-auto px-6 py-10 overflow-hidden">
       <h2 className="text-center text-3xl md:text-4xl font-bold mb-12">Media Coverage</h2>
       
       <div className="flex flex-col gap-12">

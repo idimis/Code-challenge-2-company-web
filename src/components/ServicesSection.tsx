@@ -36,7 +36,7 @@ const services: Service[] = [
 
 const ServicesSection: React.FC = () => {
   return (
-    <section className="py-10 px-5 max-w-[1440px] mx-auto mt-10">
+    <section className="py-10 px-5 max-w-[1440px] mx-auto mt-10 overflow-hidden">
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">Latest Products</h2>
       <div className="flex flex-col md:flex-row justify-between gap-6">
         {services.map((service, index) => (

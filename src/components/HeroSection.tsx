@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import goodlifeImage from '@/public/goodlife.jpg';
+// import goodlifeImage from '@/public/goodlife.jpg';
+import ghibliImage1 from '@/public/ghibli1.jpg';
+// import ghibliImage2 from '@/public/ghibli2.png';
 import { FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
 
 const textArray = [
@@ -15,10 +17,10 @@ const textArray = [
 
 const HeroSection = () => {
   const [currentText, setCurrentText] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false); // State for audio play/pause
-  const audioRef = useRef<HTMLAudioElement | null>(null); // Ref for audio element
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null); 
 
-  // Cycle through text every 3 seconds
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentText((prev) => (prev + 1) % textArray.length);
@@ -27,10 +29,10 @@ const HeroSection = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Toggle audio play/pause
+  
   const toggleAudio = () => {
     const audioElement = audioRef.current;
-    if (!audioElement) return; // Early exit if ref is null
+    if (!audioElement) return; 
 
     if (isPlaying) {
       audioElement.pause();
@@ -44,26 +46,26 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="relative flex bg-gray-800 items-center justify-center overflow-hidden">
-      {/* Background Image */}
+    <div className="relative flex items-center justify-center overflow-hidden">
+     
       <div className="absolute inset-0 top-0">
         <Image
-          src={goodlifeImage}
+          src={ghibliImage1}
           alt="farm sustainable"
-          className="w-full h-full object-cover z-0 opacity-80"
+          className="w-full h-full object-cover z-0"
           loading="lazy"
         />
       </div>
 
-      {/* Audio Element */}
+      
       <audio ref={audioRef} loop>
         <source src="/ods.ogg" type="audio/ogg" />
         <source src="/ods.mp3" type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
 
-      {/* Content Container with Text */}
-      <div className="max-w-[1440px] flex flex-col relative z-10 p-8 md:p-16 text-center h-screen mt-60">
+      
+      <div className="flex flex-col relative z-10 p-8 md:p-16 text-center h-screen mt-60">
         <AnimatePresence mode="wait">
           <motion.h1
             key={currentText}
@@ -82,7 +84,7 @@ const HeroSection = () => {
         </p>
       </div>
 
-      {/* Buttons */}
+      
       <div className="absolute bottom-0 right-0 mb-10 mr-10 flex space-x-4 z-10 pointer-events-auto">
         <a
           href="/services"

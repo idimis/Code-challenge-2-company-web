@@ -14,7 +14,7 @@ import ServicesSection from '@/components/ServicesSection';
 import SlideOutButton from '@/components/SlideOutButton';
 import Overlay from '@/components/Overlay';
 import ChatbotComponent from '@/components/Chatbot'; 
-import AnimationHead from '@/components/AnimationHead';
+// import AnimationHead from '@/components/AnimationHead';
 import DynamicDataDashboard from '@/components/DynamicDataDashboard';
 
 
@@ -63,7 +63,7 @@ const HomePage = () => {
           <Header />
           <link rel="icon" href="/favicon.ico" />
           <HeroSection />
-          <AnimationHead />
+          
           <DynamicDataDashboard /> 
           <CompanyOverview />
           <AboutSection /> 

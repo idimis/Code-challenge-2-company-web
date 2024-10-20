@@ -40,7 +40,7 @@ const testimonials: Testimonial[] = [
 
 const TestimonialsSection: React.FC = () => {
   return (
-    <section className="py-10 px-5 overflow-x-hidden">
+    <section className="py-10 px-5 overflow-x-hidden overflow-hidden">
       <div className="max-w-[1440px] mx-auto">
         <h2 className="text-3xl font-bold text-center mb-10">Client Testimonials</h2>
         <div className="flex flex-col gap-8 md:gap-10">
