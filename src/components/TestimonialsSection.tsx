@@ -49,7 +49,7 @@ const TestimonialsSection: React.FC = () => {
               key={index}
               className="border p-6 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-6"
             >
-              {/* Image Section */}
+              
               <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden">
                 <Image
                   src={testimonial.image}
@@ -60,7 +60,7 @@ const TestimonialsSection: React.FC = () => {
                 />
               </div>
 
-              {/* Testimonial Content */}
+             
               <div className="flex-1 text-center md:text-left">
                 <p className="italic text-base md:text-lg text-left leading-relaxed"> 
                   &quot;{testimonial.feedback}&quot;

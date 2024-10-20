@@ -52,6 +52,7 @@ const HeroSection = () => {
           alt="farm sustainable"
           className="w-full h-full object-cover z-0"
           loading="lazy"
+          sizes="(max-width: 768px) 100vw, 50vw"
         />
       </div>
 
@@ -83,7 +84,7 @@ const HeroSection = () => {
       </div>
 
       
-      <div className="absolute bottom-0 right-0 mb-10 mr-10 flex space-x-4 z-10 pointer-events-auto">
+      <div className="absolute bottom-20 md:bottom-0 right-0 mb-20 mr-10 flex space-x-4 z-10 pointer-events-auto">
         <a
           href="/services"
           className="px-4 md:px-8 py-3 bg-transparent border border-black text-black font-semibold rounded-md hover:bg-gray-200 transition"

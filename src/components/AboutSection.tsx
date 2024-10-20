@@ -35,23 +35,24 @@ const AboutSection: React.FC = () => {
 
           
           <a
-            href="/about"
-            className="mt-6 inline-block border border-black text-black font-semibold py-2 px-4 rounded 
-                       hover:bg-gray-200 transition"
+          href="/about"
+          className="mt-6 self-start border border-black text-black font-semibold py-2 px-4 rounded 
+                      hover:bg-gray-200 transition w-auto"
           >
-            Learn More
-          </a>
+          Learn More
+        </a>
+
         </div>
 
         
-        <div className="md:w-1/2 relative">
-          <Image
-            src={engineer}
-            alt="Engineer working on solar panels"
-            className="w-full h-auto object-cover rounded-lg shadow-lg"
-            priority
-          />
-        </div>
+        <div className="md:w-1/2 w-full relative">
+        <Image
+          src={engineer}
+        alt="Engineer working on solar panels"
+        className="w-full h-auto object-cover rounded-lg shadow-lg"
+        priority
+      />
+    </div>
       </div>
     </section>
   );
