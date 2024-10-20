@@ -17,16 +17,32 @@ const Teams = () => {
   ];
 
   
-  const TeamMember = ({ name, title, description, quote, linkedIn }: { name: string; title: string; description: string; quote: string; linkedIn: string; }) => {
-    const isMale = ['Mulyono Woodgate', 'Budi Smith', 'Luhut Lewis', 'Bahlil Davis', 'Nadiem Shearer'].includes(name);
-    const gender = isMale ? 'men' : 'women';
-    const randomUserImage = `https://randomuser.me/api/portraits/${gender}/${Math.floor(Math.random() * 10)}.jpg`;
+  const generateRandomUserImages = () => {
+    const images = [];
+    const maleImages = Array.from({ length: 10 }, (_, i) => `https://randomuser.me/api/portraits/men/${i}.jpg`);
+    const femaleImages = Array.from({ length: 10 }, (_, i) => `https://randomuser.me/api/portraits/women/${i}.jpg`);
 
+    
+    images.push(...maleImages, ...femaleImages);
+    
+    
+    for (let i = images.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [images[i], images[j]] = [images[j], images[i]];
+    }
+    
+    return images;
+  };
+
+  
+  const userImages = generateRandomUserImages();
+
+  const TeamMember = ({ name, title, description, quote, linkedIn, image }: { name: string; title: string; description: string; quote: string; linkedIn: string; image: string; }) => {
     return (
       <div className="bg-white shadow-lg p-3 rounded-lg w-full md:w-1/3 mx-2 mb-4 relative group">
         <div className="h-28 w-28 mx-auto mb-3 relative overflow-hidden rounded-full">
           <Image
-            src={randomUserImage}
+            src={image}
             alt={`${name}`}
             width={112}
             height={112}
@@ -65,6 +81,7 @@ const Teams = () => {
               description={member.description}
               quote={member.quote}
               linkedIn={member.linkedIn}
+              image={userImages[index]} 
             />
           ))}
         </div>
