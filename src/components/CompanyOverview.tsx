@@ -2,11 +2,12 @@ import React from 'react';
 import Image from 'next/image';
 import Slider from 'react-slick'; 
 
-import frontImage from '@/public/park3.jpg';
+import workerImage1 from '@/public/worker1.jpg';
+import workerImage3 from '@/public/worker3.jpg';
 import childrenImage from '@/public/children.jpg';
-import parkImage2 from '@/public/park2.jpg';
 
-const images = [childrenImage, frontImage, parkImage2];
+
+const images = [childrenImage, workerImage1, workerImage3];
 
 const CompanyOverview = () => {
   

@@ -6,19 +6,19 @@ import { FaLinkedin } from 'react-icons/fa';
 const Teams = () => {
   
   const teamMembers = [
-    { name: "Paijo Woodgate", title: "Chief Executive Officer", description: "Leader and visionary.", quote: "Creating Ciptadaya has allowed me to realize my dream of leading the renewable energy revolution.", linkedIn: "https://www.linkedin.com/in/alice" },
-    { name: "Dalimin Smith", title: "Chief Technology Officer", description: "Tech expert in renewable energy.", quote: "Innovation drives us forward, and at Ciptadaya, we push the boundaries of technology.", linkedIn: "https://www.linkedin.com/in/bob" },
-    { name: "Rukiyah Parker", title: "Chief Operation Officer", description: "Operational strategist.", quote: "Our mission of sustainability keeps me motivated every single day.", linkedIn: "https://www.linkedin.com/in/catherine" },
-    { name: "Sriyatun Lewis", title: "Chief Marketing Officer", description: "Marketing and branding expert.", quote: "Promoting renewable energy is not just a job, it's a passion.", linkedIn: "https://www.linkedin.com/in/grace" },
-    { name: "Srintil Shearer", title: "Head of Solar Energy", description: "Leading solar energy projects.", quote: "At Ciptadaya, we harness the power of the sun for a brighter future.", linkedIn: "https://www.linkedin.com/in/david" },
-    { name: "Mukidi Rooney", title: "Head of Wind Energy", description: "Wind power specialist.", quote: "The wind is our partner in creating clean energy solutions.", linkedIn: "https://www.linkedin.com/in/eve" },
-    { name: "Ngatirah Davis", title: "Head of Energy Storage", description: "Expert in energy storage solutions.", quote: "Energy storage is the key to a sustainable energy grid.", linkedIn: "https://www.linkedin.com/in/frank" },
-    { name: "Karyadi Ferdinand", title: "Head of Research & Development", description: "R&D expert leading innovation.", quote: "At Ciptadaya, we are always on the cutting edge of clean energy research.", linkedIn: "https://www.linkedin.com/in/henry" },
+    { name: "Mulyono Woodgate", title: "Chief Executive Officer", description: "Leader and visionary.", quote: "Creating Ciptadaya has allowed me to realize my dream of leading the renewable energy revolution.", linkedIn: "https://www.linkedin.com/in/alice" },
+    { name: "Budi Smith", title: "Chief Technology Officer", description: "Tech expert in renewable energy.", quote: "Innovation drives us forward, and at Ciptadaya, we push the boundaries of technology.", linkedIn: "https://www.linkedin.com/in/bob" },
+    { name: "Mulyani Parker", title: "Chief Operation Officer", description: "Operational strategist.", quote: "Our mission of sustainability keeps me motivated every single day.", linkedIn: "https://www.linkedin.com/in/catherine" },
+    { name: "Luhut Lewis", title: "Chief Marketing Officer", description: "Marketing and branding expert.", quote: "Promoting renewable energy is not just a job, it's a passion.", linkedIn: "https://www.linkedin.com/in/grace" },
+    { name: "Nadiem Shearer", title: "Head of Solar Energy", description: "Leading solar energy projects.", quote: "At Ciptadaya, we harness the power of the sun for a brighter future.", linkedIn: "https://www.linkedin.com/in/david" },
+    { name: "Puan Rooney", title: "Head of Wind Energy", description: "Wind power specialist.", quote: "The wind is our partner in creating clean energy solutions.", linkedIn: "https://www.linkedin.com/in/eve" },
+    { name: "Bahlil Davis", title: "Head of Energy Storage", description: "Expert in energy storage solutions.", quote: "Energy storage is the key to a sustainable energy grid.", linkedIn: "https://www.linkedin.com/in/frank" },
+    { name: "Srintil Karenina", title: "Head of Research & Development", description: "R&D expert leading innovation.", quote: "At Ciptadaya, we are always on the cutting edge of clean energy research.", linkedIn: "https://www.linkedin.com/in/henry" },
   ];
 
   
   const TeamMember = ({ name, title, description, quote, linkedIn }: { name: string; title: string; description: string; quote: string; linkedIn: string; }) => {
-    const isMale = ['Paijo Woodgate', 'Dalimin Smith', 'Mukidi Rooney', 'Karyadi Ferdinand', 'Mulyono van Helsing'].includes(name);
+    const isMale = ['Mulyono Woodgate', 'Budi Smith', 'Luhut Lewis', 'Bahlil Davis', 'Nadiem Shearer'].includes(name);
     const gender = isMale ? 'men' : 'women';
     const randomUserImage = `https://randomuser.me/api/portraits/${gender}/${Math.floor(Math.random() * 10)}.jpg`;
 

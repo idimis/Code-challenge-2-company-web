@@ -13,10 +13,10 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    name: "Muklas Spielberg",
+    name: "Fufufafa Spielberg",
     feedback:
-      "Ciptadaya provided excellent service and helped us transition to solar energy seamlessly. Their expertise and commitment to sustainability are truly commendable. I couldn't have asked for a better partner in this transition.",
-    office: "Hawthorne Heights Ltd",
+      "Ciptadaya provided excellent service, and the collaboration felt as smooth and natural as working with my family. Their close understanding of our needs made the transition to solar energy seamless—having a partner who truly knows you makes all the difference.",
+    office: "Royal Dynasty Ltd",
     profession: "Project Manager",
     image: "https://randomuser.me/api/portraits/men/1.jpg",
   },
