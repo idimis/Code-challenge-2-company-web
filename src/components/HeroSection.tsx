@@ -1,10 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-// import goodlifeImage from '@/public/goodlife.jpg';
 import ghibliImage1 from '@/public/ghibli1.jpg';
-// import ghibliImage2 from '@/public/ghibli2.png';
-import { FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
+
 
 const textArray = [
   "It starts today, no more sorrow.",
@@ -17,8 +15,8 @@ const textArray = [
 
 const HeroSection = () => {
   const [currentText, setCurrentText] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const audioRef = useRef<HTMLAudioElement | null>(null); 
+ 
+ 
 
 
   useEffect(() => {
@@ -30,20 +28,7 @@ const HeroSection = () => {
   }, []);
 
   
-  const toggleAudio = () => {
-    const audioElement = audioRef.current;
-    if (!audioElement) return; 
-
-    if (isPlaying) {
-      audioElement.pause();
-    } else {
-      audioElement
-        .play()
-        .catch((error: Error) => console.error("Error playing audio:", error));
-    }
-
-    setIsPlaying(!isPlaying);
-  };
+  
 
   return (
     <div className="relative flex items-center justify-center overflow-hidden">
@@ -56,13 +41,6 @@ const HeroSection = () => {
           loading="lazy"
         />
       </div>
-
-      
-      <audio ref={audioRef} loop>
-        <source src="/ods.ogg" type="audio/ogg" />
-        {/* <source src="/ods.mp3" type="audio/mpeg" /> */}
-        Your browser does not support the audio element.
-      </audio>
 
       
       <div className="flex flex-col relative z-10 p-8 md:p-16 text-center h-screen mt-60">
@@ -100,13 +78,6 @@ const HeroSection = () => {
         </a>
       </div>
 
-      
-      <button
-        onClick={toggleAudio}
-        className="absolute top-4 left-4 px-3 py-2 bg-white font-semibold rounded-md transition hover:bg-gray-200 flex items-center z-20"
-      >
-        {isPlaying ? <FaVolumeMute /> : <FaVolumeUp />}
-      </button>
     </div>
   );
 };

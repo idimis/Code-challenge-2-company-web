@@ -104,7 +104,7 @@ a:hover {
   right: -30px;
 }
 
-/* Navigation Styles */
+
 nav {
   flex-grow: 1;
   display: flex;
@@ -122,7 +122,6 @@ nav a:hover {
 }
 
 
-/* Keyframes for sway animation */
 @keyframes sway {
   0% {
     transform: rotate(-2deg);
