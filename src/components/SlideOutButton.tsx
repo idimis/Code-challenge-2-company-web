@@ -23,7 +23,7 @@ const Slideout: FC<SlideoutProps> = ({ isOpen, closeMenu }) => {
           ✖
         </button>
 
-        {/* Nav Items */}
+        
         <ul className="flex flex-col items-center justify-center h-3/4 space-y-6 text-lg md:text-2xl lg:text-3xl font-bold">
           <li>
             <Link href="/" onClick={closeMenu}>
@@ -53,7 +53,7 @@ const Slideout: FC<SlideoutProps> = ({ isOpen, closeMenu }) => {
               </span>
             </Link>
           </li>
-          {/* New Quiz Link */}
+          
           <li>
             <Link href="/quiz" onClick={closeMenu}>
               <span className="text-white hover:text-cyan-400 transition-colors duration-300">
@@ -63,7 +63,7 @@ const Slideout: FC<SlideoutProps> = ({ isOpen, closeMenu }) => {
           </li>
         </ul>
 
-        {/* Social Links */}
+       
         <div className="absolute bottom-10 w-full flex justify-center space-x-6 text-sm md:text-lg">
           <a
             href="https://www.linkedin.com"

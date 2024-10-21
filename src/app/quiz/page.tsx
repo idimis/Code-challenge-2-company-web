@@ -235,19 +235,19 @@ const GreenPersonQuiz = () => {
   
         
           <div className="flex flex-col md:flex-row justify-center w-full mt-8 text-center space-y-4 md:space-y-0 md:space-x-12 md:mt-20">
-  {/* Web Visitors */}
+  
   <div className="flex flex-col items-center w-full md:w-1/3 space-y-1">
     <span className="text-lg font-semibold">Web Visitors</span>
     <span className="text-3xl font-bold animate-pulse text-yellow-700 p-5">1000+</span>
   </div>
 
-  {/* Quiz Participants */}
+  
   <div className="flex flex-col items-center w-full md:w-1/3 space-y-1">
     <span className="text-lg font-semibold">Quiz Participants</span>
     <span className="text-3xl font-bold animate-pulse text-yellow-700 p-5">800+</span>
   </div>
 
-  {/* Most Common Personality */}
+  
   <div className="flex flex-col items-center w-full md:w-1/3 space-y-1">
     <span className="text-lg font-semibold">Most Personality</span>
     <span className="text-3xl font-bold animate-pulse text-yellow-700 p-5 whitespace-nowrap">The Inventor</span>

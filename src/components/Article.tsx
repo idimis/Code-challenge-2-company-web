@@ -36,7 +36,7 @@ const Articles = () => {
             key={index} 
             className="flex flex-col md:flex-row items-start md:items-center gap-8"
           >
-            {/* Article Image */}
+            
             <div className="flex-shrink-0 w-full md:w-64 h-40 relative">
               <Image 
                 src={article.imageUrl} 
@@ -46,7 +46,7 @@ const Articles = () => {
               />
             </div>
 
-            {/* Article Content */}
+            
             <div className="flex-1">
               <h3 className="text-2xl font-semibold mb-3">{article.title}</h3>
               <p className="text-gray-800 mb-4">{article.description}</p>

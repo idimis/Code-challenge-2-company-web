@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import ghibliImage1 from '@/public/ghibli1.jpg';
+import ghibliImage1 from '@/public/ghibli1.webp'; 
 import { FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
 
 const textArray = [
@@ -18,7 +18,6 @@ const HeroSection = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null); 
 
-
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentText((prev) => (prev + 1) % textArray.length);
@@ -26,7 +25,6 @@ const HeroSection = () => {
 
     return () => clearInterval(interval);
   }, []);
-
   
   const toggleAudio = () => {
     const audioElement = audioRef.current;
@@ -45,7 +43,6 @@ const HeroSection = () => {
 
   return (
     <div className="relative flex items-center justify-center overflow-hidden">
-     
       <div className="absolute inset-0 top-0">
         <Image
           src={ghibliImage1}
@@ -56,14 +53,11 @@ const HeroSection = () => {
         />
       </div>
 
-      
       <audio ref={audioRef} loop>
-        <source src="/ods.ogg" type="audio/ogg" />
-        <source src="/ods.mp3" type="audio/mpeg" />
+        <source src="/ods.webm" type="audio/webm" /> 
         Your browser does not support the audio element.
       </audio>
 
-      
       <div className="flex flex-col relative z-10 p-8 md:p-16 text-center h-screen mt-60">
         <AnimatePresence mode="wait">
           <motion.h1
@@ -83,7 +77,6 @@ const HeroSection = () => {
         </p>
       </div>
 
-      
       <div className="absolute bottom-20 md:bottom-0 right-0 mb-20 mr-10 flex space-x-4 z-10 pointer-events-auto">
         <a
           href="/services"
@@ -99,7 +92,6 @@ const HeroSection = () => {
         </a>
       </div>
 
-      
       <button
         onClick={toggleAudio}
         className="absolute top-4 left-4 px-3 py-2 bg-white font-semibold rounded-md transition hover:bg-gray-200 flex items-center z-20"

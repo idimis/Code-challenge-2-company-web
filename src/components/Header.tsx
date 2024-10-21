@@ -46,7 +46,7 @@ const Header = () => {
         </nav>
       </div>
 
-      {/* Mobile Menu Links */}
+      
       <div className={`md:hidden ${isMobileMenuOpen ? 'flex' : 'hidden'} flex-col items-center bg-white p-4`}>
         <Link href="/" className="my-2 text-black hover:underline">Home</Link>
         <Link href="/about" className="my-2 text-black hover:underline">About Us</Link>
